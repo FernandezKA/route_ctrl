@@ -1,4 +1,4 @@
-
+/*******************************************************************************/
 static void recognize_data(unsigned char data){
   
     if(rxCount  == 1U){
@@ -54,20 +54,29 @@ static void recognize_data(unsigned char data){
       uart_tx_data(rxData, sz); */
     }
     if((crc_head!=0xFFU)&&(rxCount==sz+7U)){
-      uart_tx_data("\n\recieved is completed", 23U);
       rxCount = 0U;
       completed=1;
     }
     /*************************************************/ 
 }
-/*******************************************************************************/
-static void uart_tx_byte(unsigned char data){
-  while(!UART1_SR_TXE);
-    UART1_DR = data;
-    return;
+static uint8_t dev_addr(void){
+  
+   return 0xFFU;
 }
-static void uart_tx_data(unsigned char * data, unsigned char len){
-  while(len--){
-    uart_tx_byte(*data++);
-  }
+/*******************************************************************************/
+int SystemInit(void)
+{
+ CLK_DeInit();
+ CLK_HSICmd(ENABLE);/*ENABLE INTERNAL RC OSCILLATE*/
+ CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);/*PRESCALER 1*/
+ CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);/*PRESKALER WITH CPU 1 */ 
+ UART1_DeInit();
+ UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
+ I2C_DeInit();
+ I2C_Init(400000U, 0xFFU, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U);
+ UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+ I2C_ITConfig(I2C_IT_EVT, ENABLE);
+ I2C_ITConfig(I2C_IT_BUF, ENABLE);
+ enableInterrupts();
+    return 0;
 }
