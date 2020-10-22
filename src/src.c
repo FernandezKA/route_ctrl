@@ -75,7 +75,7 @@ void gpio_config(void){
   return;
 }
 /*******************************************************************************/
-int SystemInit(void)
+void SystemInit(void)
 {
  CLK_DeInit();
  CLK_HSICmd(ENABLE);/*ENABLE INTERNAL RC OSCILLATE*/
@@ -88,10 +88,9 @@ int SystemInit(void)
  I2C_DeInit();
  I2C_Init(400000U, address, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U);
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
- I2C_ITConfig(I2C_IT_EVT, ENABLE);
- I2C_ITConfig(I2C_IT_BUF, ENABLE);
+ //I2C_ITConfig(I2C_IT_EVT, ENABLE);
+ //I2C_ITConfig(I2C_IT_BUF, ENABLE);
  enableInterrupts();
-    return 0;
 }
 #ifdef USE_FULL_ASSERT
 void assert_failed(u8* file, u32 line)
@@ -108,6 +107,7 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
  temp = UART1->DR;
  ++rxCount;
+ UART1_SendData8(0xFFU);
  if(temp==0xF5U&&rxCount==1U){
     status=1;
     sig = temp;
@@ -128,5 +128,6 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
    }
  }
 }
+
 
   

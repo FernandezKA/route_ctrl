@@ -30,13 +30,14 @@ int main(void)
 {
   SystemInit();
 	while (1){
-      if((status)&&(!completed)){/*Если байт на прерывании принят, выполняем функцию распознавания*/
-   status = 0;/*Опускаем байт необработанной информации*/
+  //UART1_SendData8(0x37U);
+  if((status)&&(!completed)){
+   status = 0;
    recognize_data(temp);
   }
       if(completed){
      completed=0;
     }
-  };
+  }
 }
 
