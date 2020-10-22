@@ -330,6 +330,10 @@
                     <file> 12</file>
                 </tool>
                 <tool>
+                    <name>ICCSTM8</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
                     <file> 93</file>
                 </tool>
