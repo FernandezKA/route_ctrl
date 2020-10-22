@@ -30,7 +30,7 @@ int main(void)
 {
   SystemInit();
 	while (1){
-  //UART1_SendData8(0x37U);
+  UART1_SendData8(0x37U);
   if((status)&&(!completed)){
    status = 0;
    recognize_data(temp);

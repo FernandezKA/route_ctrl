@@ -88,8 +88,7 @@ void SystemInit(void)
  I2C_DeInit();
  I2C_Init(400000U, address, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U);
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
- //I2C_ITConfig(I2C_IT_EVT, ENABLE);
- //I2C_ITConfig(I2C_IT_BUF, ENABLE);
+ I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
  enableInterrupts();
 }
 #ifdef USE_FULL_ASSERT
@@ -107,7 +106,7 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
  temp = UART1->DR;
  ++rxCount;
- UART1_SendData8(0xFFU);
+ UART1_SendData8(temp);
  if(temp==0xF5U&&rxCount==1U){
     status=1;
     sig = temp;
@@ -128,6 +127,13 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
    }
  }
 }
+INTERRUPT_HANDLER(I2C_IRQHandler, 19)
+{
+//I2C_SendData(0xFFU);
+return;
+}
+
+
 
 
   

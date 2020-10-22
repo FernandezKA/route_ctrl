@@ -217,13 +217,14 @@ INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18)
 #endif
 #endif /* (STM8AF622x) */
 
-#ifndef I2C_IRQ
+/*#ifndef I2C_IRQ
 //I2C Interrupt routine.
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
-	while (1){};
+I2C_SendData(0xFFU);
+return;
 }
-#endif
+#endif*/
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 #ifndef UART2_TX_IRQ
