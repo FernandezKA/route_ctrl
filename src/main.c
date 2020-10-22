@@ -1,22 +1,23 @@
-#include "stm8s_conf.h"
+
 #include"inc.h"
-/**
-  *inc->stm8s_conf.h - раскоментировать строчки с нужными хедерами 
-  *периферии и необходимыми обработчиками прерываний. Все закоментированные
-  *обработчики ведут на бесконечные циклы.
-  * 
-  *Project->Options->General Options - выбрать мк
-  *
-  *Project->Options->Debugger - выбрать отладчик
-  *
-  *Project->Options->C/C++ Compiler->Preprocessor->Defined symbols  - задать
-  *семейство процессора(перечислены в lib->SPL->inc->stm8s.h), а также задать
-  *частоты внутренних и внешних генераторов(если не задать, то будут ипользованы
-  *значения по умолчанию из stm8s.h).
-  */
-
-
-
+/*************************/
+unsigned char rxCount=0U;    /*Количество принятых байтов*/
+unsigned char rxData[256U];  /*Массив с принятыми данными*/
+unsigned char txCount=0U;    /*Количество данных для отправки*/
+unsigned char txData[256U];  /*Массив с данными для отправки*/
+unsigned char sig;           /*Сигнатура*/
+unsigned short dest_id;      /*dest id девайса*/
+unsigned char cmd;           /*Команда в пакете*/
+unsigned char sz;            /*Размер пакета с данными*/
+unsigned char crc_head;      /*Crc до байта с размером данных*/
+unsigned char crc_tail;      /*Crc данных с раздела data*/
+unsigned char crc_head_rec = 0xFFU;
+unsigned char crc_tail_rec = 0xFFU;
+_Bool status = 0;   /*булевская переменная для указания наличия необработанных приянтых данных*/
+_Bool completed = 0; /*булевская переменная для указания статуса распознавания данных*/
+_Bool other_flag = 0;/*будевская переменная для обработки сигнатуры 0xf6*/
+unsigned char temp;  /*Временная переменная для большинства костылей в этой программе*/
+/*************************/
 int main(void)
 {
   SystemInit();
@@ -32,37 +33,3 @@ int main(void)
   };
 }
 
-  #ifdef USE_FULL_ASSERT
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *   where the assert_param error has occurred.
-  * @param file: pointer to the source file name
-  * @param line: assert_param error line source number
-  * @retval : None
-  */
-void assert_failed(u8* file, u32 line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
-  while (1)
-  {
-    I2C_SendData(0xFFU);
-  }
-}
-#endif
-
-INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
-{
- temp = UART1->DR;
- ++rxCount;
- status = 1; 
-return;
-}
-/*INTERRUPT_HANDLER(I2C_IRQHandler, 20){
-  I2C_SendData(0xFFU);
-  return;
-}  */
-  

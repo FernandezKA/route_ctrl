@@ -1,8 +1,15 @@
+#include"inc.h"
 /*******************************************************************************/
-static void recognize_data(unsigned char data){
+void recognize_data(unsigned char data){
   
     if(rxCount  == 1U){
-       sig = data;
+      if (data == 0xf5){
+        sig = data;
+      }
+      else if (data == 0xf6){
+         sig = data;
+         other_flag = 1;
+      }
        /*uart_tx_data("\n\rSig recognized : ",19U);
        uart_tx_byte(sig); */
     }
@@ -59,7 +66,7 @@ static void recognize_data(unsigned char data){
     }
     /*************************************************/ 
 }
-static uint8_t dev_addr(void){
+uint8_t dev_addr(void){
   
    return 0xFFU;
 }
@@ -80,3 +87,29 @@ int SystemInit(void)
  enableInterrupts();
     return 0;
 }
+#ifdef USE_FULL_ASSERT
+void assert_failed(u8* file, u32 line)
+{ 
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
+  /* Infinite loop */
+  while (1)
+  {
+    I2C_SendData(0xFFU);
+  }
+}
+#endif
+
+INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
+{
+ temp = UART1->DR;
+ ++rxCount;
+ status = 1; 
+return;
+}
+/*INTERRUPT_HANDLER(I2C_IRQHandler, 20){
+  I2C_SendData(0xFFU);
+  return;
+}  */
+  

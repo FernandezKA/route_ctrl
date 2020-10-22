@@ -14,6 +14,8 @@ C:\dev\stm8\spl\inc
 -I
 C:\dev\stm8\spl\lib\SPL\inc
 -I
+C:\dev\stm8\spl\src
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\c
@@ -21,6 +23,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\c
 C:\dev\stm8\spl\inc
 -I
 C:\dev\stm8\spl\lib\SPL\inc
+-I
+C:\dev\stm8\spl\src
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

@@ -261,6 +261,7 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\inc</state>
                     <state>$PROJ_DIR$\lib\SPL\inc</state>
+                    <state>C:\dev\stm8\spl\src</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1819,7 +1820,13 @@
     <group>
         <name>src</name>
         <file>
+            <name>$PROJ_DIR$\src\inc.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\src.c</name>
         </file>
     </group>
 </project>

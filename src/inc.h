@@ -1,19 +1,24 @@
-#pragma once
-unsigned char rxCount=0U;    /*Количество принятых байтов*/
-unsigned char rxData[256U];  /*Массив с принятыми данными*/
-unsigned char txCount=0U;    /*Количество данных для отправки*/
-unsigned char txData[256U];  /*Массив с данными для отправки*/
-unsigned char sig;           /*Сигнатура*/
-unsigned short dest_id;      /*dest id девайса*/
-unsigned char cmd;           /*Команда в пакете*/
-unsigned char sz;            /*Размер пакета с данными*/
-unsigned char crc_head;      /*Crc до байта с размером данных*/
-unsigned char crc_tail;      /*Crc данных с раздела data*/
-unsigned char crc_head_rec = 0xFFU;
-unsigned char crc_tail_rec = 0xFFU;
-_Bool status = 0;   /*булевская переменная для указания наличия необработанных приянтых данных*/
-_Bool completed = 0; /*булевская переменная для указания статуса распознавания данных*/
-unsigned char temp;  /*Временная переменная для большинства костылей в этой программе*/
+#ifndef _inc_h_
+#define _inc_h_
+#include "stm8s_conf.h"
+extern unsigned char rxCount;    /*Количество принятых байтов*/
+extern unsigned char rxData[256U];  /*Массив с принятыми данными*/
+extern unsigned char txCount;    /*Количество данных для отправки*/
+extern unsigned char txData[256U];  /*Массив с данными для отправки*/
+extern unsigned char sig;           /*Сигнатура*/
+extern unsigned short dest_id;      /*dest id девайса*/
+extern unsigned char cmd;           /*Команда в пакете*/
+extern unsigned char sz;            /*Размер пакета с данными*/
+extern unsigned char crc_head;      /*Crc до байта с размером данных*/
+extern unsigned char crc_tail;      /*Crc данных с раздела data*/
+extern unsigned char crc_head_rec;
+extern unsigned char crc_tail_rec;
+extern _Bool status;   /*булевская переменная для указания наличия необработанных приянтых данных*/
+extern _Bool completed; /*булевская переменная для указания статуса распознавания данных*/
+extern _Bool other_flag;/*будевская переменная для обработки сигнатуры 0xf6*/
+extern unsigned char temp;  /*Временная переменная для большинства костылей в этой программе*/
 /***************************************************************************************/
-static void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
-static uint8_t dev_addr(void);/*Функция, определяющая адрес устройства*/
+int SystemInit(void);
+void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
+uint8_t dev_addr(void);/*Функция, определяющая адрес устройства*/
+#endif
