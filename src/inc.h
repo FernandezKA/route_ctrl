@@ -31,4 +31,6 @@ void SystemInit(void);
 void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
 uint8_t dev_addr(void);/*Функция, определяющая адрес устройства*/
 void gpio_config(void);
+void I2C_recognize();
+
 #endif

@@ -11,9 +11,9 @@ _Bool completed = 0; /*булевская переменная для указа
 _Bool other_flag = 0;/*будевская переменная для обработки сигнатуры 0xf6*/
 unsigned char temp;  /*Временная переменная для большинства костылей в этой программе*/
 /*for I2C init*/
-uint8_t address = 0xFFU;/*default value*/
+uint8_t address = 0x6eU;/*default value*/
 /*sig == 0xF5U*/
-unsigned char sig=0xFFU;           /*Сигнатура*/
+unsigned char sig;           /*Сигнатура*/
 unsigned short dest_id;      /*dest id девайса*/
 unsigned char cmd;           /*Команда в пакете*/
 unsigned char sz;            /*Размер пакета с данными*/
@@ -28,9 +28,10 @@ unsigned char name;
 /*************************/
 int main(void)
 {
+  
   SystemInit();
-	while (1){
-  UART1_SendData8(0x37U);
+    while (1){
+  I2C_SendData(0x5fU);
   if((status)&&(!completed)){
    status = 0;
    recognize_data(temp);

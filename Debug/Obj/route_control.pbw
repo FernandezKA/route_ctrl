@@ -46582,20 +46582,6 @@
     "scope": null
   },
   {
-    "ID": "c:@sig",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "sig",
-    "location": {
-      "column": "22",
-      "line": "16",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "sig",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:@dest_id",
     "What": "Variable",
     "defdec": "Dec",
@@ -46876,6 +46862,20 @@
     "scope": null
   },
   {
+    "ID": "c:@F@I2C_recognize",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void I2C_recognize(void)",
+    "location": {
+      "column": "6",
+      "line": "34",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+    },
+    "name": "I2C_recognize",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@rxCount",
     "What": "Variable",
     "defdec": "Def",
@@ -47004,7 +47004,7 @@
   {
     "ID": "c:@sig",
     "What": "Variable",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "sig",
     "location": {
       "column": "15",
@@ -47226,13 +47226,27 @@
     "scope": null
   },
   {
+    "ID": "c:@F@I2C_recognize",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void I2C_recognize(void)",
+    "location": {
+      "column": "6",
+      "line": "67",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_recognize",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:@F@SystemInit",
     "What": "Function",
     "defdec": "Def",
     "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "78",
+      "line": "80",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "SystemInit",
@@ -47246,7 +47260,7 @@
     "display": "void assert_failed(u8 *, u32)",
     "location": {
       "column": "6",
-      "line": "95",
+      "line": "97",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "assert_failed",
@@ -47260,7 +47274,7 @@
     "display": "void UART1_RX_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "105",
+      "line": "107",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "UART1_RX_IRQHandler",
@@ -47274,7 +47288,7 @@
     "display": "void I2C_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "130",
+      "line": "132",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "I2C_IRQHandler",
