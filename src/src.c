@@ -143,16 +143,15 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   volatile register uint8_t i;
   i =  I2C->SR1;
   i= I2C->SR3;
-  I2C->DR = tmp[2];
   if(last==0xFFU){
      I2C->DR=0x5FU;
      last = 0x5FU;
   }
   else if(last == 0x5FU){
      I2C->DR = 0x00U;
-     last=0x00U;
+     last=0x03U;
   }
-  else if(last==0x00U){
+  else if(last==0x03U){
      I2C->DR = 0x01U;
      last = 0x01U;
   }
@@ -168,6 +167,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
      I2C->DR = 0x7EU;
      last=0xFFU;
   }
+  //I2C->DR=0x5f;
 return;
 }
 

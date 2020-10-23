@@ -720,6 +720,10 @@
                     <file> 98</file>
                 </tool>
                 <tool>
+                    <name>BICOMP</name>
+                    <file> 78</file>
+                </tool>
+                <tool>
                     <name>__cstat</name>
                     <file> 76</file>
                 </tool>
