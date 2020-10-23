@@ -32,4 +32,5 @@ uint8_t dev_addr(void);/*Функция, определяющая адрес у�
 void gpio_config(void);
 void I2C_recognize();
 //void i2c_init(unsigned char addr);
+
 #endif

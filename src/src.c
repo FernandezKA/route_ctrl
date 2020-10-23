@@ -1,6 +1,8 @@
 #include"inc.h"
 /*******************************************************************************/
 unsigned char cnt=0U;
+unsigned char last = 0xFFU;
+unsigned char tmp[] = {0x5FU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7EU};
 void recognize_data(unsigned char data){
   
     if(sig==0xf5U){
@@ -99,7 +101,7 @@ void SystemInit(void)
 //i2c_init(0x6eU);
  I2C_Init(400000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
- I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
+ I2C_ITConfig((I2C_IT_TypeDef)( I2C_IT_EVT|I2C_IT_BUF), ENABLE);//  
  enableInterrupts();
 }
 /*******************************************************************************/
@@ -141,8 +143,31 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   volatile register uint8_t i;
   i =  I2C->SR1;
   i= I2C->SR3;
-  ++cnt;
-  I2C->DR = cnt;
+  I2C->DR = tmp[2];
+  if(last==0xFFU){
+     I2C->DR=0x5FU;
+     last = 0x5FU;
+  }
+  else if(last == 0x5FU){
+     I2C->DR = 0x00U;
+     last=0x00U;
+  }
+  else if(last==0x00U){
+     I2C->DR = 0x01U;
+     last = 0x01U;
+  }
+  else if(last == 0x01U){
+     I2C->DR = 0x80U;
+     last=0x80U;
+  }
+  else if(last == 0x80U){
+     I2C->DR = 0x00U;
+     last=0x00U;
+  }
+   else if(last == 0x00U){
+     I2C->DR = 0x7EU;
+     last=0xFFU;
+  }
 return;
 }
 

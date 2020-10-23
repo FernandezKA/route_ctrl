@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>1367623844</fileChecksum>
+    <fileChecksum>2095826719</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -718,10 +718,6 @@
                 <tool>
                     <name>ICCSTM8</name>
                     <file> 98</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 78</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
