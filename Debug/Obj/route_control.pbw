@@ -46848,20 +46848,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@gpio_config",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void gpio_config(void)",
-    "location": {
-      "column": "6",
-      "line": "33",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "gpio_config",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:@F@I2C_recognize",
     "What": "Function",
     "defdec": "Dec",
@@ -46882,7 +46868,7 @@
     "display": "rxCount",
     "location": {
       "column": "15",
-      "line": "5",
+      "line": "4",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "rxCount",
@@ -46896,7 +46882,7 @@
     "display": "rxData",
     "location": {
       "column": "15",
-      "line": "6",
+      "line": "5",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "rxData",
@@ -46910,7 +46896,7 @@
     "display": "txCount",
     "location": {
       "column": "15",
-      "line": "7",
+      "line": "6",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "txCount",
@@ -46924,7 +46910,7 @@
     "display": "txData",
     "location": {
       "column": "15",
-      "line": "8",
+      "line": "7",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "txData",
@@ -46938,7 +46924,7 @@
     "display": "status",
     "location": {
       "column": "7",
-      "line": "9",
+      "line": "8",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "status",
@@ -46952,7 +46938,7 @@
     "display": "completed",
     "location": {
       "column": "7",
-      "line": "10",
+      "line": "9",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "completed",
@@ -46966,7 +46952,7 @@
     "display": "other_flag",
     "location": {
       "column": "7",
-      "line": "11",
+      "line": "10",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "other_flag",
@@ -46980,7 +46966,7 @@
     "display": "temp",
     "location": {
       "column": "15",
-      "line": "12",
+      "line": "11",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "temp",
@@ -46994,7 +46980,7 @@
     "display": "address",
     "location": {
       "column": "9",
-      "line": "14",
+      "line": "13",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "address",
@@ -47008,7 +46994,7 @@
     "display": "sig",
     "location": {
       "column": "15",
-      "line": "16",
+      "line": "15",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "sig",
@@ -47022,7 +47008,7 @@
     "display": "dest_id",
     "location": {
       "column": "16",
-      "line": "17",
+      "line": "16",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "dest_id",
@@ -47036,7 +47022,7 @@
     "display": "cmd",
     "location": {
       "column": "15",
-      "line": "18",
+      "line": "17",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "cmd",
@@ -47050,7 +47036,7 @@
     "display": "sz",
     "location": {
       "column": "15",
-      "line": "19",
+      "line": "18",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "sz",
@@ -47064,7 +47050,7 @@
     "display": "crc_head",
     "location": {
       "column": "15",
-      "line": "20",
+      "line": "19",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "crc_head",
@@ -47078,7 +47064,7 @@
     "display": "crc_tail",
     "location": {
       "column": "15",
-      "line": "21",
+      "line": "20",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "crc_tail",
@@ -47092,7 +47078,7 @@
     "display": "crc_head_rec",
     "location": {
       "column": "15",
-      "line": "22",
+      "line": "21",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "crc_head_rec",
@@ -47106,7 +47092,7 @@
     "display": "crc_tail_rec",
     "location": {
       "column": "15",
-      "line": "23",
+      "line": "22",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "crc_tail_rec",
@@ -47120,7 +47106,7 @@
     "display": "offs",
     "location": {
       "column": "15",
-      "line": "25",
+      "line": "24",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "offs",
@@ -47134,7 +47120,7 @@
     "display": "size",
     "location": {
       "column": "15",
-      "line": "26",
+      "line": "25",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "size",
@@ -47148,7 +47134,7 @@
     "display": "name",
     "location": {
       "column": "15",
-      "line": "27",
+      "line": "26",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "name",
@@ -47162,7 +47148,7 @@
     "display": "int main(void)",
     "location": {
       "column": "5",
-      "line": "29",
+      "line": "28",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
     "name": "main",
@@ -47190,7 +47176,7 @@
     "display": "uint8_t dev_addr(void)",
     "location": {
       "column": "9",
-      "line": "60",
+      "line": "61",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "dev_addr",
@@ -47198,13 +47184,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@1622@F@dev_addr@addr",
+    "ID": "c:src.c@1626@F@dev_addr@addr",
     "What": "Variable",
     "defdec": "Def",
     "display": "addr",
     "location": {
       "column": "11",
-      "line": "61",
+      "line": "62",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "addr",
@@ -47212,30 +47198,16 @@
     "scope": null
   },
   {
-    "ID": "c:@F@gpio_config",
+    "ID": "c:@F@i2c_init",
     "What": "Function",
     "defdec": "Def",
-    "display": "void gpio_config(void)",
+    "display": "void i2c_init(void)",
     "location": {
       "column": "6",
-      "line": "66",
+      "line": "79",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
-    "name": "gpio_config",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_recognize",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void I2C_recognize(void)",
-    "location": {
-      "column": "6",
-      "line": "67",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_recognize",
+    "name": "i2c_init",
     "origin": "project_file",
     "scope": null
   },
@@ -47246,7 +47218,7 @@
     "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "80",
+      "line": "86",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "SystemInit",
@@ -47260,7 +47232,7 @@
     "display": "void assert_failed(u8 *, u32)",
     "location": {
       "column": "6",
-      "line": "97",
+      "line": "104",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "assert_failed",
@@ -47274,7 +47246,7 @@
     "display": "void UART1_RX_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "107",
+      "line": "114",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "UART1_RX_IRQHandler",
@@ -47288,7 +47260,7 @@
     "display": "void I2C_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "132",
+      "line": "139",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "I2C_IRQHandler",

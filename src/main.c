@@ -1,4 +1,3 @@
-
 #include"inc.h"
 /*************************/
 /*for uart_recieve*/

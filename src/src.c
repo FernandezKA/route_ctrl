@@ -55,17 +55,16 @@ else if(sig==0xF6U){
    completed = 1;
   }
   return;
+  }
 }
-}
+
 uint8_t dev_addr(void){
   uint8_t addr = 0x00U;
   addr = GPIOC->IDR;
   addr|=(0U<<8|0U<<7|1U<<6);
   return addr;
 }
-void gpio_config(void){
-void I2C_recognize();
-
+/*void gpio_init(void){
   GPIO_DeInit(GPIOC);
   GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT);
@@ -76,6 +75,13 @@ void I2C_recognize();
   GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
   return;
 }
+*/
+void i2c_init(void){
+   I2C->FREQR|=(1U<<2);//SET 4MHz CLOCKING
+   I2C->CR1|=(1U<<7|1U<<0);//ENABLE CLOCK STRECHING AND PERIPH ENABLE
+   I2C->CR2|=(1U<<2);//ACKNOWLEDGE ENABLE 
+   I2C->OARL|=(1U<<6|1U<<5|1U<<3|1U<<2|1U<<1);//SET 0x6E ADDRESS
+}
 /*******************************************************************************/
 void SystemInit(void)
 {
@@ -84,13 +90,14 @@ void SystemInit(void)
  CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);/*PRESCALER 1*/
  CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);/*PRESKALER WITH CPU 1 */ 
  //gpio_config();
- //UART1_DeInit();
- //UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
+ UART1_DeInit();
+ UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
  //address = dev_addr();
  I2C_DeInit();
- I2C_Init(100000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+ i2c_init();
+// I2C_Init(400000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
- //I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
+// I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
  enableInterrupts();
 }
 #ifdef USE_FULL_ASSERT
