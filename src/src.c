@@ -65,7 +65,7 @@ uint8_t dev_addr(void){
   addr|=(0U<<8|0U<<7|1U<<6);
   return addr;
 }
-/*void gpio_init(void){
+void gpio_init(void){
   GPIO_DeInit(GPIOC);
   GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT);
@@ -76,12 +76,12 @@ uint8_t dev_addr(void){
   GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
   return;
 }
-*/
-void i2c_init(void){
+/*******************************************************************************/
+void i2c_init(unsigned char addr){
    I2C->FREQR|=(1U<<2);//SET 4MHz CLOCKING
    I2C->CR1|=(1U<<7|1U<<0);//ENABLE CLOCK STRECHING AND PERIPH ENABLE
    I2C->CR2|=(1U<<2);//ACKNOWLEDGE ENABLE 
-   I2C->OARL|=(1U<<6|1U<<5|1U<<3|1U<<2|1U<<1);//SET 0x6E ADDRESS
+   I2C->OARL=(addr<<1);//SET 0x6E ADDRESS
    I2C->ITR|=(1U<<2|1U<<1);//ENABLE ITEVTEN AND ITBUFEN
 }
 /*******************************************************************************/
@@ -96,23 +96,20 @@ void SystemInit(void)
  UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
  //address = dev_addr();
  I2C_DeInit();
- i2c_init();
-// I2C_Init(400000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+//i2c_init(0x6eU);
+ I2C_Init(400000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-// I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
+ I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_ERR | I2C_IT_EVT | I2C_IT_BUF), ENABLE);
  enableInterrupts();
 }
+/*******************************************************************************/
 #ifdef USE_FULL_ASSERT
 void assert_failed(u8* file, u32 line)
 { 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
   while (1);
 }
 #endif
-
+/*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
  temp = UART1->DR;
@@ -138,12 +135,14 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
    }
  }
 }
+/*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   volatile register uint8_t i;
   i =  I2C->SR1;
   i= I2C->SR3;
-  I2C->DR = cnt++;
+  ++cnt;
+  I2C->DR = cnt;
 return;
 }
 

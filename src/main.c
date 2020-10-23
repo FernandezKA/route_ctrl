@@ -1,7 +1,6 @@
 #include"inc.h"
-/*************************/
+/*******************************************************************************/
 /*for uart_recieve*/
-
 unsigned char rxCount=0x00U;    /*Количество принятых байтов*/
 unsigned char rxData[256U];  /*Массив с принятыми данными*/
 unsigned char txCount=0U;    /*Количество данных для отправки*/
@@ -25,10 +24,9 @@ unsigned char crc_tail_rec = 0xFFU;
 unsigned char offs ;
 unsigned char size;
 unsigned char name;
-/*************************/
+/*******************************************************************************/
 int main(void)
 {
-  
   SystemInit();
     while (1){
   if((status)&&(!completed)){
