@@ -1,7 +1,8 @@
 #include"inc.h"
 /*************************/
 /*for uart_recieve*/
-unsigned char rxCount=0U;    /*Количество принятых байтов*/
+
+unsigned char rxCount=0x00U;    /*Количество принятых байтов*/
 unsigned char rxData[256U];  /*Массив с принятыми данными*/
 unsigned char txCount=0U;    /*Количество данных для отправки*/
 unsigned char txData[256U];  /*Массив с данными для отправки*/
@@ -30,7 +31,6 @@ int main(void)
   
   SystemInit();
     while (1){
-  I2C_SendData(0x5fU);
   if((status)&&(!completed)){
    status = 0;
    recognize_data(temp);

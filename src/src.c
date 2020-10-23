@@ -1,5 +1,6 @@
 #include"inc.h"
 /*******************************************************************************/
+unsigned char cnt=0U;
 void recognize_data(unsigned char data){
   
     if(sig==0xf5U){
@@ -81,6 +82,7 @@ void i2c_init(void){
    I2C->CR1|=(1U<<7|1U<<0);//ENABLE CLOCK STRECHING AND PERIPH ENABLE
    I2C->CR2|=(1U<<2);//ACKNOWLEDGE ENABLE 
    I2C->OARL|=(1U<<6|1U<<5|1U<<3|1U<<2|1U<<1);//SET 0x6E ADDRESS
+   I2C->ITR|=(1U<<2|1U<<1);//ENABLE ITEVTEN AND ITBUFEN
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -138,6 +140,10 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 }
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
+  volatile register uint8_t i;
+  i =  I2C->SR1;
+  i= I2C->SR3;
+  I2C->DR = cnt++;
 return;
 }
 
