@@ -1,6 +1,7 @@
 #ifndef _inc_h_
 #define _inc_h_
 #include "stm8s_conf.h"
+#define BitMask(a,b) ((a&b)==b)
 /*for uart recieve*/
 extern unsigned char rxCount;    /*Количество принятых байтов*/
 extern unsigned char rxData[256U];  /*Массив с принятыми данными*/

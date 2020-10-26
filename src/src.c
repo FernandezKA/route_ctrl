@@ -141,34 +141,23 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   volatile register uint8_t i;
-  i =  I2C->SR1;
-  i= I2C->SR3;
-  if(last==0xFFU){
+  volatile register uint8_t i2;
+  volatile uint8_t dt[]={0x5fU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7E};
+  i=I2C->SR1;
+     i2= I2C->SR3;
+     if(!other_flag){
      I2C->DR=0x5FU;
-     last = 0x5FU;
-  }
-  else if(last == 0x5FU){
-     I2C->DR = 0x00U;
-     last=0x03U;
-  }
-  else if(last==0x03U){
-     I2C->DR = 0x01U;
-     last = 0x01U;
-  }
-  else if(last == 0x01U){
-     I2C->DR = 0x80U;
-     last=0x80U;
-  }
-  else if(last == 0x80U){
-     I2C->DR = 0x00U;
-     last=0x00U;
-  }
-   else if(last == 0x00U){
-     I2C->DR = 0x7EU;
-     last=0xFFU;
-  }
-  //I2C->DR=0x5f;
-return;
+     other_flag=1;
+     }
+     if(rxCount>5){
+       other_flag=0;
+        rxCount = 0;
+     }
+    if(BitMask(i, 0x02U)&&BitMask(i2,0x04U)){
+      I2C->DR = dt[rxCount];
+      rxCount++;        
+    }
+   return;
 }
 
 

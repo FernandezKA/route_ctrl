@@ -46148,118 +46148,6 @@
     "scope": null
   },
   {
-    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__STM8S_WWDG_H",
-    "location": {
-      "column": "9",
-      "line": "30",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "__STM8S_WWDG_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_COUNTERVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "55",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_COUNTERVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_Init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_Init(uint8_t, uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "69",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetCounter",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetCounter(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "70",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_GetCounter",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t WWDG_GetCounter(void)",
-    "location": {
-      "column": "9",
-      "line": "71",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_GetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SWReset",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SWReset(void)",
-    "location": {
-      "column": "6",
-      "line": "72",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SWReset",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetWindowValue",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetWindowValue(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "73",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetWindowValue",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_wwdg.c@1413@macro@BIT_MASK",
     "What": "MacroDef",
     "defdec": "Def",
@@ -46358,13 +46246,27 @@
     "scope": null
   },
   {
+    "ID": "c:inc.h@67@macro@BitMask",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BitMask",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+    },
+    "name": "BitMask",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@rxCount",
     "What": "Variable",
     "defdec": "Dec",
     "display": "rxCount",
     "location": {
       "column": "22",
-      "line": "5",
+      "line": "6",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "rxCount",
@@ -46378,7 +46280,7 @@
     "display": "rxCount",
     "location": {
       "column": "22",
-      "line": "5",
+      "line": "6",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "rxCount",
@@ -46392,7 +46294,7 @@
     "display": "rxData",
     "location": {
       "column": "22",
-      "line": "6",
+      "line": "7",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "rxData",
@@ -46406,7 +46308,7 @@
     "display": "txCount",
     "location": {
       "column": "22",
-      "line": "7",
+      "line": "8",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "txCount",
@@ -46420,7 +46322,7 @@
     "display": "txCount",
     "location": {
       "column": "22",
-      "line": "7",
+      "line": "8",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "txCount",
@@ -46434,7 +46336,7 @@
     "display": "txData",
     "location": {
       "column": "22",
-      "line": "8",
+      "line": "9",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "txData",
@@ -46448,7 +46350,7 @@
     "display": "status",
     "location": {
       "column": "14",
-      "line": "9",
+      "line": "10",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "status",
@@ -46462,7 +46364,7 @@
     "display": "status",
     "location": {
       "column": "14",
-      "line": "9",
+      "line": "10",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "status",
@@ -46476,7 +46378,7 @@
     "display": "completed",
     "location": {
       "column": "14",
-      "line": "10",
+      "line": "11",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "completed",
@@ -46490,7 +46392,7 @@
     "display": "completed",
     "location": {
       "column": "14",
-      "line": "10",
+      "line": "11",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "completed",
@@ -46504,7 +46406,7 @@
     "display": "other_flag",
     "location": {
       "column": "14",
-      "line": "11",
+      "line": "12",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "other_flag",
@@ -46518,7 +46420,7 @@
     "display": "other_flag",
     "location": {
       "column": "14",
-      "line": "11",
+      "line": "12",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "other_flag",
@@ -46532,7 +46434,7 @@
     "display": "temp",
     "location": {
       "column": "22",
-      "line": "12",
+      "line": "13",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "temp",
@@ -46546,7 +46448,7 @@
     "display": "address",
     "location": {
       "column": "16",
-      "line": "14",
+      "line": "15",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "address",
@@ -46560,7 +46462,7 @@
     "display": "address",
     "location": {
       "column": "16",
-      "line": "14",
+      "line": "15",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "address",
@@ -46574,7 +46476,7 @@
     "display": "sig",
     "location": {
       "column": "22",
-      "line": "16",
+      "line": "17",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "sig",
@@ -46588,7 +46490,7 @@
     "display": "dest_id",
     "location": {
       "column": "23",
-      "line": "17",
+      "line": "18",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "dest_id",
@@ -46602,7 +46504,7 @@
     "display": "cmd",
     "location": {
       "column": "22",
-      "line": "18",
+      "line": "19",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "cmd",
@@ -46616,7 +46518,7 @@
     "display": "sz",
     "location": {
       "column": "22",
-      "line": "19",
+      "line": "20",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "sz",
@@ -46630,7 +46532,7 @@
     "display": "crc_head",
     "location": {
       "column": "22",
-      "line": "20",
+      "line": "21",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_head",
@@ -46644,7 +46546,7 @@
     "display": "crc_tail",
     "location": {
       "column": "22",
-      "line": "21",
+      "line": "22",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_tail",
@@ -46658,7 +46560,7 @@
     "display": "crc_head_rec",
     "location": {
       "column": "22",
-      "line": "22",
+      "line": "23",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_head_rec",
@@ -46672,7 +46574,7 @@
     "display": "crc_head_rec",
     "location": {
       "column": "22",
-      "line": "22",
+      "line": "23",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_head_rec",
@@ -46686,7 +46588,7 @@
     "display": "crc_tail_rec",
     "location": {
       "column": "22",
-      "line": "23",
+      "line": "24",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_tail_rec",
@@ -46700,7 +46602,7 @@
     "display": "crc_tail_rec",
     "location": {
       "column": "22",
-      "line": "23",
+      "line": "24",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "crc_tail_rec",
@@ -46714,7 +46616,7 @@
     "display": "offs",
     "location": {
       "column": "22",
-      "line": "25",
+      "line": "26",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "offs",
@@ -46728,7 +46630,7 @@
     "display": "size",
     "location": {
       "column": "22",
-      "line": "26",
+      "line": "27",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "size",
@@ -46742,7 +46644,7 @@
     "display": "name",
     "location": {
       "column": "22",
-      "line": "27",
+      "line": "28",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "name",
@@ -46756,7 +46658,7 @@
     "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "29",
+      "line": "30",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "SystemInit",
@@ -46770,7 +46672,7 @@
     "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "29",
+      "line": "30",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "SystemInit",
@@ -46784,7 +46686,7 @@
     "display": "void recognize_data(unsigned char)",
     "location": {
       "column": "6",
-      "line": "30",
+      "line": "31",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "recognize_data",
@@ -46798,7 +46700,7 @@
     "display": "void recognize_data(unsigned char)",
     "location": {
       "column": "6",
-      "line": "30",
+      "line": "31",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "recognize_data",
@@ -46812,7 +46714,7 @@
     "display": "uint8_t dev_addr(void)",
     "location": {
       "column": "9",
-      "line": "31",
+      "line": "32",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "dev_addr",
@@ -46826,7 +46728,7 @@
     "display": "uint8_t dev_addr(void)",
     "location": {
       "column": "9",
-      "line": "31",
+      "line": "32",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "dev_addr",
@@ -46840,7 +46742,7 @@
     "display": "void gpio_config(void)",
     "location": {
       "column": "6",
-      "line": "32",
+      "line": "33",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "gpio_config",
@@ -46854,7 +46756,7 @@
     "display": "void I2C_recognize(void)",
     "location": {
       "column": "6",
-      "line": "33",
+      "line": "34",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
     "name": "I2C_recognize",
@@ -47156,6 +47058,118 @@
     "scope": null
   },
   {
+    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__STM8S_WWDG_H",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "__STM8S_WWDG_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "49",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_COUNTERVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "55",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_COUNTERVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_Init(uint8_t, uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "69",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetCounter",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetCounter(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "70",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_GetCounter",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t WWDG_GetCounter(void)",
+    "location": {
+      "column": "9",
+      "line": "71",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_GetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SWReset",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SWReset(void)",
+    "location": {
+      "column": "6",
+      "line": "72",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SWReset",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetWindowValue",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetWindowValue(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "73",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetWindowValue",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@cnt",
     "What": "Variable",
     "defdec": "Def",
@@ -47334,6 +47348,34 @@
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@4298@F@I2C_IRQHandler@i2",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i2",
+    "location": {
+      "column": "29",
+      "line": "144",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "i2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@4331@F@I2C_IRQHandler@dt",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "dt",
+    "location": {
+      "column": "20",
+      "line": "145",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "dt",
     "origin": "project_file",
     "scope": null
   }
