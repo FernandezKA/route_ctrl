@@ -62,10 +62,11 @@ else if(sig==0xF6U){
 }
 
 uint8_t dev_addr(void){
-  uint8_t addr = 0x00U;
+  volatile unsigned char addr;
   addr = GPIOC->IDR;
-  addr|=(0U<<8|0U<<7|1U<<6);
-  return addr;
+  addr&=(0x3FU);//побитовое и для зануления 7 и 6 битов
+  addr|=(1U<<5);
+  return 0x5e;
 }
 void gpio_init(void){
   GPIO_DeInit(GPIOC);
@@ -93,13 +94,12 @@ void SystemInit(void)
  CLK_HSICmd(ENABLE);/*ENABLE INTERNAL RC OSCILLATE*/
  CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);/*PRESCALER 1*/
  CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);/*PRESKALER WITH CPU 1 */ 
- //gpio_config();
+ gpio_init();
  UART1_DeInit();
  UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
- //address = dev_addr();
+ address = dev_addr();
  I2C_DeInit();
-//i2c_init(0x6eU);
- I2C_Init(40000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+ I2C_Init(10000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
  I2C_ITConfig((I2C_IT_TypeDef)( I2C_IT_EVT|I2C_IT_BUF), ENABLE);//  
  enableInterrupts();
@@ -146,17 +146,12 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   i=I2C->SR1; //очищаем ADDR
   i2= I2C->SR3;
   if(BitMask(i,0x02U)){//если совпадает адрес
-      i=I2C->SR1; //очищаем ADDR
+      i=I2C->SR1; //очищаем ADDR считыванием в регистр
       i2= I2C->SR3;
-      //if(BitMask(I2C->SR3,0x02U)){
-       // for(int i = 0; i <20; ++i);
-     // }
-        // else{ 
       for(int q = 0; q<6; ++q){
-        while(!BitMask(I2C->SR1,(1<<7)));
-            I2C->DR=dt[q];
+        while(!BitMask(I2C->SR1,(1<<7)));//тупим, пока не освободится регистр
+            I2C->DR=dt[q];//Когда регистр освободился - заливаем в него данные
       }
-        // }
   }
    return;
 }
