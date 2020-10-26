@@ -99,7 +99,7 @@ void SystemInit(void)
  //address = dev_addr();
  I2C_DeInit();
 //i2c_init(0x6eU);
- I2C_Init(400000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+ I2C_Init(40000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
  I2C_ITConfig((I2C_IT_TypeDef)( I2C_IT_EVT|I2C_IT_BUF), ENABLE);//  
  enableInterrupts();
@@ -143,20 +143,21 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   volatile register uint8_t i;
   volatile register uint8_t i2;
   volatile uint8_t dt[]={0x5fU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7E};
-  i=I2C->SR1;
-     i2= I2C->SR3;
-     if(!other_flag){
-     I2C->DR=0x5FU;
-     other_flag=1;
-     }
-     if(rxCount>5){
-       other_flag=0;
-        rxCount = 0;
-     }
-    if(BitMask(i, 0x02U)&&BitMask(i2,0x04U)){
-      I2C->DR = dt[rxCount];
-      rxCount++;        
-    }
+  i=I2C->SR1; //очищаем ADDR
+  i2= I2C->SR3;
+  if(BitMask(i,0x02U)){//если совпадает адрес
+      i=I2C->SR1; //очищаем ADDR
+      i2= I2C->SR3;
+      //if(BitMask(I2C->SR3,0x02U)){
+       // for(int i = 0; i <20; ++i);
+     // }
+        // else{ 
+      for(int q = 0; q<6; ++q){
+        while(!BitMask(I2C->SR1,(1<<7)));
+            I2C->DR=dt[q];
+      }
+        // }
+  }
    return;
 }
 
