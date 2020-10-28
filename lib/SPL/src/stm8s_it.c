@@ -221,28 +221,26 @@ INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18)
 #ifndef I2C_IRQ
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
+  uint8_t dt[]={0x06, 0x05};
   /* Read SR2 register to get I2C error */
   if ((I2C->SR2) != 0)
   {
     I2C->SR2 = 0;
  }
-  //I2C->DR = 0x5fU;
-  
-  /* Event = I2C_GetLastEvent();
+ volatile uint8_t i = I2C->SR1;
+ i = I2C->SR3;
+   Event = I2C_GetLastEvent();
   switch (Event)
   {
       /******* Slave transmitter ******/
       /* check on EV1 */
     case I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED:
-      txCount = 0;
+      txCount = 0;//ставим счетчик принятых данных в ноль по распознаванию адреса
       break;
-  /* check on EV3 */
     case I2C_EVENT_SLAVE_BYTE_TRANSMITTING:
-     /* Transmit data */
-      I2C_SendData(0x6f);
+   I2C->DR = 0x5f;
+   I2C->DR = 0x6f;
       break;
-//      /******* Slave receiver **********/
-//      /* check on EV1*/
     case I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED:
       break;
 
@@ -259,7 +257,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 
     default:
       break;
-  }  */
+  }  
 }
 #endif
 
