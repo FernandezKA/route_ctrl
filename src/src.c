@@ -99,7 +99,8 @@ void SystemInit(void)
  UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);/*UART1 CONFIG*/
  address = dev_addr();
  I2C_DeInit();
- I2C_Init(10000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+ i2c_init(0x6eU);
+ //I2C_Init(10000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
  I2C_ITConfig((I2C_IT_TypeDef)( I2C_IT_EVT|I2C_IT_BUF), ENABLE);//  
  enableInterrupts();
@@ -112,32 +113,6 @@ void assert_failed(u8* file, u32 line)
 }
 #endif
 /*******************************************************************************/
-INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
-{
- temp = UART1->DR;
- UART1->DR = temp;
- ++rxCount;
- UART1_SendData8(address);
- if(temp==0xF5U&&rxCount==1U){
-    status=1;
-    sig = temp;
-    return;
- }
- else if(temp==0xF6U&&rxCount==1U){
-    status=1;
-    sig=temp;
-    return;
- }
- else{
-   if(rxCount==1){
-      return;
-   }
-   else{
-      status = 1;
-      return;
-   }
- }
-}
 /*******************************************************************************/
 //INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 //{

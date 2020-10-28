@@ -12,7 +12,7 @@ unsigned char temp;  /*Временная переменная для больш
 /*for I2C init*/
 uint8_t address = 0x6eU;/*default value*/
 /*sig == 0xF5U*/
-unsigned char sig;           /*Сигнатура*/
+unsigned char sig;         /*Сигнатура*/
 unsigned short dest_id;      /*dest id девайса*/
 unsigned char cmd;           /*Команда в пакете*/
 unsigned char sz;            /*Размер пакета с данными*/
@@ -29,13 +29,7 @@ int main(void)
 {
   SystemInit();
     while (1){
-  if((status)&&(!completed)){
-   status = 0;
-   recognize_data(temp);
-  }
-      if(completed){
-     completed=0;
-    }
+  asm("nop");
   }
 }
 

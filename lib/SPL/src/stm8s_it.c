@@ -191,13 +191,32 @@ INTERRUPT_HANDLER(UART1_TX_IRQHandler, 17)
 }
 #endif
 
-#ifndef UART1_RX_IRQ 
-//UART1 RX Interrupt routine.
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
-	while (1){};
+	temp = UART1->DR;
+ UART1->DR = temp;
+ ++rxCount;
+ UART1_SendData8(address);
+ if(temp==0xF5U&&rxCount==1U){
+    status=1;
+    sig = temp;
+    return;
+ }
+ else if(temp==0xF6U&&rxCount==1U){
+    status=1;
+    sig=temp;
+    return;
+ }
+ else{
+   if(rxCount==1){
+      return;
+   }
+   else{
+      status = 1;
+      return;
+   }
+ }
 }
-#endif
 #endif /* (STM8S208) || (STM8S207) || (STM8S103) || (STM8S903) || (STM8AF62Ax) || (STM8AF52Ax) */
 
 #if defined(STM8AF622x)
@@ -238,8 +257,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
       txCount = 0;//ставим счетчик принятых данных в ноль по распознаванию адреса
       break;
     case I2C_EVENT_SLAVE_BYTE_TRANSMITTING:
-   I2C->DR = 0x5f;
-   I2C->DR = 0x6f;
+   I2C_SendData(0x5f);
       break;
     case I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED:
       break;
