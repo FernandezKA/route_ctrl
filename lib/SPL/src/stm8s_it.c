@@ -1,6 +1,7 @@
 #include "stm8s_conf.h"
-#include "stm8s_it.h"
 #include"inc.h"
+#include "stm8s_it.h"
+
 
 #ifndef TRAP_IRQ
 //TRAP Interrupt routine
@@ -190,33 +191,6 @@ INTERRUPT_HANDLER(UART1_TX_IRQHandler, 17)
 	while (1){};
 }
 #endif
-
-INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
-{
-	temp = UART1->DR;
- UART1->DR = temp;
- ++rxCount;
- UART1_SendData8(address);
- if(temp==0xF5U&&rxCount==1U){
-    status=1;
-    sig = temp;
-    return;
- }
- else if(temp==0xF6U&&rxCount==1U){
-    status=1;
-    sig=temp;
-    return;
- }
- else{
-   if(rxCount==1){
-      return;
-   }
-   else{
-      status = 1;
-      return;
-   }
- }
-}
 #endif /* (STM8S208) || (STM8S207) || (STM8S103) || (STM8S903) || (STM8AF62Ax) || (STM8AF52Ax) */
 
 #if defined(STM8AF622x)
@@ -237,47 +211,6 @@ INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18)
 #endif
 #endif /* (STM8AF622x) */
 
-#ifndef I2C_IRQ
-INTERRUPT_HANDLER(I2C_IRQHandler, 19)
-{
-  uint8_t dt[]={0x06, 0x05};
-  /* Read SR2 register to get I2C error */
-  if ((I2C->SR2) != 0)
-  {
-    I2C->SR2 = 0;
- }
- volatile uint8_t i = I2C->SR1;
- i = I2C->SR3;
-   Event = I2C_GetLastEvent();
-  switch (Event)
-  {
-      /******* Slave transmitter ******/
-      /* check on EV1 */
-    case I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED:
-      txCount = 0;//ставим счетчик принятых данных в ноль по распознаванию адреса
-      break;
-    case I2C_EVENT_SLAVE_BYTE_TRANSMITTING:
-   I2C_SendData(0x5f);
-      break;
-    case I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED:
-      break;
-
-//      /* Check on EV2*/
-    case I2C_EVENT_SLAVE_BYTE_RECEIVED:
-      name = I2C_ReceiveData();
-      break;
-
-//      /* Check on EV4 */
-    case (I2C_EVENT_SLAVE_STOP_DETECTED):
-            /* write to CR2 to clear STOPF flag */
-            I2C->CR2 |= I2C_CR2_ACK;
-      break;
-
-    default:
-      break;
-  }  
-}
-#endif
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 #ifndef UART2_TX_IRQ

@@ -1,7 +1,7 @@
 #ifndef _inc_h_
 #define _inc_h_
 #include "stm8s_conf.h"
-#define BitMask(a,b) ((a&b)==b)
+#define BitMask(a,b) (((a)&(b))==(b))
 /*for uart recieve*/
 extern unsigned char rxCount;    /*Количество принятых байтов*/
 extern unsigned char rxData[256U];  /*Массив с принятыми данными*/
@@ -25,7 +25,9 @@ extern unsigned char crc_tail_rec;
 /*for sifg == 0xF6U*/
 extern unsigned char offs;
 extern unsigned char size;
-extern unsigned char name;
+extern volatile unsigned char name; 
+extern _Bool i2cst;
+//extern eI2CState i2cState;
 /***************************************************************************************/
 void SystemInit(void);
 void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
