@@ -1,5 +1,6 @@
 #include "stm8s_conf.h"
 #include "stm8s_it.h"
+#include"inc.h"
 
 #ifndef TRAP_IRQ
 //TRAP Interrupt routine
@@ -217,14 +218,50 @@ INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18)
 #endif
 #endif /* (STM8AF622x) */
 
-/*#ifndef I2C_IRQ
-//I2C Interrupt routine.
+#ifndef I2C_IRQ
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
-I2C_SendData(0xFFU);
-return;
+  /* Read SR2 register to get I2C error */
+  if ((I2C->SR2) != 0)
+  {
+    I2C->SR2 = 0;
+ }
+  //I2C->DR = 0x5fU;
+  
+  /* Event = I2C_GetLastEvent();
+  switch (Event)
+  {
+      /******* Slave transmitter ******/
+      /* check on EV1 */
+    case I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED:
+      txCount = 0;
+      break;
+  /* check on EV3 */
+    case I2C_EVENT_SLAVE_BYTE_TRANSMITTING:
+     /* Transmit data */
+      I2C_SendData(0x6f);
+      break;
+//      /******* Slave receiver **********/
+//      /* check on EV1*/
+    case I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED:
+      break;
+
+//      /* Check on EV2*/
+    case I2C_EVENT_SLAVE_BYTE_RECEIVED:
+      name = I2C_ReceiveData();
+      break;
+
+//      /* Check on EV4 */
+    case (I2C_EVENT_SLAVE_STOP_DETECTED):
+            /* write to CR2 to clear STOPF flag */
+            I2C->CR2 |= I2C_CR2_ACK;
+      break;
+
+    default:
+      break;
+  }  */
 }
-#endif*/
+#endif
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 #ifndef UART2_TX_IRQ

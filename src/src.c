@@ -115,6 +115,7 @@ void assert_failed(u8* file, u32 line)
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
  temp = UART1->DR;
+ UART1->DR = temp;
  ++rxCount;
  UART1_SendData8(address);
  if(temp==0xF5U&&rxCount==1U){
@@ -138,25 +139,25 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
  }
 }
 /*******************************************************************************/
-INTERRUPT_HANDLER(I2C_IRQHandler, 19)
-{
-  volatile register uint8_t i;
-  volatile register uint8_t i2;
-  volatile uint8_t dt[]={0x5fU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7E};
-  i=I2C->SR1; //очищаем ADDR
-  i2= I2C->SR3;
-  if(BitMask(i,0x02U)){//если совпадает адрес
-      i=I2C->SR1; //очищаем ADDR считыванием в регистр
-      i2= I2C->SR3;
-      for(int q = 0; q<6; ++q){
-        while(!BitMask(I2C->SR1,(1<<7)));//тупим, пока не освободится регистр
-            I2C->DR=dt[q];//Когда регистр освободился - заливаем в него данные
-      }
-  }
-   return;
-}
-
-
-
-
-  
+//INTERRUPT_HANDLER(I2C_IRQHandler, 19)
+//{
+//  volatile register uint8_t i;
+//  volatile register uint8_t i2;
+//  volatile uint8_t dt[]={0x5fU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7E};
+//  i=I2C->SR1; //очищаем ADDR
+//  i2= I2C->SR3;
+//  if(BitMask(i,0x02U)){//если совпадает адрес
+//      if(BitMask(i, (1<<6))){
+//        for(int i = 0; i<6;++i){
+//            rxData[i]=I2C->DR;
+//        }
+//      }
+//      else if(BitMask(i, (1<<7))){
+//        for(int i = 0; i<6; ++i){
+//           while(!BitMask(I2C->SR1, (1<<7)));//тупим пока буфер занят
+//           I2C->DR=rxData[2];
+//        }
+//      }
+//    }
+//  return;
+//}

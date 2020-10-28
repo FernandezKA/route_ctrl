@@ -24,7 +24,7 @@
   *
   ******************************************************************************
   */ 
-
+ __IO uint16_t Event = 0x00;
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM8S_IT_H
 #define __STM8S_IT_H
