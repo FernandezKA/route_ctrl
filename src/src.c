@@ -3,6 +3,7 @@
 unsigned char cnt = 0U;
 unsigned char last = 0xFFU;
 unsigned char tmp[] = {0x5FU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7EU};
+unsigned char MessageBegin;
 void recognize_data(unsigned char data)
 {
 
@@ -102,8 +103,38 @@ void i2c_init(unsigned char addr)
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
   I2C->CR2 |= (1U << 2);           //ACKNOWLEDGE ENABLE
   I2C->OARL = (address << 1);      //SET ADDRESS
-  //I2C->ITR |= (1U << 2 | 1U << 1); //ENABLE ITEVTEN AND ITBUFEN
+  I2C->OARH|=(1U<<6);
+  I2C->ITR	= 0x07;					      // all I2C interrupt enable
 }
+/*******************************************************************************/
+	void I2C_transaction_begin(void)
+	{
+		MessageBegin = TRUE;
+	}
+	void I2C_transaction_end(void)
+	{
+		//Not used in this example
+	}
+	void I2C_byte_received(u8 u8_RxData)
+	{
+		/*if (MessageBegin == TRUE) {
+			//u8_MyBuffp= &u8_My_Buffer[u8_RxData];
+      name=u8_RxData;//push data to global variable
+			MessageBegin = FALSE;
+		}
+    else if(u8_MyBuffp < &rxData[256U])
+      *(u8_MyBuffp++) = u8_RxData;
+      */
+     rxData[rxCount++] = u8_RxData;
+	}
+	u8 I2C_byte_write(void)
+	{
+		/*if (u8_MyBuffp < &u8_My_Buffer[MAX_BUFFER])
+			return *(u8_MyBuffp++);
+		else
+			return 0x00;*/
+      return rxData[rxCount--];
+	}
 /*******************************************************************************/
 void SystemInit(void)
 {
@@ -117,10 +148,8 @@ void SystemInit(void)
   address = dev_addr();
   I2C_DeInit();
   i2c_init(0x6eU);
-  //I2C_Init(10000U, 0x32U<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-  I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_EVT|I2C_IT_BUF), ENABLE);//
-  //enableInterrupts();
+  enableInterrupts();
 }
 /*******************************************************************************/
 #ifdef USE_FULL_ASSERT
@@ -165,62 +194,59 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
-  asm("SIM");
-  volatile unsigned char sr1;
-  volatile unsigned char sr2;
-  volatile unsigned char sr3;
-  sr1 = I2C->SR1;
-  sr2=I2C->SR2;
-  sr3 = I2C->SR3;
-  if (rxCount < 255)
-  {
-    rxData[rxCount++] = sr1;
-    rxData[rxCount++] = sr2;
-    rxData[rxCount++] = sr3;
-  }
+	static u8 sr1;					
+	static u8 sr2;
+	static u8 sr3;
+	
+// save the I2C registers configuration
+sr1 = I2C->SR1;
+sr2 = I2C->SR2;
+sr3 = I2C->SR3;
 
-  if (BitMask(sr1, 1U << 1)) //addr rec
+/* Communication error? */
+  if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR |I2C_SR2_ARLO |I2C_SR2_BERR))
+  {		
+    I2C->CR2|= I2C_CR2_STOP;  // stop communication - release the lines
+    I2C->SR2= 0;					    // clear all error flags
+	}
+/* More bytes received ? */
+  if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
   {
-    sr2 = I2C->SR1;
-    sr2 = I2C->SR3;
-  
-    //i2cst = 1; //enable TR status
+    I2C_byte_received(I2C->DR);
   }
-
-  if (BitMask(sr1, 1U << 4))//rec stop-bit
+/* Byte received ? */
+  if (sr1 & I2C_SR1_RXNE)
   {
-    sr2 = I2C->SR1;
-    I2C->CR2 = (1U << 2);
+    //name = I2C->DR;
+    I2C_byte_received(I2C->DR);
   }
-   if (BitMask(sr1, 1U << 7))//if TXE==1, send data to DR
+/* NAK? (=end of slave transmit comm) */
+  if (sr2 & I2C_SR2_AF)
+  {	
+    I2C->SR2 &= ~I2C_SR2_AF;	  // clear AF
+		I2C_transaction_end();
+	}
+/* Stop bit from Master  (= end of slave receive comm) */
+  if (sr1 & I2C_SR1_STOPF) 
   {
-    I2C->DR = 0x5fU;
-  }
-  if (BitMask(sr1, 1U << 6))//if RXNE==1, recieve data from DR to variable
+    I2C->CR2 |= I2C_CR2_ACK;	  // CR2 write to clear STOPF
+		I2C_transaction_end();
+	}
+/* Slave address matched (= Start Comm) */
+  if (sr1 & I2C_SR1_ADDR)
+  {	 
+		I2C_transaction_begin();
+	}
+/* More bytes to transmit ? */
+  if ((sr1 & (I2C_SR1_TXE | I2C_SR1_BTF)) == (I2C_SR1_TXE | I2C_SR1_BTF))
   {
-    name = I2C->DR;
+		I2C->DR = I2C_byte_write();
   }
-  /*
-
-  if (i2cst)
+/* Byte to transmit ? */
+  if (sr1 & I2C_SR1_TXE)
   {
-    if (BitMask(sr3, 1U << 2)) //if TRA is 1, data byte is transmitted
-    {
-      I2C_SendData(rxData[rxCount--]);
-    }
-    else //else recieved byte
-    {
-      rxData[rxCount++] = I2C_ReceiveData(); //push to array with incremental index
-    }
-  }
-  if(BitMask(sr1, 1U<<0)){
-    sr2 = I2C->SR3;
-    I2C->CR2|=1U<<1;//write to CR2;
-    i2cst=0;
-  } */
-  if(I2C->SR2!=0x00U){//if exist errors, write 0x00U
-    I2C->SR2 = 0x00U;
-  }
-  asm("RIM");
-  return;
+    //I2C->DR = name;
+    I2C->DR = I2C_byte_write();
+  }	
 }
+

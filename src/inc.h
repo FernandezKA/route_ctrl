@@ -26,14 +26,12 @@ extern unsigned char crc_tail_rec;
 extern unsigned char offs;
 extern unsigned char size;
 extern volatile unsigned char name; 
-extern _Bool i2cst;
-//extern eI2CState i2cState;
 /***************************************************************************************/
 void SystemInit(void);
 void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
 uint8_t dev_addr(void);/*Функция, определяющая адрес устройства*/
 void gpio_config(void);
 void I2C_recognize();
-//void i2c_init(unsigned char addr);
+void i2c_init(unsigned char addr);
 
 #endif

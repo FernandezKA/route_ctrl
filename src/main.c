@@ -25,6 +25,7 @@ unsigned char crc_tail_rec = 0xFFU;
 unsigned char offs ;
 unsigned char size;
 volatile unsigned char name = 0x00U;
+
 /*******************************************************************************/
 int main(void)
 {
