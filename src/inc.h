@@ -8,9 +8,9 @@ extern unsigned char rxData[256U];  /*Массив с принятыми дан�
 extern unsigned char txCount;    /*Количество данных для отправки*/
 extern unsigned char txData[256U];  /*Массив с данными для отправки*/
 extern _Bool status;   /*булевская переменная для указания наличия необработанных приянтых данных*/
-extern _Bool completed; /*булевская переменная для указания статуса распознавания данных*/
-extern _Bool other_flag;/*будевская переменная для обработки сигнатуры 0xf6*/
-extern unsigned char temp;  /*Временная переменная для большинства костылей в этой программе*/
+extern _Bool completed;/*булевская переменная для указания статуса распознавания данных*/ 
+extern unsigned char temp;
+extern unsigned char cnt;
 /*for I2C init*/
 extern uint8_t address;
 /*for sig ==0x5FU*/
@@ -25,7 +25,7 @@ extern unsigned char crc_tail_rec;
 /*for sifg == 0xF6U*/
 extern unsigned char offs;
 extern unsigned char size;
-extern volatile unsigned char name; 
+extern unsigned char name; 
 /***************************************************************************************/
 void SystemInit(void);
 void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/
@@ -33,5 +33,6 @@ uint8_t dev_addr(void);/*Функция, определяющая адрес у�
 void gpio_config(void);
 void I2C_recognize();
 void i2c_init(unsigned char addr);
+void I2C_transaction_begin(void);
 
 #endif

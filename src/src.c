@@ -1,8 +1,5 @@
 #include "inc.h"
 /*******************************************************************************/
-unsigned char cnt = 0U;
-unsigned char last = 0xFFU;
-unsigned char tmp[] = {0x5FU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7EU};
 unsigned char MessageBegin;
 void recognize_data(unsigned char data)
 {
@@ -99,7 +96,7 @@ void gpio_init(void)
 /*******************************************************************************/
 void i2c_init(unsigned char addr)
 {
-  I2C->FREQR |= (1U << 1);         //SET 2MHz CLOCKING
+  I2C->FREQR = 16U;         //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
   I2C->CR2 |= (1U << 2);           //ACKNOWLEDGE ENABLE
   I2C->OARL = (address << 1);      //SET ADDRESS
@@ -117,23 +114,16 @@ void i2c_init(unsigned char addr)
 	}
 	void I2C_byte_received(u8 u8_RxData)
 	{
-		/*if (MessageBegin == TRUE) {
-			//u8_MyBuffp= &u8_My_Buffer[u8_RxData];
-      name=u8_RxData;//push data to global variable
-			MessageBegin = FALSE;
+           rxData[rxCount++] = u8_RxData;
+           cnt = rxCount;
 		}
-    else if(u8_MyBuffp < &rxData[256U])
-      *(u8_MyBuffp++) = u8_RxData;
-      */
-     rxData[rxCount++] = u8_RxData;
-	}
 	u8 I2C_byte_write(void)
 	{
 		/*if (u8_MyBuffp < &u8_My_Buffer[MAX_BUFFER])
 			return *(u8_MyBuffp++);
 		else
 			return 0x00;*/
-      return rxData[rxCount--];
+      return rxData[--rxCount];
 	}
 /*******************************************************************************/
 void SystemInit(void)
@@ -147,7 +137,7 @@ void SystemInit(void)
   UART1_Init(9600U, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE); /*UART1 CONFIG*/
   address = dev_addr();
   I2C_DeInit();
-  i2c_init(0x6eU);
+  i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
 }
