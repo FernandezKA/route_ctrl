@@ -75,13 +75,13 @@ void recognize_data(unsigned char data)
   }
 }
 
-uint8_t dev_addr(void)
+unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
   addr = GPIOC->IDR;
   addr &= (0x3FU); //побитовое и для зануления 7 и 6 битов
   addr |= (1U << 5);
-  return 0x5e;
+  return 0x32U;
 }
 void gpio_init(void)
 {
@@ -98,11 +98,11 @@ void gpio_init(void)
 /*******************************************************************************/
 void i2c_init(unsigned char addr)
 {
-  I2C->FREQR |= (1U << 2);         //SET 4MHz CLOCKING
+  I2C->FREQR |= (1U << 1);         //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
   I2C->CR2 |= (1U << 2);           //ACKNOWLEDGE ENABLE
-  I2C->OARL = (addr << 1);         //SET ADDRESS
-  I2C->ITR |= (1U << 2 | 1U << 1); //ENABLE ITEVTEN AND ITBUFEN
+  I2C->OARL = (address << 1);      //SET ADDRESS
+  //I2C->ITR |= (1U << 2 | 1U << 1); //ENABLE ITEVTEN AND ITBUFEN
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -117,10 +117,10 @@ void SystemInit(void)
   address = dev_addr();
   I2C_DeInit();
   i2c_init(0x6eU);
-  //I2C_Init(10000U, address<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
+  //I2C_Init(10000U, 0x32U<<1, I2C_DUTYCYCLE_2,I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16U); /*сдвинуть влево на 1 бит*/
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-  //I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_EVT|I2C_IT_BUF), ENABLE);//
-  enableInterrupts();
+  I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_EVT|I2C_IT_BUF), ENABLE);//
+  //enableInterrupts();
 }
 /*******************************************************************************/
 #ifdef USE_FULL_ASSERT
@@ -165,81 +165,62 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
+  asm("SIM");
   volatile unsigned char sr1;
   volatile unsigned char sr2;
   volatile unsigned char sr3;
   sr1 = I2C->SR1;
-  //sr2=I2C->SR2;
+  sr2=I2C->SR2;
   sr3 = I2C->SR3;
-
-  if (BitMask(sr1, 1U << 1))
+  if (rxCount < 255)
   {
-    //I2C_state = sTR;
-    i2cst = 1;                 //enable TR status
+    rxData[rxCount++] = sr1;
+    rxData[rxCount++] = sr2;
+    rxData[rxCount++] = sr3;
+  }
+
+  if (BitMask(sr1, 1U << 1)) //addr rec
+  {
+    sr2 = I2C->SR1;
+    sr2 = I2C->SR3;
+  
+    //i2cst = 1; //enable TR status
+  }
+
+  if (BitMask(sr1, 1U << 4))//rec stop-bit
+  {
+    sr2 = I2C->SR1;
+    I2C->CR2 = (1U << 2);
+  }
+   if (BitMask(sr1, 1U << 7))//if TXE==1, send data to DR
+  {
+    I2C->DR = 0x5fU;
+  }
+  if (BitMask(sr1, 1U << 6))//if RXNE==1, recieve data from DR to variable
+  {
+    name = I2C->DR;
+  }
+  /*
+
+  if (i2cst)
+  {
     if (BitMask(sr3, 1U << 2)) //if TRA is 1, data byte is transmitted
     {
-      I2C->DR = name;
+      I2C_SendData(rxData[rxCount--]);
     }
     else //else recieved byte
     {
-      name = I2C->DR;
+      rxData[rxCount++] = I2C_ReceiveData(); //push to array with incremental index
     }
   }
-  else
-  {
-    if (!i2cst)
-    { //if data is ended, return over
-      return;
-    }
-    else
-    { //else parce data
-      if (BitMask(sr3, 1U << 2))
-      {
-        I2C->DR = name;
-      }
-      else
-      {
-        name = I2C->DR;
-      }
-    }
+  if(BitMask(sr1, 1U<<0)){
+    sr2 = I2C->SR3;
+    I2C->CR2|=1U<<1;//write to CR2;
+    i2cst=0;
+  } */
+  if(I2C->SR2!=0x00U){//if exist errors, write 0x00U
+    I2C->SR2 = 0x00U;
   }
+  asm("RIM");
   return;
-  volatile register unsigned char i;
-  volatile register unsigned char i2;
-  //volatile uint8_t dt[]={0x5fU, 0x00U, 0x01U, 0x80U, 0x00U, 0x7E};
-  i = I2C->SR1; //очищаем ADDR
-  i2 = I2C->SR3;
-  if (BitMask(i, (1U << 4)))
-  { //stop bit
-    I2C->SR2 = 0x00U;
-    I2C->CR2 |= (1U << 2); //ACKNOWLEDGE ENABLE
-  }
-  I2C->SR2 = 0x00U;
-  if (rxCount < 254)
-  {
-    rxData[rxCount] = i;
-    txData[rxCount] = i2;
-    rxCount++;
-  }
-  if (BitMask(i, (1U << 1)))
-  { //если совпадает адрес
-    volatile unsigned char tmp = I2C->SR1;
-    tmp = I2C->SR3;
-    if (BitMask(i, (1U << 4)))
-    { //stop bit
-      I2C->SR2 = 0x00U;
-      I2C->CR2 |= (1U << 2); //ACKNOWLEDGE ENABLE
-    }
-    I2C->SR2 = 0x00U;
-
-    if (BitMask(i, (1U << 6)))
-    { //if recieved
-      name = I2C->DR;
-    }
-    else if (BitMask(i, (1 << 7)))
-    { //if transmiting
-      I2C->DR = name;
-    }
-    return;
-  }
 }
