@@ -4,11 +4,12 @@
 #define BitMask(a,b) (((a)&(b))==(b))
 /*for uart recieve*/
 extern unsigned char rxCount;    /*Количество принятых байтов*/
-extern unsigned char rxData[256U];  /*Массив с принятыми данными*/
+extern unsigned char rxData[64U];  /*Массив с принятыми данными*/
 extern unsigned char txCount;    /*Количество данных для отправки*/
-extern unsigned char txData[256U];  /*Массив с данными для отправки*/
+extern unsigned char txData[64U];  /*Массив с данными для отправки*/
 extern _Bool status;   /*булевская переменная для указания наличия необработанных приянтых данных*/
 extern _Bool completed;/*булевская переменная для указания статуса распознавания данных*/ 
+extern _Bool resData;
 extern unsigned char temp;
 extern unsigned char cnt;
 /*for I2C init*/
@@ -26,6 +27,17 @@ extern unsigned char crc_tail_rec;
 extern unsigned char offs;
 extern unsigned char size;
 extern unsigned char name; 
+typedef struct{
+    unsigned char buffer[64U];
+	unsigned char inp;
+	unsigned char output;
+} Ring_buff;
+extern void put(unsigned char data,Ring_buff* buffer);
+extern unsigned char pop(Ring_buff *buff);
+extern unsigned char get_count(Ring_buff *buff);
+extern void clean(Ring_buff* buff);
+extern _Bool IsEmpty(Ring_buff* buff);
+extern Ring_buff bf;
 /***************************************************************************************/
 void SystemInit(void);
 void recognize_data(unsigned char data);  /*Функция распознавания принятых данных*/

@@ -72,7 +72,20 @@ void recognize_data(unsigned char data)
     return;
   }
 }
-
+void put(unsigned char data, Ring_buff* buff){
+  buff->buffer[buff->inp++]=data;
+  if(buff->inp == 64U) buff->inp=0;
+}
+unsigned char pop(Ring_buff* buff){
+  if(!IsEmpty) return 0;
+  unsigned char ret = buff->buffer[buff->output++];
+  if(buff->output==64U) buff->output = 0U;
+  return ret;
+}
+_Bool IsEmpty(Ring_buff* buff){
+  if((buff->inp)==(buff->output)||buff->inp ==0U) return 1;
+  else return 0;
+}
 unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
@@ -114,8 +127,9 @@ void i2c_init(unsigned char addr)
 	}
 	void I2C_byte_received(u8 u8_RxData)
 	{
-           rxData[rxCount++] = u8_RxData;
-           cnt = rxCount;
+           //put(u8_RxData, &bf);
+          put(u8_RxData, &bf);
+          return;
 		}
 	u8 I2C_byte_write(void)
 	{
@@ -123,7 +137,7 @@ void i2c_init(unsigned char addr)
 			return *(u8_MyBuffp++);
 		else
 			return 0x00;*/
-      return rxData[--rxCount];
+      return pop(&bf);
 	}
 /*******************************************************************************/
 void SystemInit(void)
@@ -193,50 +207,49 @@ sr1 = I2C->SR1;
 sr2 = I2C->SR2;
 sr3 = I2C->SR3;
 
-/* Communication error? */
+// Communication error? 
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR |I2C_SR2_ARLO |I2C_SR2_BERR))
   {		
     I2C->CR2|= I2C_CR2_STOP;  // stop communication - release the lines
     I2C->SR2= 0;					    // clear all error flags
 	}
-/* More bytes received ? */
+//More bytes received ? 
   if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
   {
     I2C_byte_received(I2C->DR);
   }
-/* Byte received ? */
+// Byte received ? 
   if (sr1 & I2C_SR1_RXNE)
   {
     //name = I2C->DR;
     I2C_byte_received(I2C->DR);
   }
-/* NAK? (=end of slave transmit comm) */
+ //NAK? (=end of slave transmit comm) 
   if (sr2 & I2C_SR2_AF)
   {	
     I2C->SR2 &= ~I2C_SR2_AF;	  // clear AF
 		I2C_transaction_end();
 	}
-/* Stop bit from Master  (= end of slave receive comm) */
+// Stop bit from Master  (= end of slave receive comm)
   if (sr1 & I2C_SR1_STOPF) 
   {
     I2C->CR2 |= I2C_CR2_ACK;	  // CR2 write to clear STOPF
 		I2C_transaction_end();
 	}
-/* Slave address matched (= Start Comm) */
+// Slave address matched (= Start Comm) 
   if (sr1 & I2C_SR1_ADDR)
   {	 
 		I2C_transaction_begin();
 	}
-/* More bytes to transmit ? */
+// More bytes to transmit ? 
   if ((sr1 & (I2C_SR1_TXE | I2C_SR1_BTF)) == (I2C_SR1_TXE | I2C_SR1_BTF))
   {
 		I2C->DR = I2C_byte_write();
   }
-/* Byte to transmit ? */
+// Byte to transmit ? 
   if (sr1 & I2C_SR1_TXE)
   {
     //I2C->DR = name;
     I2C->DR = I2C_byte_write();
   }	
 }
-
