@@ -1,0 +1,6 @@
+{
+    "iar.enabled":true,
+    "iar.installationPath": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 6.5\\",
+    "iarproject.projectFile": "c:\\dev\\stm8\\spl\\route_control.ewp",
+    "iar.projectFile": "c:\\dev\\stm8\\spl\\route_control.ewp",
+}

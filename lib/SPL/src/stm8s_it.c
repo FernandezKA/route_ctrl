@@ -209,8 +209,8 @@ INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18)
 	while (1){};
 }
 #endif
-#endif /* (STM8AF622x) */
 
+#endif /* (STM8AF622x) */
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 #ifndef UART2_TX_IRQ

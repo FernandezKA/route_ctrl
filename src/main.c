@@ -3,7 +3,7 @@
 /*for uart_recieve*/
 unsigned char rxCount=0x00U;    /*Количество принятых байтов*/
 unsigned char rxData[64U];  /*Массив с принятыми данными*/
-unsigned char txCount=0U;    /*Количество данных для отправки*/
+unsigned char txCount=0x00U;    /*Количество данных для отправки*/
 unsigned char txData[64U];  /*Массив с данными для отправки*/
 /*******************************************************************************/
 _Bool status = 0;   /*булевская переменная для указания наличия необработанных приянтых данных*/
@@ -31,9 +31,13 @@ Ring_buff bf;
 int main(void)
 {
   SystemInit();
+  bf.inp=0x00U;
+  bf.output=0x00U;
 while(1){
-  for(int i = 0; i<60000U; ++i);
-  //if(!IsEmpty(&bf)){
-    //UART1_SendData8(pop(&bf));
+  //UART1_SendData8(0x25U);
+  while(bf.inp!=bf.output){
+    for(int i = 0; i<60000U;++i);
+    UART1_SendData8(pop(&bf));
     }
   }
+}
