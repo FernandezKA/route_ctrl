@@ -34,10 +34,11 @@ int main(void)
   bf.inp=0x00U;
   bf.output=0x00U;
 while(1){
-  //UART1_SendData8(0x25U);
   while(bf.inp!=bf.output){
-    for(int i = 0; i<60000U;++i);
-    UART1_SendData8(pop(&bf));
+    if(BitMask(UART1->SR, 1U<<7)){/*waiting while txe==1*/
+    UART1->DR=pop(&bf);     /*send data to DR of uart*/
+      }
     }
+  
   }
 }

@@ -4,53 +4,52 @@ unsigned char MessageBegin;
 void recognize_data(unsigned char data)
 {
 
-  if (sig == 0xf5U)
+  if (sig == 0x5FU)
   {
     /************************************************/
-    if (rxCount == 2U)
+    if (rxCount == 0x02U)
     {
       dest_id = data;
       crc_head_rec = crc_head_rec ^ data;
     }
     /**********************************************/
-    if (rxCount == 3U)
+    if (rxCount == 0x03U)
     {
       dest_id += data;
       crc_head_rec = crc_head_rec ^ data;
     }
     /**********************************************/
-    if (rxCount == 4U)
+    if (rxCount == 0x04U)
     {
       cmd = data;
       crc_head_rec = crc_head_rec ^ data;
     }
     /***********************************************/
-    if (rxCount == 5U)
+    if (rxCount == 0x05U)
     {
       sz = data;
       crc_tail_rec = crc_tail_rec ^ data;
     }
     /************************************************/
-    if (rxCount == 6U)
+    if (rxCount == 0x06U)
     {
       crc_head = data;
     }
     /************************************************/
-    if ((rxCount > 6U) && (rxCount < sz + 6U))
+    if ((rxCount > 0x06U) && (rxCount < sz + 6U))
     {
-      rxData[rxCount - 7U] = data; /*С 7 т.к. адресация идет с нуля*/
+      rxData[rxCount - 0x07U] = data; /*С 7 т.к. адресация идет с нуля*/
       crc_tail_rec = crc_tail_rec ^ data;
     }
     /************************************************/
-    if (rxCount == sz + 6U)
+    if (rxCount == sz + 0x06U)
     {
       crc_tail = data;
     }
-    if ((crc_head != 0xFFU) && (rxCount == sz + 7U))
+    if ((crc_head != 0xFFU) && (rxCount == sz + 0x07U))
     {
       completed = 1;
-      rxCount = 0U;
-      completed = 1;
+      rxCount = 0x00U;
     }
     /*************************************************/
   }
@@ -153,7 +152,7 @@ void SystemInit(void)
   address = dev_addr();
   I2C_DeInit();
   i2c_init(address);
-  //UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
  enableInterrupts();
 }
 /*******************************************************************************/
