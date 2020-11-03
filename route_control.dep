@@ -1487,6 +1487,10 @@
             <name>$PROJ_DIR$\src\src.c</name>
             <outputs>
                 <tool>
+                    <name>ICCSTM8</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
                     <name>__cstat</name>
                     <file> 81</file>
                 </tool>

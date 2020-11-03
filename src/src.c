@@ -118,7 +118,7 @@ void I2C_transaction_begin(void)
 }
 void I2C_transaction_end(void)
 {
-
+   tbf.output--;
   //Not used in this example
 }
 void I2C_byte_received(u8 u8_RxData)
@@ -128,7 +128,7 @@ void I2C_byte_received(u8 u8_RxData)
 }
 u8 I2C_byte_write(void)
 {
-  return txData[txCount++];
+  return pop(&tbf);
 }
 /*******************************************************************************/
 void SystemInit(void)

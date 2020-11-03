@@ -47746,7 +47746,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@4691@F@I2C_IRQHandler@sr1",
+    "ID": "c:src.c@4699@F@I2C_IRQHandler@sr1",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr1",
@@ -47760,7 +47760,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@4709@F@I2C_IRQHandler@sr2",
+    "ID": "c:src.c@4717@F@I2C_IRQHandler@sr2",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr2",
@@ -47774,7 +47774,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@4727@F@I2C_IRQHandler@sr3",
+    "ID": "c:src.c@4735@F@I2C_IRQHandler@sr3",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr3",
