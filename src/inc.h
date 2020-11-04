@@ -1,29 +1,33 @@
 #ifndef _inc_h_
 #define _inc_h_
 #include "stm8s_conf.h"
+/***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
-/*for uart recieve*/
-extern unsigned char rxCount;	  /*Количество принятых байтов*/
-extern unsigned char rxData[64U]; /*Массив с принятыми данными*/
-extern unsigned char txCount;	  /*Количество данных для отправки*/
-extern unsigned char txData[64U]; /*Массив с данными для отправки*/
-extern _Bool status;			  /*булевская переменная для указания наличия необработанных приянтых данных*/
-extern _Bool completed;			  /*булевская переменная для указания статуса распознавания данных*/
-extern _Bool resData;
-extern unsigned char temp;
-extern unsigned char cnt;
-/*for I2C init*/
+/***********************/
 extern uint8_t address;
-/*for sig ==0x5FU*/
-extern unsigned char sig;	   /*Сигнатура*/
-extern unsigned char dest_id; /*dest id девайса*/
-extern unsigned char dest_id_1;
-extern unsigned char cmd;	   /*Команда в пакете*/
-extern unsigned char sz;	   /*Размер пакета с данными*/
-extern unsigned char crc_head; /*Crc до байта с размером данных*/
-extern unsigned char crc_tail; /*Crc данных с раздела data*/
-extern unsigned char crc_head_rec;
-extern unsigned char crc_tail_rec;
+/***********************/
+struct RING{
+private:
+  volatile unsigned char inp;
+  volatile unsigned char out;
+  volatile unsigned char data[64U];
+public:
+  RING(){
+     inp = out = 0U;
+  }
+  void push(const unsigned char temp){
+    if(inp == 63U){
+      inp = 0U;
+    }
+      data[inp++]=temp;
+  }
+  unsigned char pull(void){
+    if(out == 63U){
+    out = 0U;
+    }
+      return data[out++];
+  }
+};
 typedef struct
 {
 	unsigned char buffer[64U];
@@ -36,7 +40,6 @@ extern unsigned char get_count(Ring_buff *buff);
 extern void clean(Ring_buff *buff);
 extern _Bool IsEmpty(Ring_buff *buff);
 extern Ring_buff bf;
-extern Ring_buff tbf;
 /***************************************************************************************/
 void SystemInit(void);
 void recognize_data(unsigned char data); /*Функция распознавания принятых данных*/

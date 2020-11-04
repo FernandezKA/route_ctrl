@@ -1,63 +1,5 @@
 #include "inc.h"
 /*******************************************************************************/
-unsigned char MessageBegin;
-void recognize_data(unsigned char data)
-{
-  if (rxCount > 0)
-  {
-    if (rxCount < 6)
-    {
-      if (rxCount == 5)
-      {
-        sz = data;
-        put(data, &tbf);
-        ++rxCount;
-        return;
-      }
-      else
-      {
-        crc_head ^= data;
-        put(data, &tbf);
-        ++rxCount;
-        return;
-      }
-    }
-    else
-    {
-      if (rxCount == sz + 7 && rxCount != 0U)
-      {
-        crc_tail = data;
-        rxCount = 0U;
-        if (crc_head == crc_head_rec)
-        {
-          if (crc_tail == crc_tail_rec)
-          {
-            GPIOA->ODR |= (1U << 1);
-          }
-          else
-          {
-            return;
-          }
-        }
-        else
-          return;
-      }
-    }
-  }
-  else
-  {
-    if (data == 0x5F)
-    {
-      ++rxCount;
-      put(data, &tbf);
-      return;
-    }
-    else
-    {
-      return;
-    }
-  }
-}
 void put(unsigned char data, Ring_buff *buff)
 {
   buff->buffer[buff->inp++] = data;
@@ -99,6 +41,7 @@ void gpio_init(void)
   GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_PU_NO_IT);
   GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_PU_NO_IT);
   GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
+  GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_LOW_FAST);
   return;
 }
 /*******************************************************************************/
@@ -114,11 +57,10 @@ void i2c_init(unsigned char addr)
 /*******************************************************************************/
 void I2C_transaction_begin(void)
 {
-  MessageBegin = TRUE;
+  
 }
 void I2C_transaction_end(void)
 {
-   tbf.output--;
   //Not used in this example
 }
 void I2C_byte_received(u8 u8_RxData)
@@ -128,7 +70,7 @@ void I2C_byte_received(u8 u8_RxData)
 }
 u8 I2C_byte_write(void)
 {
-  return pop(&tbf);
+   return 0xFFU;
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -162,22 +104,7 @@ void assert_failed(u8 *file, u32 line)
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
-  ++rxCount;
-  temp = UART1->DR;
-  if (temp == 0x5FU && rxCount == 1U) /*if sign = 0x5f ->write data to variable sig*/
-  {
-    status = 1; /*enable status*/
-    sig = temp; /*write signature to var. sig*/
-    return;     /*go out interrupt*/
-  }
-  else if (rxCount != 0x01U && status)
-  {
-    rxData[rxCount] = temp; /*add data to array */
-  }
-  else
-  {
-    return; /*else ->return out interrupt*/
-  }
+  asm("nop");
 }
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)

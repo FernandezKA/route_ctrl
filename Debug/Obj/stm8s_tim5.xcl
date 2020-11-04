@@ -1,5 +1,5 @@
 "C:\dev\stm8\spl\lib\SPL\src\stm8s_tim5.c"
--std=c99
+-std=c++98
 -ferror-limit=0
 -fbracket-depth=512
 -MD
@@ -19,6 +19,8 @@ C:\dev\stm8\spl\src
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\c
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\ecpp
 -I
 C:\dev\stm8\spl\inc
 -I
@@ -236,9 +238,12 @@ C:\dev\stm8\spl\src
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=595716
 -D__STDC__=1
--D__STDC_VERSION__=199901L
--D__STDC_HOSTED__=1
--D__STDC_NO_ATOMICS__=1
+-D__cplusplus=199711L
+-D__iar_extended_embedded_cplusplus=1
+-D__embedded_cplusplus=1
+-D__WCHAR_T=1
+-D__BOOL=1
+-D__ARRAY_OPERATORS=1
 -D__EDG_IA64_ABI=1
 -D__EDG_IA64_ABI_VARIANT_CTORS_AND_DTORS_RETURN_THIS=1
 -D__EDG_IA64_ABI_USE_INT_STATIC_INIT_GUARD=1

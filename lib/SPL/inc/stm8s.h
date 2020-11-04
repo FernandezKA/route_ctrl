@@ -227,8 +227,10 @@ typedef uint16_t u16;
 typedef uint8_t  u8;
 
 
-typedef enum {FALSE = 0, TRUE = !FALSE} bool;
-
+//typedef enum {FALSE = 0, TRUE = !FALSE} bool;
+typedef bool _Bool;
+#define TRUE true
+#define FALSE false
 typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus, BitStatus, BitAction;
 
 typedef enum {DISABLE = 0, ENABLE = !DISABLE} FunctionalState;
