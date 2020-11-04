@@ -3,6 +3,7 @@
 uint8_t address = 0x6eU; /*default value*/
 /*Variable init*/
 Ring_buff bf;
+RING uart;
 /*******************************************************************************/
 int main(void)
 {

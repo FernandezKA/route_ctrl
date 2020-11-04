@@ -36,17 +36,12 @@ typedef struct
 } Ring_buff;
 extern void put(unsigned char data, Ring_buff *buffer);
 extern unsigned char pop(Ring_buff *buff);
-extern unsigned char get_count(Ring_buff *buff);
-extern void clean(Ring_buff *buff);
-extern _Bool IsEmpty(Ring_buff *buff);
 extern Ring_buff bf;
+extern RING uart;
 /***************************************************************************************/
 void SystemInit(void);
-void recognize_data(unsigned char data); /*Функция распознавания принятых данных*/
 uint8_t dev_addr(void);										  /*Функция, определяющая адрес устройства*/
 void gpio_config(void);
-void I2C_recognize();
 void i2c_init(unsigned char addr);
-void I2C_transaction_begin(void);
 
 #endif

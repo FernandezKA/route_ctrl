@@ -33888,310 +33888,440 @@
     "scope": null
   },
   {
-    "ID": "c:@Event",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "Event",
-    "location": {
-      "column": "16",
-      "line": "1",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "Event",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_it.h@142@macro@__STM8S_IT_H",
+    "ID": "c:inc.h@25@macro@_inc_h_",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "__STM8S_IT_H",
+    "display": "_inc_h_",
     "location": {
       "column": "9",
-      "line": "4",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "line": "2",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "__STM8S_IT_H",
+    "name": "_inc_h_",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TRAP_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TRAP_IRQHandler(void)",
+    "ID": "c:inc.h@94@macro@BitMask",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BitMask",
     "location": {
-      "column": "17",
-      "line": "14",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "5",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TRAP_IRQHandler",
+    "name": "BitMask",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TLI_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@address",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TLI_IRQHandler(void)",
+    "display": "address",
     "location": {
-      "column": "17",
-      "line": "15",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "16",
+      "line": "7",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TLI_IRQHandler",
+    "name": "address",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@AWU_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@address",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void AWU_IRQHandler(void)",
+    "display": "address",
     "location": {
-      "column": "17",
-      "line": "16",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "16",
+      "line": "7",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "AWU_IRQHandler",
+    "name": "address",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@CLK_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void CLK_IRQHandler(void)",
+    "ID": "c:@S@RING",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "RING",
     "location": {
-      "column": "17",
-      "line": "17",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "8",
+      "line": "9",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "CLK_IRQHandler",
+    "members": [
+      {
+        "ID": "c:@S@RING@FI@inp",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "inp",
+        "location": {
+          "column": "26",
+          "line": "11",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "inp",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@out",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "out",
+        "location": {
+          "column": "26",
+          "line": "12",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "out",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@data",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "data",
+        "location": {
+          "column": "26",
+          "line": "13",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "data",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@RING#",
+        "What": "CXXConstructor",
+        "defdec": "Def",
+        "display": "void RING(void)",
+        "location": {
+          "column": "3",
+          "line": "15",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "RING",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@push#1c#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "void push(const unsigned char)",
+        "location": {
+          "column": "8",
+          "line": "18",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "push",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@pull#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "unsigned char pull(void)",
+        "location": {
+          "column": "17",
+          "line": "24",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "pull",
+        "origin": "user_include",
+        "scope": "RING"
+      }
+    ],
+    "name": "RING",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTA_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void EXTI_PORTA_IRQHandler(void)",
+    "ID": "c:@SA@Ring_buff",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "",
     "location": {
-      "column": "17",
-      "line": "18",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "31",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTA_IRQHandler",
+    "members": [
+      {
+        "ID": "c:@SA@Ring_buff@FI@buffer",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "buffer",
+        "location": {
+          "column": "16",
+          "line": "33",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "buffer",
+        "origin": "user_include",
+        "scope": "_anonymous_inc_h_31_9"
+      },
+      {
+        "ID": "c:@SA@Ring_buff@FI@inp",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "inp",
+        "location": {
+          "column": "16",
+          "line": "34",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "inp",
+        "origin": "user_include",
+        "scope": "_anonymous_inc_h_31_9"
+      },
+      {
+        "ID": "c:@SA@Ring_buff@FI@output",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "output",
+        "location": {
+          "column": "16",
+          "line": "35",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "output",
+        "origin": "user_include",
+        "scope": "_anonymous_inc_h_31_9"
+      },
+      {
+        "ID": "c:@T@Ring_buff",
+        "What": "TypedefDecl",
+        "defdec": "Def",
+        "display": "struct Ring_buff",
+        "location": {
+          "column": "3",
+          "line": "36",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "Ring_buff",
+        "origin": "user_include",
+        "scope": "_anonymous_inc_h_31_9"
+      }
+    ],
+    "name": "",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTB_IRQHandler#",
+    "ID": "c:@F@put#c#*$@SA@Ring_buff#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EXTI_PORTB_IRQHandler(void)",
+    "display": "void put(unsigned char, Ring_buff *)",
     "location": {
-      "column": "17",
-      "line": "19",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "37",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTB_IRQHandler",
+    "name": "put",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTC_IRQHandler#",
+    "ID": "c:@F@put#c#*$@SA@Ring_buff#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EXTI_PORTC_IRQHandler(void)",
+    "display": "void put(unsigned char, Ring_buff *)",
     "location": {
-      "column": "17",
-      "line": "20",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "37",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTC_IRQHandler",
+    "name": "put",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTD_IRQHandler#",
+    "ID": "c:@F@pop#*$@SA@Ring_buff#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EXTI_PORTD_IRQHandler(void)",
+    "display": "unsigned char pop(Ring_buff *)",
     "location": {
-      "column": "17",
-      "line": "21",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "22",
+      "line": "38",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTD_IRQHandler",
+    "name": "pop",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTE_IRQHandler#",
+    "ID": "c:@F@pop#*$@SA@Ring_buff#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EXTI_PORTE_IRQHandler(void)",
+    "display": "unsigned char pop(Ring_buff *)",
     "location": {
-      "column": "17",
-      "line": "22",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "22",
+      "line": "38",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTE_IRQHandler",
+    "name": "pop",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@SPI_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@bf",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void SPI_IRQHandler(void)",
+    "display": "bf",
     "location": {
-      "column": "17",
-      "line": "33",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "18",
+      "line": "39",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "SPI_IRQHandler",
+    "name": "bf",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM1_CAP_COM_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@bf",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TIM1_CAP_COM_IRQHandler(void)",
+    "display": "bf",
     "location": {
-      "column": "17",
-      "line": "34",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "18",
+      "line": "39",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM1_CAP_COM_IRQHandler",
+    "name": "bf",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@uart",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
+    "display": "uart",
     "location": {
-      "column": "17",
-      "line": "35",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "40",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
+    "name": "uart",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM2_UPD_OVF_BRK_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@uart",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TIM2_UPD_OVF_BRK_IRQHandler(void)",
+    "display": "uart",
     "location": {
-      "column": "17",
-      "line": "41",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "40",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM2_UPD_OVF_BRK_IRQHandler",
+    "name": "uart",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM2_CAP_COM_IRQHandler#",
+    "ID": "c:@F@SystemInit#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void TIM2_CAP_COM_IRQHandler(void)",
+    "display": "void SystemInit(void)",
     "location": {
-      "column": "17",
+      "column": "6",
       "line": "42",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM2_CAP_COM_IRQHandler",
+    "name": "SystemInit",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@UART1_TX_IRQHandler#",
+    "ID": "c:@F@SystemInit#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void UART1_TX_IRQHandler(void)",
+    "display": "void SystemInit(void)",
     "location": {
-      "column": "17",
-      "line": "53",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "42",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "UART1_TX_IRQHandler",
+    "name": "SystemInit",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@UART1_RX_IRQHandler#",
+    "ID": "c:@F@dev_addr#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void UART1_RX_IRQHandler(void)",
+    "display": "uint8_t dev_addr(void)",
     "location": {
-      "column": "17",
-      "line": "54",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "43",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "UART1_RX_IRQHandler",
+    "name": "dev_addr",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@I2C_IRQHandler#",
+    "ID": "c:@F@dev_addr#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void I2C_IRQHandler(void)",
+    "display": "uint8_t dev_addr(void)",
     "location": {
-      "column": "17",
-      "line": "62",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "43",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "I2C_IRQHandler",
+    "name": "dev_addr",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@ADC1_IRQHandler#",
+    "ID": "c:@F@gpio_config#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void ADC1_IRQHandler(void)",
+    "display": "void gpio_config(void)",
     "location": {
-      "column": "17",
-      "line": "77",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "44",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "ADC1_IRQHandler",
+    "name": "gpio_config",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM4_UPD_OVF_IRQHandler#",
+    "ID": "c:@F@i2c_init#c#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void TIM4_UPD_OVF_IRQHandler(void)",
+    "display": "void i2c_init(unsigned char)",
     "location": {
-      "column": "17",
-      "line": "83",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "45",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM4_UPD_OVF_IRQHandler",
+    "name": "i2c_init",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EEPROM_EEC_IRQHandler#",
+    "ID": "c:@F@i2c_init#c#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EEPROM_EEC_IRQHandler(void)",
+    "display": "void i2c_init(unsigned char)",
     "location": {
-      "column": "17",
-      "line": "85",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "45",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EEPROM_EEC_IRQHandler",
+    "name": "i2c_init",
     "origin": "user_include",
     "scope": null
   },
@@ -35900,240 +36030,380 @@
     "scope": null
   },
   {
+    "ID": "c:@Event",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Event",
+    "location": {
+      "column": "16",
+      "line": "1",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "Event",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_it.h@142@macro@__STM8S_IT_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__STM8S_IT_H",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "__STM8S_IT_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@F@TRAP_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TRAP_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "8",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "14",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TRAP_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@TLI_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TLI_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "16",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "15",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TLI_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@AWU_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void AWU_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "25",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "16",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "AWU_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@CLK_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void CLK_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "33",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "17",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "CLK_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EXTI_PORTA_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EXTI_PORTA_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "41",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "18",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EXTI_PORTA_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EXTI_PORTB_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EXTI_PORTB_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "19",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EXTI_PORTB_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EXTI_PORTC_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EXTI_PORTC_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "57",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "20",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EXTI_PORTC_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EXTI_PORTD_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EXTI_PORTD_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "65",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "21",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EXTI_PORTD_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EXTI_PORTE_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EXTI_PORTE_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "73",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "22",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EXTI_PORTE_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@SPI_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void SPI_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "110",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "33",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "SPI_IRQHandler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
-    "location": {
-      "column": "1",
-      "line": "118",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
-    },
-    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@TIM1_CAP_COM_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TIM1_CAP_COM_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "126",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "34",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TIM1_CAP_COM_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "35",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@TIM2_UPD_OVF_BRK_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TIM2_UPD_OVF_BRK_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "151",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "41",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TIM2_UPD_OVF_BRK_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@TIM2_CAP_COM_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TIM2_CAP_COM_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "159",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "42",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TIM2_CAP_COM_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UART1_TX_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UART1_TX_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "53",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "UART1_TX_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UART1_RX_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UART1_RX_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "54",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "UART1_RX_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void I2C_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "62",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "I2C_IRQHandler",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@ADC1_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void ADC1_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "262",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "77",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "ADC1_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@TIM4_UPD_OVF_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void TIM4_UPD_OVF_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "280",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "83",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "TIM4_UPD_OVF_IRQHandler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@EEPROM_EEC_IRQHandler#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void EEPROM_EEC_IRQHandler(void)",
     "location": {
-      "column": "1",
-      "line": "289",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+      "column": "17",
+      "line": "85",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
     "name": "EEPROM_EEC_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_WriteAccessCmd#$@EA@IWDG_WriteAccess_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef)",
+    "location": {
+      "column": "6",
+      "line": "48",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_WriteAccessCmd",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_SetPrescaler#$@EA@IWDG_Prescaler_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef)",
+    "location": {
+      "column": "6",
+      "line": "63",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_SetPrescaler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_SetReload#c#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_SetReload(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "78",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_SetReload",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_ReloadCounter#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_ReloadCounter(void)",
+    "location": {
+      "column": "6",
+      "line": "89",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_ReloadCounter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_Enable#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_Enable(void)",
+    "location": {
+      "column": "6",
+      "line": "99",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_Enable",
     "origin": "project_file",
     "scope": null
   },
@@ -36436,594 +36706,240 @@
     "scope": null
   },
   {
-    "ID": "c:inc.h@25@macro@_inc_h_",
-    "What": "MacroDef",
+    "ID": "c:@F@TRAP_IRQHandler#",
+    "What": "Function",
     "defdec": "Def",
-    "display": "_inc_h_",
+    "display": "void TRAP_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "2",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "1",
+      "line": "8",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "_inc_h_",
-    "origin": "user_include",
+    "name": "TRAP_IRQHandler",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:inc.h@94@macro@BitMask",
-    "What": "MacroDef",
+    "ID": "c:@F@TLI_IRQHandler#",
+    "What": "Function",
     "defdec": "Def",
-    "display": "BitMask",
+    "display": "void TLI_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "5",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "1",
+      "line": "16",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "BitMask",
-    "origin": "user_include",
+    "name": "TLI_IRQHandler",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@address",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "address",
-    "location": {
-      "column": "16",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "address",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@address",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "address",
-    "location": {
-      "column": "16",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "address",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@S@RING",
-    "What": "Struct",
+    "ID": "c:@F@AWU_IRQHandler#",
+    "What": "Function",
     "defdec": "Def",
-    "display": "RING",
+    "display": "void AWU_IRQHandler(void)",
     "location": {
-      "column": "8",
-      "line": "9",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "1",
+      "line": "25",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "members": [
-      {
-        "ID": "c:@S@RING@FI@inp",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "inp",
-        "location": {
-          "column": "26",
-          "line": "11",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "inp",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@out",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "out",
-        "location": {
-          "column": "26",
-          "line": "12",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "out",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@data",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "data",
-        "location": {
-          "column": "26",
-          "line": "13",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "data",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@RING#",
-        "What": "CXXConstructor",
-        "defdec": "Def",
-        "display": "void RING(void)",
-        "location": {
-          "column": "3",
-          "line": "15",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "RING",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@push#1c#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "void push(const unsigned char)",
-        "location": {
-          "column": "8",
-          "line": "18",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "push",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@pull#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "unsigned char pull(void)",
-        "location": {
-          "column": "17",
-          "line": "24",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "pull",
-        "origin": "user_include",
-        "scope": "RING"
-      }
-    ],
-    "name": "RING",
-    "origin": "user_include",
+    "name": "AWU_IRQHandler",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@SA@Ring_buff",
-    "What": "Struct",
+    "ID": "c:@F@CLK_IRQHandler#",
+    "What": "Function",
     "defdec": "Def",
-    "display": "",
+    "display": "void CLK_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "31",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "1",
+      "line": "33",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "members": [
-      {
-        "ID": "c:@SA@Ring_buff@FI@buffer",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "buffer",
-        "location": {
-          "column": "16",
-          "line": "33",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "buffer",
-        "origin": "user_include",
-        "scope": "_anonymous_inc_h_31_9"
-      },
-      {
-        "ID": "c:@SA@Ring_buff@FI@inp",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "inp",
-        "location": {
-          "column": "16",
-          "line": "34",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "inp",
-        "origin": "user_include",
-        "scope": "_anonymous_inc_h_31_9"
-      },
-      {
-        "ID": "c:@SA@Ring_buff@FI@output",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "output",
-        "location": {
-          "column": "16",
-          "line": "35",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "output",
-        "origin": "user_include",
-        "scope": "_anonymous_inc_h_31_9"
-      },
-      {
-        "ID": "c:@T@Ring_buff",
-        "What": "TypedefDecl",
-        "defdec": "Def",
-        "display": "struct Ring_buff",
-        "location": {
-          "column": "3",
-          "line": "36",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "Ring_buff",
-        "origin": "user_include",
-        "scope": "_anonymous_inc_h_31_9"
-      }
-    ],
-    "name": "",
-    "origin": "user_include",
+    "name": "CLK_IRQHandler",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@put#c#*$@SA@Ring_buff#",
+    "ID": "c:@F@EXTI_PORTA_IRQHandler#",
     "What": "Function",
-    "defdec": "Dec",
-    "display": "void put(unsigned char, Ring_buff *)",
+    "defdec": "Def",
+    "display": "void EXTI_PORTA_IRQHandler(void)",
     "location": {
-      "column": "13",
-      "line": "37",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "put",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@put#c#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void put(unsigned char, Ring_buff *)",
-    "location": {
-      "column": "13",
-      "line": "37",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "put",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@pop#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char pop(Ring_buff *)",
-    "location": {
-      "column": "22",
-      "line": "38",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "pop",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@pop#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char pop(Ring_buff *)",
-    "location": {
-      "column": "22",
-      "line": "38",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "pop",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@get_count#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char get_count(Ring_buff *)",
-    "location": {
-      "column": "22",
-      "line": "39",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "get_count",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@clean#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void clean(Ring_buff *)",
-    "location": {
-      "column": "13",
-      "line": "40",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "clean",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IsEmpty#*$@SA@Ring_buff#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "_Bool IsEmpty(Ring_buff *)",
-    "location": {
-      "column": "14",
+      "column": "1",
       "line": "41",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "IsEmpty",
-    "origin": "user_include",
+    "name": "EXTI_PORTA_IRQHandler",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@IsEmpty#*$@SA@Ring_buff#",
+    "ID": "c:@F@EXTI_PORTB_IRQHandler#",
     "What": "Function",
-    "defdec": "Dec",
-    "display": "_Bool IsEmpty(Ring_buff *)",
+    "defdec": "Def",
+    "display": "void EXTI_PORTB_IRQHandler(void)",
     "location": {
-      "column": "14",
-      "line": "41",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "IsEmpty",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@bf",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "bf",
-    "location": {
-      "column": "18",
-      "line": "42",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "bf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@bf",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "bf",
-    "location": {
-      "column": "18",
-      "line": "42",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "bf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemInit#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void SystemInit(void)",
-    "location": {
-      "column": "6",
-      "line": "44",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "SystemInit",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemInit#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void SystemInit(void)",
-    "location": {
-      "column": "6",
-      "line": "44",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "SystemInit",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@recognize_data#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void recognize_data(unsigned char)",
-    "location": {
-      "column": "6",
-      "line": "45",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "recognize_data",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@dev_addr#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t dev_addr(void)",
-    "location": {
-      "column": "9",
-      "line": "46",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "dev_addr",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@dev_addr#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t dev_addr(void)",
-    "location": {
-      "column": "9",
-      "line": "46",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "dev_addr",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@gpio_config#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void gpio_config(void)",
-    "location": {
-      "column": "6",
-      "line": "47",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "gpio_config",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_recognize#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void I2C_recognize(void)",
-    "location": {
-      "column": "6",
-      "line": "48",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "I2C_recognize",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@i2c_init#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void i2c_init(unsigned char)",
-    "location": {
-      "column": "6",
+      "column": "1",
       "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "i2c_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@i2c_init#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void i2c_init(unsigned char)",
-    "location": {
-      "column": "6",
-      "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "i2c_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_transaction_begin#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void I2C_transaction_begin(void)",
-    "location": {
-      "column": "6",
-      "line": "50",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "I2C_transaction_begin",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_transaction_begin#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void I2C_transaction_begin(void)",
-    "location": {
-      "column": "6",
-      "line": "50",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "I2C_transaction_begin",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IWDG_WriteAccessCmd#$@EA@IWDG_WriteAccess_TypeDef#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef)",
-    "location": {
-      "column": "6",
-      "line": "48",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
-    },
-    "name": "IWDG_WriteAccessCmd",
+    "name": "EXTI_PORTB_IRQHandler",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@IWDG_SetPrescaler#$@EA@IWDG_Prescaler_TypeDef#",
+    "ID": "c:@F@EXTI_PORTC_IRQHandler#",
     "What": "Function",
     "defdec": "Def",
-    "display": "void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef)",
+    "display": "void EXTI_PORTC_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "63",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "column": "1",
+      "line": "57",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "IWDG_SetPrescaler",
+    "name": "EXTI_PORTC_IRQHandler",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@IWDG_SetReload#c#",
+    "ID": "c:@F@EXTI_PORTD_IRQHandler#",
     "What": "Function",
     "defdec": "Def",
-    "display": "void IWDG_SetReload(uint8_t)",
+    "display": "void EXTI_PORTD_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "78",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "column": "1",
+      "line": "65",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "IWDG_SetReload",
+    "name": "EXTI_PORTD_IRQHandler",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@IWDG_ReloadCounter#",
+    "ID": "c:@F@EXTI_PORTE_IRQHandler#",
     "What": "Function",
     "defdec": "Def",
-    "display": "void IWDG_ReloadCounter(void)",
+    "display": "void EXTI_PORTE_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "89",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "column": "1",
+      "line": "73",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "IWDG_ReloadCounter",
+    "name": "EXTI_PORTE_IRQHandler",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@IWDG_Enable#",
+    "ID": "c:@F@SPI_IRQHandler#",
     "What": "Function",
     "defdec": "Def",
-    "display": "void IWDG_Enable(void)",
+    "display": "void SPI_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "99",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "column": "1",
+      "line": "110",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
     },
-    "name": "IWDG_Enable",
+    "name": "SPI_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "118",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM1_CAP_COM_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIM1_CAP_COM_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "126",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "TIM1_CAP_COM_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM2_UPD_OVF_BRK_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIM2_UPD_OVF_BRK_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "151",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "TIM2_UPD_OVF_BRK_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM2_CAP_COM_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIM2_CAP_COM_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "159",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "TIM2_CAP_COM_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ADC1_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void ADC1_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "262",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "ADC1_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM4_UPD_OVF_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIM4_UPD_OVF_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "280",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "TIM4_UPD_OVF_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@EEPROM_EEC_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void EEPROM_EEC_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "289",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_it.c"
+    },
+    "name": "EEPROM_EEC_IRQHandler",
     "origin": "project_file",
     "scope": null
   },
@@ -46682,6 +46598,118 @@
     "scope": null
   },
   {
+    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__STM8S_WWDG_H",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "__STM8S_WWDG_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "49",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_COUNTERVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "55",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_COUNTERVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_Init#c#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_Init(uint8_t, uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "69",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetCounter#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetCounter(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "70",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_GetCounter#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t WWDG_GetCounter(void)",
+    "location": {
+      "column": "9",
+      "line": "71",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_GetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SWReset#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SWReset(void)",
+    "location": {
+      "column": "6",
+      "line": "72",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SWReset",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetWindowValue#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetWindowValue(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "73",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetWindowValue",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:stm8s_wwdg.c@1413@macro@BIT_MASK",
     "What": "MacroDef",
     "defdec": "Def",
@@ -46762,6 +46790,62 @@
       "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_wwdg.c"
     },
     "name": "WWDG_SetWindowValue",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@address",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "address",
+    "location": {
+      "column": "9",
+      "line": "3",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "address",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@bf",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "bf",
+    "location": {
+      "column": "11",
+      "line": "5",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "bf",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@uart",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "uart",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "uart",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "8",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "main",
     "origin": "project_file",
     "scope": null
   },
@@ -47029,160 +47113,6 @@
     },
     "name": "sr3",
     "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@address",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "address",
-    "location": {
-      "column": "9",
-      "line": "3",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "address",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@bf",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "bf",
-    "location": {
-      "column": "11",
-      "line": "5",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "bf",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@main#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int main(void)",
-    "location": {
-      "column": "5",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "main",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__STM8S_WWDG_H",
-    "location": {
-      "column": "9",
-      "line": "30",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "__STM8S_WWDG_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_COUNTERVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "55",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_COUNTERVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_Init#c#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_Init(uint8_t, uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "69",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetCounter#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetCounter(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "70",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_GetCounter#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t WWDG_GetCounter(void)",
-    "location": {
-      "column": "9",
-      "line": "71",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_GetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SWReset#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SWReset(void)",
-    "location": {
-      "column": "6",
-      "line": "72",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SWReset",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetWindowValue#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetWindowValue(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "73",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetWindowValue",
-    "origin": "user_include",
     "scope": null
   }
 ]
