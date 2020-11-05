@@ -6,7 +6,7 @@ unsigned char dev_addr(void)
   addr = GPIOC->IDR;
   addr &= (0x3FU); //побитовое и для зануления 7 и 6 битов
   addr |= (1U << 5);
-  return 0x32U;
+  return DEF_ADDR;
 }
 void gpio_init(void)
 {
@@ -38,14 +38,11 @@ void I2C_transaction_begin(void)
 }
 void I2C_transaction_end(void)
 {
-  //Not used in this example
   uart.out--;
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
-  //put(u8_RxData, &bf);
   i2c.push(u8_RxData);
-  // return;
 }
 inline u8 I2C_byte_write(void){
   return uart.pull();

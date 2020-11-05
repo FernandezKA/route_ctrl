@@ -3,6 +3,8 @@
 #include "stm8s_conf.h"
 /***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
+#define BUFF_SIZE (64U)
+#define DEF_ADDR (0x32U)
 /***********************/
 extern uint8_t address;
 extern bool started;
@@ -13,14 +15,14 @@ struct RING
 public:
   unsigned char inp;
   unsigned char out;
-  unsigned char data[64U];
+  unsigned char data[BUFF_SIZE];
   RING()
   {
     inp = out = 0U;
   }
 void push(const unsigned char temp)
   {
-    if (inp == 63U)
+    if (inp == BUFF_SIZE - 1U)
     {
       inp = 0U;
     }
@@ -30,6 +32,9 @@ unsigned char pull(void)
   { 
     if(out>inp){
        out = inp;
+    }
+    if(out==BUFF_SIZE-1U){
+       out = inp = 0x00U;
     }
     return data[out++];
   }
