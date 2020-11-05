@@ -38,7 +38,7 @@ void I2C_transaction_begin(void)
 }
 void I2C_transaction_end(void)
 {
-  uart.out--;
+  uart.out--;/*немного черной магии*/
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
