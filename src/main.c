@@ -13,7 +13,10 @@ int main(void)
   while (1)
   {
     if(uart.inp>uart.out){
-       GPIOA->ODR|=(1U<<0);
+       GPIO_WriteLow(GPIOA, GPIO_PIN_1);
+    }
+    else{
+       GPIO_WriteHigh(GPIOA, GPIO_PIN_1);
     }
     while (i2c.inp != i2c.out)
     {

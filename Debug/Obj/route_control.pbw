@@ -46526,118 +46526,6 @@
     "scope": null
   },
   {
-    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__STM8S_WWDG_H",
-    "location": {
-      "column": "9",
-      "line": "30",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "__STM8S_WWDG_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "49",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_WWDG_COUNTERVALUE_OK",
-    "location": {
-      "column": "9",
-      "line": "55",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "IS_WWDG_COUNTERVALUE_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_Init#c#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_Init(uint8_t, uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "69",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetCounter#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetCounter(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "70",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_GetCounter#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t WWDG_GetCounter(void)",
-    "location": {
-      "column": "9",
-      "line": "71",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_GetCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SWReset#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SWReset(void)",
-    "location": {
-      "column": "6",
-      "line": "72",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SWReset",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@WWDG_SetWindowValue#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void WWDG_SetWindowValue(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "73",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
-    },
-    "name": "WWDG_SetWindowValue",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_wwdg.c@1413@macro@BIT_MASK",
     "What": "MacroDef",
     "defdec": "Def",
@@ -46718,90 +46606,6 @@
       "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_wwdg.c"
     },
     "name": "WWDG_SetWindowValue",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@address",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "address",
-    "location": {
-      "column": "9",
-      "line": "3",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "address",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@started",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "started",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "started",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@uart",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "uart",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "uart",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@i2c",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i2c",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "i2c",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@temp",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "temp",
-    "location": {
-      "column": "15",
-      "line": "8",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "temp",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@main#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int main(void)",
-    "location": {
-      "column": "5",
-      "line": "10",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "main",
     "origin": "project_file",
     "scope": null
   },
@@ -46974,7 +46778,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3018@F@I2C_IRQHandler#@sr1",
+    "ID": "c:src.c@3019@F@I2C_IRQHandler#@sr1",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr1",
@@ -46988,7 +46792,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3036@F@I2C_IRQHandler#@sr2",
+    "ID": "c:src.c@3037@F@I2C_IRQHandler#@sr2",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr2",
@@ -47002,7 +46806,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3054@F@I2C_IRQHandler#@sr3",
+    "ID": "c:src.c@3055@F@I2C_IRQHandler#@sr3",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr3",
@@ -47013,6 +46817,202 @@
     },
     "name": "sr3",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@address",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "address",
+    "location": {
+      "column": "9",
+      "line": "3",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "address",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@started",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "started",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "started",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@uart",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "uart",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "uart",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@i2c",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i2c",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "i2c",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@temp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "temp",
+    "location": {
+      "column": "15",
+      "line": "8",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "temp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__STM8S_WWDG_H",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "__STM8S_WWDG_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1730@macro@IS_WWDG_WINDOWLIMITVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "49",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_WINDOWLIMITVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_wwdg.h@1943@macro@IS_WWDG_COUNTERVALUE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_WWDG_COUNTERVALUE_OK",
+    "location": {
+      "column": "9",
+      "line": "55",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "IS_WWDG_COUNTERVALUE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_Init#c#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_Init(uint8_t, uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "69",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetCounter#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetCounter(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "70",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_GetCounter#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t WWDG_GetCounter(void)",
+    "location": {
+      "column": "9",
+      "line": "71",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_GetCounter",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SWReset#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SWReset(void)",
+    "location": {
+      "column": "6",
+      "line": "72",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SWReset",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@WWDG_SetWindowValue#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void WWDG_SetWindowValue(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "73",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_wwdg.h"
+    },
+    "name": "WWDG_SetWindowValue",
+    "origin": "user_include",
     "scope": null
   }
 ]
