@@ -1,28 +1,5 @@
 #include "inc.h"
 /*******************************************************************************/
-void put(unsigned char data, Ring_buff *buff)
-{
-  buff->buffer[buff->inp++] = data;
-  if (buff->inp == 64U)
-    buff->inp = 0;
-}
-unsigned char pop(Ring_buff *buff)
-{
-  unsigned char ret = buff->buffer[buff->output++];
-  if (buff->inp == buff->output)
-  {
-    buff->inp = 0x00U;
-    buff->output = 0x00U;
-  }
-  return ret;
-}
-_Bool IsEmpty(Ring_buff *buff)
-{
-  if ((buff->inp) == (buff->output) || buff->inp == 0U)
-    return 1;
-  else
-    return 0;
-}
 unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
@@ -45,7 +22,7 @@ void gpio_init(void)
   return;
 }
 /*******************************************************************************/
-void i2c_init(unsigned char addr)
+void i2c_init(const unsigned char& addr)
 {
   I2C->FREQR = 16U;                //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
@@ -62,15 +39,17 @@ void I2C_transaction_begin(void)
 void I2C_transaction_end(void)
 {
   //Not used in this example
+  uart.out--;
 }
 void I2C_byte_received(u8 u8_RxData)
 {
-  put(u8_RxData, &bf);
+  //put(u8_RxData, &bf);
+  i2c.push(u8_RxData);
   // return;
 }
 u8 I2C_byte_write(void)
-{
-   return 0xFFU;
+{    
+  return uart.pull();
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -90,7 +69,7 @@ void SystemInit(void)
   address = dev_addr();
   I2C_DeInit();
   i2c_init(address);
-  //UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
 }
 /*******************************************************************************/
@@ -104,7 +83,7 @@ void assert_failed(u8 *file, u32 line)
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
-  asm("nop");
+  uart.push(UART1->DR);
 }
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)

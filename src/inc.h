@@ -5,13 +5,14 @@
 #define BitMask(a, b) (((a) & (b)) == (b))
 /***********************/
 extern uint8_t address;
+extern bool started;
+extern unsigned char temp;
 /***********************/
 struct RING{
-private:
-  volatile unsigned char inp;
-  volatile unsigned char out;
-  volatile unsigned char data[64U];
-public:
+  public:
+  unsigned char inp;
+  unsigned char out;
+  unsigned char data[64U];
   RING(){
      inp = out = 0U;
   }
@@ -28,20 +29,12 @@ public:
       return data[out++];
   }
 };
-typedef struct
-{
-	unsigned char buffer[64U];
-	unsigned char inp;
-	unsigned char output;
-} Ring_buff;
-extern void put(unsigned char data, Ring_buff *buffer);
-extern unsigned char pop(Ring_buff *buff);
-extern Ring_buff bf;
 extern RING uart;
+extern RING i2c;
 /***************************************************************************************/
 void SystemInit(void);
 uint8_t dev_addr(void);										  /*Функция, определяющая адрес устройства*/
 void gpio_config(void);
-void i2c_init(unsigned char addr);
+void i2c_init(const unsigned char& addr);
 
 #endif
