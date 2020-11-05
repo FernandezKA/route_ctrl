@@ -22,7 +22,7 @@ void gpio_init(void)
   return;
 }
 /*******************************************************************************/
-void i2c_init(const unsigned char& addr)
+void i2c_init(const unsigned char &addr)
 {
   I2C->FREQR = 16U;                //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
@@ -34,21 +34,20 @@ void i2c_init(const unsigned char& addr)
 /*******************************************************************************/
 void I2C_transaction_begin(void)
 {
-  
+  I2C_SendData(uart.inp-uart.out);
 }
 void I2C_transaction_end(void)
 {
   //Not used in this example
   uart.out--;
 }
-void I2C_byte_received(u8 u8_RxData)
+inline void I2C_byte_received(u8 u8_RxData)
 {
   //put(u8_RxData, &bf);
   i2c.push(u8_RxData);
   // return;
 }
-u8 I2C_byte_write(void)
-{    
+inline u8 I2C_byte_write(void){
   return uart.pull();
 }
 /*******************************************************************************/
@@ -84,6 +83,7 @@ void assert_failed(u8 *file, u32 line)
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
   uart.push(UART1->DR);
+  return;
 }
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)

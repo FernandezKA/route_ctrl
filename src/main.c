@@ -12,10 +12,13 @@ int main(void)
   SystemInit();
   while (1)
   {
+    if(uart.inp>uart.out){
+       GPIOA->ODR|=(1U<<0);
+    }
     while (i2c.inp != i2c.out)
     {
       if (BitMask(UART1->SR, 1U << 7))
-      {                       /*waiting while txe==1*/
+      { /*waiting while txe==1*/
         UART1->DR = i2c.pull();
       }
     }
