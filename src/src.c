@@ -18,7 +18,7 @@ void gpio_init(void)
   GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_PP_HIGH_SLOW);
+  GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
   return;
 }
 /*******************************************************************************/
@@ -27,7 +27,7 @@ void i2c_init(const unsigned char &addr)
   I2C->FREQR = 16U;                //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
   I2C->CR2 |= (1U << 2);           //ACKNOWLEDGE ENABLE
-  I2C->OARL = (address << 1);      //SET ADDRESS
+  I2C->OARL = (0x6e << 1);      //SET ADDRESS
   I2C->OARH |= (1U << 6);
   I2C->ITR = 0x07; // all I2C interrupt enable
 }
@@ -64,7 +64,7 @@ void SystemInit(void)
   UART1->PSCR = 0x01;     // divede the source clock by 1 for IrDA
   address = dev_addr();
   I2C_DeInit();
-  i2c_init(address);
+  i2c_init(DEF_ADDR);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
 }

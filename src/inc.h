@@ -4,9 +4,8 @@
 /***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
-#define DEF_ADDR (0x32U)
+#define DEF_ADDR (0x34U)
 /***********************/
-extern uint8_t address;
 extern bool started;
 extern unsigned char temp;
 /***********************/
@@ -45,6 +44,6 @@ extern RING i2c;
 void SystemInit(void);
 uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
 void gpio_config(void);
-void i2c_init(const unsigned char &addr);
+void i2c_init(void);
 
 #endif
