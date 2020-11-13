@@ -62,7 +62,7 @@ void SystemInit(void)
   /*UART1 CONFIG*/
   UART1->CR5 |= (1 << 1); // IrDA mode enable
   UART1->PSCR = 0x01;     // divede the source clock by 1 for IrDA
-  address = dev_addr();
+  //address = dev_addr();
   I2C_DeInit();
   i2c_init(DEF_ADDR);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
