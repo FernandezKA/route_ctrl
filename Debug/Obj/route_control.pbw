@@ -33888,310 +33888,706 @@
     "scope": null
   },
   {
-    "ID": "c:@Event",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "Event",
-    "location": {
-      "column": "16",
-      "line": "1",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "Event",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stm8s_it.h@142@macro@__STM8S_IT_H",
+    "ID": "c:inc.h@25@macro@_inc_h_",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "__STM8S_IT_H",
+    "display": "_inc_h_",
     "location": {
       "column": "9",
-      "line": "4",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "line": "2",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "__STM8S_IT_H",
+    "name": "_inc_h_",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TRAP_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TRAP_IRQHandler(void)",
+    "ID": "c:inc.h@94@macro@BitMask",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BitMask",
     "location": {
-      "column": "17",
-      "line": "14",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "5",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TRAP_IRQHandler",
+    "name": "BitMask",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TLI_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TLI_IRQHandler(void)",
+    "ID": "c:inc.h@138@macro@BUFF_SIZE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BUFF_SIZE",
     "location": {
-      "column": "17",
-      "line": "15",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "6",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TLI_IRQHandler",
+    "name": "BUFF_SIZE",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@AWU_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void AWU_IRQHandler(void)",
+    "ID": "c:inc.h@163@macro@DEF_ADDR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DEF_ADDR",
     "location": {
-      "column": "17",
-      "line": "16",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "7",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "AWU_IRQHandler",
+    "name": "DEF_ADDR",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@CLK_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void CLK_IRQHandler(void)",
+    "ID": "c:inc.h@189@macro@SIGNATURE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SIGNATURE",
     "location": {
-      "column": "17",
-      "line": "17",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "8",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "CLK_IRQHandler",
+    "name": "SIGNATURE",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTA_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@started",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void EXTI_PORTA_IRQHandler(void)",
+    "display": "started",
     "location": {
-      "column": "17",
-      "line": "18",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "10",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTA_IRQHandler",
+    "name": "started",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTB_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@temp",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void EXTI_PORTB_IRQHandler(void)",
+    "display": "temp",
     "location": {
-      "column": "17",
-      "line": "19",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "22",
+      "line": "11",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTB_IRQHandler",
+    "name": "temp",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTC_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@temp",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void EXTI_PORTC_IRQHandler(void)",
+    "display": "temp",
     "location": {
-      "column": "17",
-      "line": "20",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "22",
+      "line": "11",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTC_IRQHandler",
+    "name": "temp",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTD_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void EXTI_PORTD_IRQHandler(void)",
+    "ID": "c:@S@RING",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "RING",
     "location": {
-      "column": "17",
-      "line": "21",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "8",
+      "line": "13",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTD_IRQHandler",
+    "members": [
+      {
+        "ID": "c:@S@RING@FI@inp",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "inp",
+        "location": {
+          "column": "17",
+          "line": "16",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "inp",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@out",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "out",
+        "location": {
+          "column": "17",
+          "line": "17",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "out",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@count",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "count",
+        "location": {
+          "column": "17",
+          "line": "18",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "count",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@rollback_disable",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "rollback_disable",
+        "location": {
+          "column": "8",
+          "line": "19",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "rollback_disable",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@FI@data",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "data",
+        "location": {
+          "column": "17",
+          "line": "20",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "data",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@RING#",
+        "What": "CXXConstructor",
+        "defdec": "Def",
+        "display": "void RING(void)",
+        "location": {
+          "column": "3",
+          "line": "21",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "RING",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@push#1c#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "void push(const unsigned char)",
+        "location": {
+          "column": "15",
+          "line": "28",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "push",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@pull#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "unsigned char pull(void)",
+        "location": {
+          "column": "24",
+          "line": "36",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "pull",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:inc.h@818@S@RING@F@pull#@o1",
+        "What": "VarDecl",
+        "defdec": "Def",
+        "display": "o1",
+        "location": {
+          "column": "28",
+          "line": "38",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "o1",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@rollback#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "void rollback(void)",
+        "location": {
+          "column": "15",
+          "line": "51",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "rollback",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@isEmpty#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "bool isEmpty(void)",
+        "location": {
+          "column": "15",
+          "line": "63",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "isEmpty",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@isFull#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "bool isFull(void)",
+        "location": {
+          "column": "15",
+          "line": "68",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "isFull",
+        "origin": "user_include",
+        "scope": "RING"
+      },
+      {
+        "ID": "c:@S@RING@F@getCount#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "unsigned char getCount(void)",
+        "location": {
+          "column": "24",
+          "line": "73",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "getCount",
+        "origin": "user_include",
+        "scope": "RING"
+      }
+    ],
+    "name": "RING",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EXTI_PORTE_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@uart",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void EXTI_PORTE_IRQHandler(void)",
+    "display": "uart",
     "location": {
-      "column": "17",
-      "line": "22",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "79",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EXTI_PORTE_IRQHandler",
+    "name": "uart",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@SPI_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@uart",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void SPI_IRQHandler(void)",
+    "display": "uart",
     "location": {
-      "column": "17",
-      "line": "33",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "79",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "SPI_IRQHandler",
+    "name": "uart",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM1_CAP_COM_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@i2c",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TIM1_CAP_COM_IRQHandler(void)",
+    "display": "i2c",
     "location": {
-      "column": "17",
-      "line": "34",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "80",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM1_CAP_COM_IRQHandler",
+    "name": "i2c",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
-    "What": "Function",
+    "ID": "c:@i2c",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
+    "display": "i2c",
     "location": {
-      "column": "17",
-      "line": "35",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "13",
+      "line": "80",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
+    "name": "i2c",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM2_UPD_OVF_BRK_IRQHandler#",
+    "ID": "c:@F@SystemInit#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void TIM2_UPD_OVF_BRK_IRQHandler(void)",
+    "display": "void SystemInit(void)",
     "location": {
-      "column": "17",
-      "line": "41",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "82",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM2_UPD_OVF_BRK_IRQHandler",
+    "name": "SystemInit",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@TIM2_CAP_COM_IRQHandler#",
+    "ID": "c:@F@SystemInit#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void TIM2_CAP_COM_IRQHandler(void)",
+    "display": "void SystemInit(void)",
     "location": {
-      "column": "17",
-      "line": "42",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "6",
+      "line": "82",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM2_CAP_COM_IRQHandler",
+    "name": "SystemInit",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@UART1_TX_IRQHandler#",
+    "ID": "c:@F@dev_addr#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void UART1_TX_IRQHandler(void)",
+    "display": "uint8_t dev_addr(void)",
     "location": {
-      "column": "17",
-      "line": "53",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "UART1_TX_IRQHandler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UART1_RX_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UART1_RX_IRQHandler(void)",
-    "location": {
-      "column": "17",
-      "line": "54",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "UART1_RX_IRQHandler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void I2C_IRQHandler(void)",
-    "location": {
-      "column": "17",
-      "line": "62",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "I2C_IRQHandler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ADC1_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void ADC1_IRQHandler(void)",
-    "location": {
-      "column": "17",
-      "line": "77",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
-    },
-    "name": "ADC1_IRQHandler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TIM4_UPD_OVF_IRQHandler#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TIM4_UPD_OVF_IRQHandler(void)",
-    "location": {
-      "column": "17",
+      "column": "9",
       "line": "83",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "TIM4_UPD_OVF_IRQHandler",
+    "name": "dev_addr",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@EEPROM_EEC_IRQHandler#",
+    "ID": "c:@F@dev_addr#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void EEPROM_EEC_IRQHandler(void)",
+    "display": "uint8_t dev_addr(void)",
     "location": {
-      "column": "17",
-      "line": "85",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+      "column": "9",
+      "line": "83",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
-    "name": "EEPROM_EEC_IRQHandler",
+    "name": "dev_addr",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@gpio_config#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void gpio_config(void)",
+    "location": {
+      "column": "6",
+      "line": "84",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+    },
+    "name": "gpio_config",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@i2c_init#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void i2c_init(void)",
+    "location": {
+      "column": "6",
+      "line": "85",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+    },
+    "name": "i2c_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@S@command",
+    "What": "Class",
+    "defdec": "Def",
+    "display": "command",
+    "location": {
+      "column": "7",
+      "line": "86",
+      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+    },
+    "members": [
+      {
+        "ID": "c:@S@command@FI@signature",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "signature",
+        "location": {
+          "column": "17",
+          "line": "88",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "signature",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@dest_id_1",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "dest_id_1",
+        "location": {
+          "column": "17",
+          "line": "89",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "dest_id_1",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@dest_id_2",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "dest_id_2",
+        "location": {
+          "column": "17",
+          "line": "90",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "dest_id_2",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@cmd",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "cmd",
+        "location": {
+          "column": "17",
+          "line": "91",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "cmd",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@size",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "size",
+        "location": {
+          "column": "17",
+          "line": "92",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "size",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@hcrc",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "hcrc",
+        "location": {
+          "column": "17",
+          "line": "93",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "hcrc",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@dcrc",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "dcrc",
+        "location": {
+          "column": "17",
+          "line": "94",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "dcrc",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@hcrcr",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "hcrcr",
+        "location": {
+          "column": "19",
+          "line": "95",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "hcrcr",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@dcrcr",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "dcrcr",
+        "location": {
+          "column": "17",
+          "line": "96",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "dcrcr",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@data",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "data",
+        "location": {
+          "column": "17",
+          "line": "97",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "data",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@index",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "index",
+        "location": {
+          "column": "17",
+          "line": "98",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "index",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@FI@completed",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "completed",
+        "location": {
+          "column": "8",
+          "line": "99",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "completed",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@F@command#",
+        "What": "CXXConstructor",
+        "defdec": "Def",
+        "display": "void command(void)",
+        "location": {
+          "column": "3",
+          "line": "100",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "command",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@F@buf_clear#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "void buf_clear(void)",
+        "location": {
+          "column": "8",
+          "line": "106",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "buf_clear",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:inc.h@2302@S@command@F@buf_clear#@i",
+        "What": "VarDecl",
+        "defdec": "Def",
+        "display": "i",
+        "location": {
+          "column": "17",
+          "line": "107",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "i",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@F@get_size#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "unsigned char get_size(void)",
+        "location": {
+          "column": "17",
+          "line": "111",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "get_size",
+        "origin": "user_include",
+        "scope": "command"
+      },
+      {
+        "ID": "c:@S@command@F@recognize#c#",
+        "What": "CXXMethod",
+        "defdec": "Def",
+        "display": "void recognize(unsigned char)",
+        "location": {
+          "column": "15",
+          "line": "114",
+          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+        },
+        "name": "recognize",
+        "origin": "user_include",
+        "scope": "command"
+      }
+    ],
+    "name": "command",
     "origin": "user_include",
     "scope": null
   },
@@ -35394,73 +35790,301 @@
     "scope": null
   },
   {
+    "ID": "c:stm8s_iwdg.h@1290@macro@__STM8S_IWDG_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__STM8S_IWDG_H",
+    "location": {
+      "column": "9",
+      "line": "30",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "__STM8S_IWDG_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_iwdg.h@1591@macro@IWDG_KEY_REFRESH",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IWDG_KEY_REFRESH",
+    "location": {
+      "column": "9",
+      "line": "46",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "IWDG_KEY_REFRESH",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_iwdg.h@1785@macro@IWDG_KEY_ENABLE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IWDG_KEY_ENABLE",
+    "location": {
+      "column": "9",
+      "line": "51",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "IWDG_KEY_ENABLE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_iwdg.h@2105@macro@IS_IWDG_PRESCALER_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_IWDG_PRESCALER_OK",
+    "location": {
+      "column": "9",
+      "line": "65",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "IS_IWDG_PRESCALER_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_iwdg.h@2761@macro@IS_IWDG_WRITEACCESS_MODE_OK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "IS_IWDG_WRITEACCESS_MODE_OK",
+    "location": {
+      "column": "9",
+      "line": "77",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "IS_IWDG_WRITEACCESS_MODE_OK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@EA@IWDG_WriteAccess_TypeDef",
+    "What": "Enum",
+    "defdec": "Def",
+    "display": "",
+    "fields": [
+      {
+        "ID": "c:@EA@IWDG_WriteAccess_TypeDef@IWDG_WriteAccess_Enable",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_WriteAccess_Enable",
+        "location": {
+          "column": "3",
+          "line": "90",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_WriteAccess_Enable",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_WriteAccess_TypeDef@IWDG_WriteAccess_Disable",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_WriteAccess_Disable",
+        "location": {
+          "column": "3",
+          "line": "91",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_WriteAccess_Disable",
+        "origin": "user_include",
+        "scope": null
+      }
+    ],
+    "location": {
+      "column": "9",
+      "line": "88",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@EA@IWDG_Prescaler_TypeDef",
+    "What": "Enum",
+    "defdec": "Def",
+    "display": "",
+    "fields": [
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_4",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_4",
+        "location": {
+          "column": "3",
+          "line": "97",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_4",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_8",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_8",
+        "location": {
+          "column": "3",
+          "line": "98",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_8",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_16",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_16",
+        "location": {
+          "column": "3",
+          "line": "99",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_16",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_32",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_32",
+        "location": {
+          "column": "3",
+          "line": "100",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_32",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_64",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_64",
+        "location": {
+          "column": "3",
+          "line": "101",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_64",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_128",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_128",
+        "location": {
+          "column": "3",
+          "line": "102",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_128",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_256",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "IWDG_Prescaler_256",
+        "location": {
+          "column": "3",
+          "line": "103",
+          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+        },
+        "name": "IWDG_Prescaler_256",
+        "origin": "user_include",
+        "scope": null
+      }
+    ],
+    "location": {
+      "column": "9",
+      "line": "95",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+    },
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@F@IWDG_WriteAccessCmd#$@EA@IWDG_WriteAccess_TypeDef#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef)",
     "location": {
       "column": "6",
-      "line": "48",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "line": "114",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
     },
     "name": "IWDG_WriteAccessCmd",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@IWDG_SetPrescaler#$@EA@IWDG_Prescaler_TypeDef#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef)",
     "location": {
       "column": "6",
-      "line": "63",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "line": "115",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
     },
     "name": "IWDG_SetPrescaler",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@IWDG_SetReload#c#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void IWDG_SetReload(uint8_t)",
     "location": {
       "column": "6",
-      "line": "78",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "line": "116",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
     },
     "name": "IWDG_SetReload",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@IWDG_ReloadCounter#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void IWDG_ReloadCounter(void)",
     "location": {
       "column": "6",
-      "line": "89",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "line": "117",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
     },
     "name": "IWDG_ReloadCounter",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
     "ID": "c:@F@IWDG_Enable#",
     "What": "Function",
-    "defdec": "Def",
+    "defdec": "Dec",
     "display": "void IWDG_Enable(void)",
     "location": {
       "column": "6",
-      "line": "99",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+      "line": "118",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
     },
     "name": "IWDG_Enable",
-    "origin": "project_file",
+    "origin": "user_include",
     "scope": null
   },
   {
@@ -35828,750 +36452,310 @@
     "scope": null
   },
   {
-    "ID": "c:inc.h@25@macro@_inc_h_",
+    "ID": "c:@Event",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Event",
+    "location": {
+      "column": "16",
+      "line": "1",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "Event",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stm8s_it.h@142@macro@__STM8S_IT_H",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_inc_h_",
+    "display": "__STM8S_IT_H",
     "location": {
       "column": "9",
-      "line": "2",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "_inc_h_",
+    "name": "__STM8S_IT_H",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:inc.h@94@macro@BitMask",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "BitMask",
-    "location": {
-      "column": "9",
-      "line": "5",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "BitMask",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:inc.h@138@macro@BUFF_SIZE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "BUFF_SIZE",
-    "location": {
-      "column": "9",
-      "line": "6",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "BUFF_SIZE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:inc.h@163@macro@DEF_ADDR",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DEF_ADDR",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "DEF_ADDR",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@started",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "started",
-    "location": {
-      "column": "13",
-      "line": "9",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "started",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@started",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "started",
-    "location": {
-      "column": "13",
-      "line": "9",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "started",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@temp",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "temp",
-    "location": {
-      "column": "22",
-      "line": "10",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "temp",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@temp",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "temp",
-    "location": {
-      "column": "22",
-      "line": "10",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "temp",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@S@RING",
-    "What": "Struct",
-    "defdec": "Def",
-    "display": "RING",
-    "location": {
-      "column": "8",
-      "line": "12",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "members": [
-      {
-        "ID": "c:@S@RING@FI@inp",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "inp",
-        "location": {
-          "column": "17",
-          "line": "15",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "inp",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@out",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "out",
-        "location": {
-          "column": "17",
-          "line": "16",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "out",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@count",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "count",
-        "location": {
-          "column": "17",
-          "line": "17",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "count",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@rollback_disable",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "rollback_disable",
-        "location": {
-          "column": "8",
-          "line": "18",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "rollback_disable",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@FI@data",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "data",
-        "location": {
-          "column": "17",
-          "line": "19",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "data",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@RING#",
-        "What": "CXXConstructor",
-        "defdec": "Def",
-        "display": "void RING(void)",
-        "location": {
-          "column": "3",
-          "line": "20",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "RING",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@push#1c#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "void push(const unsigned char)",
-        "location": {
-          "column": "15",
-          "line": "27",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "push",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@pull#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "unsigned char pull(void)",
-        "location": {
-          "column": "24",
-          "line": "35",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "pull",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:inc.h@791@S@RING@F@pull#@o1",
-        "What": "VarDecl",
-        "defdec": "Def",
-        "display": "o1",
-        "location": {
-          "column": "28",
-          "line": "37",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "o1",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@rollback#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "void rollback(void)",
-        "location": {
-          "column": "15",
-          "line": "50",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "rollback",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@isEmpty#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "bool isEmpty(void)",
-        "location": {
-          "column": "15",
-          "line": "62",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "isEmpty",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@isFull#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "bool isFull(void)",
-        "location": {
-          "column": "15",
-          "line": "67",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "isFull",
-        "origin": "user_include",
-        "scope": "RING"
-      },
-      {
-        "ID": "c:@S@RING@F@getCount#",
-        "What": "CXXMethod",
-        "defdec": "Def",
-        "display": "unsigned char getCount(void)",
-        "location": {
-          "column": "24",
-          "line": "72",
-          "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-        },
-        "name": "getCount",
-        "origin": "user_include",
-        "scope": "RING"
-      }
-    ],
-    "name": "RING",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@uart",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "uart",
-    "location": {
-      "column": "13",
-      "line": "78",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "uart",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@uart",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "uart",
-    "location": {
-      "column": "13",
-      "line": "78",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "uart",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@i2c",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "i2c",
-    "location": {
-      "column": "13",
-      "line": "79",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "i2c",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@i2c",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "i2c",
-    "location": {
-      "column": "13",
-      "line": "79",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
-    },
-    "name": "i2c",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemInit#",
+    "ID": "c:@F@TRAP_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void SystemInit(void)",
+    "display": "void TRAP_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "81",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "14",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "SystemInit",
+    "name": "TRAP_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@SystemInit#",
+    "ID": "c:@F@TLI_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void SystemInit(void)",
+    "display": "void TLI_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "81",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "15",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "SystemInit",
+    "name": "TLI_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@dev_addr#",
+    "ID": "c:@F@AWU_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t dev_addr(void)",
+    "display": "void AWU_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "82",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "16",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "dev_addr",
+    "name": "AWU_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@dev_addr#",
+    "ID": "c:@F@CLK_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t dev_addr(void)",
+    "display": "void CLK_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "82",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "17",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "dev_addr",
+    "name": "CLK_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@gpio_config#",
+    "ID": "c:@F@EXTI_PORTA_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void gpio_config(void)",
+    "display": "void EXTI_PORTA_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "83",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "18",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "gpio_config",
+    "name": "EXTI_PORTA_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@i2c_init#",
+    "ID": "c:@F@EXTI_PORTB_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void i2c_init(void)",
+    "display": "void EXTI_PORTB_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "84",
-      "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
+      "column": "17",
+      "line": "19",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "i2c_init",
+    "name": "EXTI_PORTB_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:stm8s_iwdg.h@1290@macro@__STM8S_IWDG_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__STM8S_IWDG_H",
+    "ID": "c:@F@EXTI_PORTC_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void EXTI_PORTC_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "30",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "20",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "__STM8S_IWDG_H",
+    "name": "EXTI_PORTC_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:stm8s_iwdg.h@1591@macro@IWDG_KEY_REFRESH",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IWDG_KEY_REFRESH",
+    "ID": "c:@F@EXTI_PORTD_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void EXTI_PORTD_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "46",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "21",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IWDG_KEY_REFRESH",
+    "name": "EXTI_PORTD_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:stm8s_iwdg.h@1785@macro@IWDG_KEY_ENABLE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IWDG_KEY_ENABLE",
+    "ID": "c:@F@EXTI_PORTE_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void EXTI_PORTE_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "51",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "22",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IWDG_KEY_ENABLE",
+    "name": "EXTI_PORTE_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:stm8s_iwdg.h@2105@macro@IS_IWDG_PRESCALER_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_IWDG_PRESCALER_OK",
+    "ID": "c:@F@SPI_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void SPI_IRQHandler(void)",
     "location": {
-      "column": "9",
-      "line": "65",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "33",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IS_IWDG_PRESCALER_OK",
+    "name": "SPI_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:stm8s_iwdg.h@2761@macro@IS_IWDG_WRITEACCESS_MODE_OK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "IS_IWDG_WRITEACCESS_MODE_OK",
+    "ID": "c:@F@TIM1_CAP_COM_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIM1_CAP_COM_IRQHandler(void)",
     "location": {
-      "column": "9",
+      "column": "17",
+      "line": "34",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "TIM1_CAP_COM_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM1_UPD_OVF_TRG_BRK_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIM1_UPD_OVF_TRG_BRK_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "35",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "TIM1_UPD_OVF_TRG_BRK_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM2_UPD_OVF_BRK_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIM2_UPD_OVF_BRK_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "41",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "TIM2_UPD_OVF_BRK_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIM2_CAP_COM_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIM2_CAP_COM_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "42",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "TIM2_CAP_COM_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UART1_TX_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UART1_TX_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "53",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "UART1_TX_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UART1_RX_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UART1_RX_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "54",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "UART1_RX_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void I2C_IRQHandler(void)",
+    "location": {
+      "column": "17",
+      "line": "62",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
+    },
+    "name": "I2C_IRQHandler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ADC1_IRQHandler#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void ADC1_IRQHandler(void)",
+    "location": {
+      "column": "17",
       "line": "77",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IS_IWDG_WRITEACCESS_MODE_OK",
+    "name": "ADC1_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@EA@IWDG_WriteAccess_TypeDef",
-    "What": "Enum",
-    "defdec": "Def",
-    "display": "",
-    "fields": [
-      {
-        "ID": "c:@EA@IWDG_WriteAccess_TypeDef@IWDG_WriteAccess_Enable",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_WriteAccess_Enable",
-        "location": {
-          "column": "3",
-          "line": "90",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_WriteAccess_Enable",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_WriteAccess_TypeDef@IWDG_WriteAccess_Disable",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_WriteAccess_Disable",
-        "location": {
-          "column": "3",
-          "line": "91",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_WriteAccess_Disable",
-        "origin": "user_include",
-        "scope": null
-      }
-    ],
-    "location": {
-      "column": "9",
-      "line": "88",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-    },
-    "name": "",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@EA@IWDG_Prescaler_TypeDef",
-    "What": "Enum",
-    "defdec": "Def",
-    "display": "",
-    "fields": [
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_4",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_4",
-        "location": {
-          "column": "3",
-          "line": "97",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_4",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_8",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_8",
-        "location": {
-          "column": "3",
-          "line": "98",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_8",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_16",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_16",
-        "location": {
-          "column": "3",
-          "line": "99",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_16",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_32",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_32",
-        "location": {
-          "column": "3",
-          "line": "100",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_32",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_64",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_64",
-        "location": {
-          "column": "3",
-          "line": "101",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_64",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_128",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_128",
-        "location": {
-          "column": "3",
-          "line": "102",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_128",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
-        "ID": "c:@EA@IWDG_Prescaler_TypeDef@IWDG_Prescaler_256",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "IWDG_Prescaler_256",
-        "location": {
-          "column": "3",
-          "line": "103",
-          "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-        },
-        "name": "IWDG_Prescaler_256",
-        "origin": "user_include",
-        "scope": null
-      }
-    ],
-    "location": {
-      "column": "9",
-      "line": "95",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-    },
-    "name": "",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IWDG_WriteAccessCmd#$@EA@IWDG_WriteAccess_TypeDef#",
+    "ID": "c:@F@TIM4_UPD_OVF_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef)",
+    "display": "void TIM4_UPD_OVF_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "114",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "83",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IWDG_WriteAccessCmd",
+    "name": "TIM4_UPD_OVF_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@IWDG_SetPrescaler#$@EA@IWDG_Prescaler_TypeDef#",
+    "ID": "c:@F@EEPROM_EEC_IRQHandler#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef)",
+    "display": "void EEPROM_EEC_IRQHandler(void)",
     "location": {
-      "column": "6",
-      "line": "115",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
+      "column": "17",
+      "line": "85",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_it.h"
     },
-    "name": "IWDG_SetPrescaler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IWDG_SetReload#c#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void IWDG_SetReload(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "116",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-    },
-    "name": "IWDG_SetReload",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IWDG_ReloadCounter#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void IWDG_ReloadCounter(void)",
-    "location": {
-      "column": "6",
-      "line": "117",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-    },
-    "name": "IWDG_ReloadCounter",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@IWDG_Enable#",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void IWDG_Enable(void)",
-    "location": {
-      "column": "6",
-      "line": "118",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\inc\\stm8s_iwdg.h"
-    },
-    "name": "IWDG_Enable",
+    "name": "EEPROM_EEC_IRQHandler",
     "origin": "user_include",
     "scope": null
   },
@@ -36814,34 +36998,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@RST_GetFlagStatus#$@EA@RST_Flag_TypeDef#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "FlagStatus RST_GetFlagStatus(RST_Flag_TypeDef)",
-    "location": {
-      "column": "12",
-      "line": "54",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_rst.c"
-    },
-    "name": "RST_GetFlagStatus",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@RST_ClearFlag#$@EA@RST_Flag_TypeDef#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void RST_ClearFlag(RST_Flag_TypeDef)",
-    "location": {
-      "column": "6",
-      "line": "69",
-      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_rst.c"
-    },
-    "name": "RST_ClearFlag",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_rst.h@1284@macro@__STM8S_RST_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -36981,6 +37137,104 @@
     },
     "name": "RST_ClearFlag",
     "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_WriteAccessCmd#$@EA@IWDG_WriteAccess_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef)",
+    "location": {
+      "column": "6",
+      "line": "48",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_WriteAccessCmd",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_SetPrescaler#$@EA@IWDG_Prescaler_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef)",
+    "location": {
+      "column": "6",
+      "line": "63",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_SetPrescaler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_SetReload#c#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_SetReload(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "78",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_SetReload",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_ReloadCounter#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_ReloadCounter(void)",
+    "location": {
+      "column": "6",
+      "line": "89",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_ReloadCounter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@IWDG_Enable#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IWDG_Enable(void)",
+    "location": {
+      "column": "6",
+      "line": "99",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_iwdg.c"
+    },
+    "name": "IWDG_Enable",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RST_GetFlagStatus#$@EA@RST_Flag_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "FlagStatus RST_GetFlagStatus(RST_Flag_TypeDef)",
+    "location": {
+      "column": "12",
+      "line": "54",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_rst.c"
+    },
+    "name": "RST_GetFlagStatus",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RST_ClearFlag#$@EA@RST_Flag_TypeDef#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void RST_ClearFlag(RST_Flag_TypeDef)",
+    "location": {
+      "column": "6",
+      "line": "69",
+      "path": "C:\\dev\\stm8\\spl\\lib\\SPL\\src\\stm8s_rst.c"
+    },
+    "name": "RST_ClearFlag",
+    "origin": "project_file",
     "scope": null
   },
   {
@@ -46694,300 +46948,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@dev_addr#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "unsigned char dev_addr(void)",
-    "location": {
-      "column": "15",
-      "line": "3",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "dev_addr",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:src.c@136@F@dev_addr#@addr",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "addr",
-    "location": {
-      "column": "26",
-      "line": "5",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "addr",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@gpio_init#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void gpio_init(void)",
-    "location": {
-      "column": "6",
-      "line": "11",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "gpio_init",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@i2c_init#&1c#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void i2c_init(const unsigned char &)",
-    "location": {
-      "column": "6",
-      "line": "25",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "i2c_init",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_transaction_begin#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void I2C_transaction_begin(void)",
-    "location": {
-      "column": "6",
-      "line": "35",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_transaction_begin",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_transaction_end#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void I2C_transaction_end(void)",
-    "location": {
-      "column": "6",
-      "line": "39",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_transaction_end",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_byte_received#c#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void I2C_byte_received(u8)",
-    "location": {
-      "column": "13",
-      "line": "43",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_byte_received",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_byte_write#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "u8 I2C_byte_write(void)",
-    "location": {
-      "column": "11",
-      "line": "47",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_byte_write",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemInit#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SystemInit(void)",
-    "location": {
-      "column": "6",
-      "line": "51",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "SystemInit",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@assert_failed#*c#l#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void assert_failed(u8 *, u32)",
-    "location": {
-      "column": "6",
-      "line": "73",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "assert_failed",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UART1_RX_IRQHandler#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void UART1_RX_IRQHandler(void)",
-    "location": {
-      "column": "1",
-      "line": "80",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "UART1_RX_IRQHandler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@I2C_IRQHandler#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void I2C_IRQHandler(void)",
-    "location": {
-      "column": "1",
-      "line": "86",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "I2C_IRQHandler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:src.c@2993@F@I2C_IRQHandler#@sr1",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "sr1",
-    "location": {
-      "column": "13",
-      "line": "88",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "sr1",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:src.c@3011@F@I2C_IRQHandler#@sr2",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "sr2",
-    "location": {
-      "column": "13",
-      "line": "89",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "sr2",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:src.c@3029@F@I2C_IRQHandler#@sr3",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "sr3",
-    "location": {
-      "column": "13",
-      "line": "90",
-      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
-    },
-    "name": "sr3",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@address",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "address",
-    "location": {
-      "column": "9",
-      "line": "3",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "address",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@started",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "started",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "started",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@uart",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "uart",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "uart",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@i2c",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i2c",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "i2c",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@temp",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "temp",
-    "location": {
-      "column": "15",
-      "line": "8",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "temp",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@main#",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int main(void)",
-    "location": {
-      "column": "5",
-      "line": "10",
-      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
-    },
-    "name": "main",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_wwdg.h@1291@macro@__STM8S_WWDG_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -47097,6 +47057,286 @@
     },
     "name": "WWDG_SetWindowValue",
     "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@uart",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "uart",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "uart",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@i2c",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i2c",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "i2c",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@temp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "temp",
+    "location": {
+      "column": "15",
+      "line": "5",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "temp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "7",
+      "path": "C:\\dev\\stm8\\spl\\src\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@address",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "address",
+    "location": {
+      "column": "9",
+      "line": "3",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "address",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@dev_addr#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "unsigned char dev_addr(void)",
+    "location": {
+      "column": "15",
+      "line": "4",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "dev_addr",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@199@F@dev_addr#@addr",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "addr",
+    "location": {
+      "column": "26",
+      "line": "6",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "addr",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@gpio_init#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void gpio_init(void)",
+    "location": {
+      "column": "6",
+      "line": "12",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "gpio_init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@i2c_init#&1c#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void i2c_init(const unsigned char &)",
+    "location": {
+      "column": "6",
+      "line": "32",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "i2c_init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_transaction_begin#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void I2C_transaction_begin(void)",
+    "location": {
+      "column": "13",
+      "line": "42",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_transaction_begin",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_transaction_end#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void I2C_transaction_end(void)",
+    "location": {
+      "column": "13",
+      "line": "46",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_transaction_end",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_byte_received#c#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void I2C_byte_received(u8)",
+    "location": {
+      "column": "13",
+      "line": "50",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_byte_received",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_byte_write#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "u8 I2C_byte_write(void)",
+    "location": {
+      "column": "11",
+      "line": "54",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_byte_write",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SystemInit#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SystemInit(void)",
+    "location": {
+      "column": "6",
+      "line": "58",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "SystemInit",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@assert_failed#*c#l#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void assert_failed(u8 *, u32)",
+    "location": {
+      "column": "6",
+      "line": "80",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "assert_failed",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UART1_RX_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void UART1_RX_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "87",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "UART1_RX_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@I2C_IRQHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void I2C_IRQHandler(void)",
+    "location": {
+      "column": "1",
+      "line": "97",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "I2C_IRQHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@3608@F@I2C_IRQHandler#@sr1",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "sr1",
+    "location": {
+      "column": "13",
+      "line": "99",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "sr1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@3626@F@I2C_IRQHandler#@sr2",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "sr2",
+    "location": {
+      "column": "13",
+      "line": "100",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "sr2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:src.c@3644@F@I2C_IRQHandler#@sr3",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "sr3",
+    "location": {
+      "column": "13",
+      "line": "101",
+      "path": "C:\\dev\\stm8\\spl\\src\\src.c"
+    },
+    "name": "sr3",
+    "origin": "project_file",
     "scope": null
   }
 ]

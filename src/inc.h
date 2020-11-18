@@ -5,6 +5,7 @@
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
 #define DEF_ADDR (0x32U)
+#define SIGNATURE (0x5FU)
 /***********************/
 extern bool started;
 extern unsigned char temp;
@@ -82,5 +83,96 @@ void SystemInit(void);
 uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
 void gpio_config(void);
 void i2c_init(void);
+class command{
+private:
+  unsigned char signature;
+  unsigned char dest_id_1;
+  unsigned char dest_id_2;
+  unsigned char cmd;
+  unsigned char size;
+  unsigned char hcrc;
+  unsigned char dcrc;
+    unsigned char hcrcr;
+  unsigned char dcrcr;
+  unsigned char data[64U];
+  unsigned char index;
+  bool completed;
+  command(){
+     index = 0x00U;
+     hcrcr = 0xFFU;
+     dcrcr = 0xFFU;
+  }
+public:
+  void buf_clear() {
+    for(uint8_t i = 0; i<63U; ++i){
+      data[i]=0x00U;
+    }
+  }
+  unsigned char get_size(){
+     return index;
+  }
+  inline void recognize(unsigned char cb)
+{
+        switch (index) {
+        case 0x00: // signature
+            if (cb!=SIGNATURE) {
+                break;
+            }
+            if (cb==SIGNATURE)   {
+                signature = cb;
+            break;
+            }
+        case 0x01:
+            dest_id_1 = cb;
+            hcrcr ^= cb;
+            ++index;
+            break;
 
+        case 0x02:  {
+          
+            dest_id_2 = cb;
+            hcrcr ^= cb;
+            ++index;
+            break;
+        }
+        case 0x03:{ // cmd id or hcrc if mid_command
+            cmd = cb;
+            hcrcr^= cb;
+            ++index;
+            break;
+        }
+        case 0x04: // size
+            size = cb;
+            hcrcr ^= cb;
+            ++index;
+            break;
+
+        case 0x05: // hcrc
+          hcrc = cb;
+            if (hcrc!=hcrcr) { // error in hcrc
+                index = 0x00U;
+                break;
+            }
+            if (hcrc==hcrcr) { // zadel for next version oof protocol
+              ++index;
+            }
+            break;
+
+        default: // data+dcrc
+            dcrcr ^= cb;
+            ++index;
+            if (index==size) {
+                if (dcrcr!=0x00U) { //bad dcrc
+                    //printf("bad dcrc dif 0x%02x\r\n", buf->dcrc);
+                  index = 0x00U;
+                    break;
+                }
+                //printf("big cmd %i bytes cmd 0x%02X addr 0x%04X recved\r\n", buf->csize, buf->cid, buf->caddr);
+                completed = true;
+            }
+            break;
+        }
+  }
+};
+  
 #endif

@@ -6,8 +6,5 @@
     <project>
         <path>$WS_DIR$\route_control.ewp</path>
     </project>
-    <project>
-        <path>$WS_DIR$\..\..\..\Users\ferna\OneDrive\Рабочий стол\route_ctrl-master\route_control.ewp</path>
-    </project>
     <batchBuild />
 </workspace>
