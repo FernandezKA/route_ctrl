@@ -1,6 +1,6 @@
 #include "inc.h"
 /*******************************************************************************/
-uint8_t address = 0x6eU; /*default value*/ // Change position
+uint8_t address = 0x00U; /*default value*/ // Change position
 unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
@@ -41,7 +41,7 @@ void i2c_init(const unsigned char &addr)
 /*******************************************************************************/
 inline void I2C_transaction_begin(void)
 {
-  if (I2C->SR3 & (1 << 2)) I2C->DR = uart.getCount();//I2C_SendData(uart.getCount());
+  if (I2C->SR3 & (1 << 2)) I2C->DR = CMD->get_size();//I2C_SendData(uart.getCount());
 }
 inline void I2C_transaction_end(void)
 {
@@ -86,10 +86,11 @@ void assert_failed(u8 *file, u32 line)
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)  // add led blink here
 { 
- uart.push(UART1->DR);
+  CMD->recognize(UART1->DR);
+ //uart.push(UART1->DR);
   //GPIOC->ODR ^= 0xF8;
-  if (GPIOC->ODR == 0x00) GPIOC->ODR |= 0xF8;
-  else GPIOC->ODR = 0x00;
+  //if (GPIOC->ODR == 0x00) GPIOC->ODR |= 0xF8;
+  //else GPIOC->ODR = 0x00;
   
   return;
 }

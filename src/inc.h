@@ -9,6 +9,7 @@
 /***********************/
 extern bool started;
 extern unsigned char temp;
+
 /***********************/
 struct RING
 {
@@ -76,13 +77,6 @@ public:
   };
   
 };
-extern RING uart;
-extern RING i2c;
-/***************************************************************************************/
-void SystemInit(void);
-uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
-void gpio_config(void);
-void i2c_init(void);
 class command{
 private:
   unsigned char signature;
@@ -97,12 +91,11 @@ private:
   unsigned char data[64U];
   unsigned char index;
   bool completed;
-  command(){
-     index = 0x00U;
-     hcrcr = 0xFFU;
-     dcrcr = 0xFFU;
-  }
 public:
+  command (){
+     index = 0;
+     hcrcr = dcrcr = 0xFFU;
+  }
   void buf_clear() {
     for(uint8_t i = 0; i<63U; ++i){
       data[i]=0x00U;
@@ -111,31 +104,35 @@ public:
   unsigned char get_size(){
      return index;
   }
-  inline void recognize(unsigned char cb)
+  bool get_status(){
+     return completed;
+  }
+  void recognize(unsigned char cb)
 {
         switch (index) {
-        case 0x00: // signature
+        case 0: // signature
             if (cb!=SIGNATURE) {
                 break;
             }
             if (cb==SIGNATURE)   {
                 signature = cb;
+                ++index;
             break;
             }
-        case 0x01:
+        case 1:  {
             dest_id_1 = cb;
             hcrcr ^= cb;
             ++index;
             break;
-
-        case 0x02:  {
+        }
+        case 2:  {
           
             dest_id_2 = cb;
             hcrcr ^= cb;
             ++index;
             break;
         }
-        case 0x03:{ // cmd id or hcrc if mid_command
+        case 3:{ // cmd id or hcrc if mid_command
             cmd = cb;
             hcrcr^= cb;
             ++index;
@@ -175,4 +172,13 @@ public:
   }
 };
   
+extern RING uart;
+extern RING i2c;
+extern command *CMD;
+/***************************************************************************************/
+void SystemInit(void);
+uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
+void gpio_config(void);
+void i2c_init(void);
+
 #endif

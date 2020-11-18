@@ -3,13 +3,15 @@
 RING uart;
 RING i2c;
 unsigned char temp = 0U;
+command *CMD = new command;
 /*******************************************************************************/
 int main(void)
 {
   SystemInit();
+  
   while (1)
   {
-    if(!uart.isEmpty()){
+    if(CMD->get_status()){
        GPIO_WriteLow(GPIOA, GPIO_PIN_1);
     }
     else{
