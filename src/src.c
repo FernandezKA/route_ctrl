@@ -45,14 +45,14 @@ inline void I2C_transaction_begin(void)
 }
 inline void I2C_transaction_end(void)
 {
-  uart.rollback(); /*немного черной магии*/ /* никакой чёрной магии в стенах вуза. Исключительно зелёное волхование, или белое волшебство!*/
+  uart->rollback(); /*немного черной магии*/ /* никакой чёрной магии в стенах вуза. Исключительно зелёное волхование, или белое волшебство!*/
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
-  i2c.push(u8_RxData);
+  i2c->push(u8_RxData);
 }
 inline u8 I2C_byte_write(void){
-  return uart.pull();
+  return uart->pull();
 }
 /*******************************************************************************/
 void SystemInit(void)

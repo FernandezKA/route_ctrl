@@ -1,7 +1,7 @@
 #include "inc.h"
 /*I2C config*/
-RING uart;
-RING i2c;
+RING* uart = new RING;
+RING* i2c = new RING;
 unsigned char temp = 0U;
 command *CMD = new command;
 /*******************************************************************************/
@@ -19,7 +19,7 @@ int main(void)
     }
 
     if (BitMask(UART1->SR, 1U << 7))   { /*waiting while txe==1*/
-      if (!i2c.isEmpty()) UART1->DR = i2c.pull();
+      if (!i2c->isEmpty()) UART1->DR = i2c->pull();
     }
   }
 }

@@ -35907,7 +35907,7 @@
     "defdec": "Dec",
     "display": "uart",
     "location": {
-      "column": "13",
+      "column": "14",
       "line": "175",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
@@ -35921,7 +35921,7 @@
     "defdec": "Dec",
     "display": "uart",
     "location": {
-      "column": "13",
+      "column": "14",
       "line": "175",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
@@ -35935,7 +35935,7 @@
     "defdec": "Dec",
     "display": "i2c",
     "location": {
-      "column": "13",
+      "column": "14",
       "line": "176",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
@@ -35949,7 +35949,7 @@
     "defdec": "Dec",
     "display": "i2c",
     "location": {
-      "column": "13",
+      "column": "14",
       "line": "176",
       "path": "C:\\dev\\stm8\\spl\\src\\inc.h"
     },
@@ -46911,7 +46911,7 @@
     "defdec": "Def",
     "display": "uart",
     "location": {
-      "column": "6",
+      "column": "7",
       "line": "3",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
@@ -46925,7 +46925,7 @@
     "defdec": "Def",
     "display": "i2c",
     "location": {
-      "column": "6",
+      "column": "7",
       "line": "4",
       "path": "C:\\dev\\stm8\\spl\\src\\main.c"
     },
@@ -47158,7 +47158,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3644@F@I2C_IRQHandler#@sr1",
+    "ID": "c:src.c@3647@F@I2C_IRQHandler#@sr1",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr1",
@@ -47172,7 +47172,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3662@F@I2C_IRQHandler#@sr2",
+    "ID": "c:src.c@3665@F@I2C_IRQHandler#@sr2",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr2",
@@ -47186,7 +47186,7 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3680@F@I2C_IRQHandler#@sr3",
+    "ID": "c:src.c@3683@F@I2C_IRQHandler#@sr3",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr3",

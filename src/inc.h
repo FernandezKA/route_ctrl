@@ -172,8 +172,8 @@ public:
   }
 };
   
-extern RING uart;
-extern RING i2c;
+extern RING* uart;
+extern RING* i2c;
 extern command *CMD;
 /***************************************************************************************/
 void SystemInit(void);
