@@ -2,8 +2,9 @@
 /*I2C config*/
 RING *uart = new RING;
 RING *i2c = new RING;
-RING *tmp = new RING;
 unsigned char result = 0U;
+bool unread = false;
+unsigned char counter = 0U;
 /*******************************************************************************/
 int main(void)
 {
@@ -11,7 +12,7 @@ int main(void)
 
   while (1)
   {
-    if (result!=0U)
+    if (unread)
     {
       GPIO_WriteLow(GPIOA, GPIO_PIN_1);
     }
@@ -19,7 +20,7 @@ int main(void)
     {
       GPIO_WriteHigh(GPIOA, GPIO_PIN_1);
     }
-
+  
     if (BitMask(UART1->SR, 1U << 7))
     { /*waiting while txe==1*/
       if (!i2c->isEmpty())

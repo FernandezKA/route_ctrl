@@ -43,8 +43,9 @@ void i2c_init(const unsigned char &addr)
 inline void I2C_transaction_begin(void)
 {
   if (I2C->SR3 & (1 << 2))    {
-     GPIO_WriteHigh(GPIOA, GPIO_PIN_1);
-     //I2C_SendData(uart.getCount());
+    unread = false;
+    I2C->DR = lastCmdBuf[0U];
+    counter = 1U;
   }
 }
 inline void I2C_transaction_end(void)
@@ -57,7 +58,7 @@ inline void I2C_byte_received(u8 u8_RxData)
 }
 inline u8 I2C_byte_write(void)
 {
-  return uart->pull();
+  return lastCmdBuf[counter++];
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -93,12 +94,14 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
 {
 
   result = processPacketData(UART1->DR);
+  if (result!=0U) unread = true;
+  
   GPIOC->ODR ^= 0xF8;
-  if (GPIOC->ODR == 0x00)
+  /*if (GPIOC->ODR == 0x00)
     GPIOC->ODR |= 0xF8;
   else
     GPIOC->ODR = 0x00;
-
+  */
   return;
 }
 /*******************************************************************************/

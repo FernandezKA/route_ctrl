@@ -20,7 +20,7 @@ unsigned char *getLastCmd(void) { return lastCmdBuf; }
 //inline unsigned char getLastSize(void) { return lastCmdBuf[0U]; }
 void setLatch(void)
 {
-    memcpy(lastCmdBuf, buf.data, buf.csize * sizeof(unsigned short));
+    memcpy(lastCmdBuf+1, buf.data, buf.csize * sizeof(unsigned short));
     lastCmdBuf[0U] = buf.csize;
 }
 

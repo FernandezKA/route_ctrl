@@ -8,6 +8,8 @@
 /***********************/
 extern bool started;
 extern unsigned char result;
+extern bool unread;
+extern unsigned char counter;
 /*************************************************************************/
 struct RING
 {
