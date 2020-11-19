@@ -2,6 +2,7 @@
 /*I2C config*/
 RING* uart = new RING;
 RING* i2c = new RING;
+RING* tmp = new RING;
 unsigned char temp = 0U;
 command *CMD = new command;
 /*******************************************************************************/

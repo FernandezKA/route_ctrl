@@ -86,8 +86,8 @@ void assert_failed(u8 *file, u32 line)
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)  // add led blink here
 { 
-  CMD->recognize(UART1->DR);
- //uart.push(UART1->DR);
+ CMD->recognize(UART1->DR);
+ //uart->push(UART1->DR);
   //GPIOC->ODR ^= 0xF8;
   //if (GPIOC->ODR == 0x00) GPIOC->ODR |= 0xF8;
   //else GPIOC->ODR = 0x00;

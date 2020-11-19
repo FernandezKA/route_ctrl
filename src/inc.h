@@ -77,6 +77,9 @@ public:
   };
   
 };
+extern RING* uart;
+extern RING* i2c;
+extern RING* tmp;
 class command{
 private:
   unsigned char signature;
@@ -86,23 +89,43 @@ private:
   unsigned char size;
   unsigned char hcrc;
   unsigned char dcrc;
-    unsigned char hcrcr;
+  unsigned char hcrcr;
   unsigned char dcrcr;
-  unsigned char data[64U];
+  unsigned char data[8U];
   unsigned char index;
+  unsigned char size_of_packet;
   bool completed;
 public:
   command (){
      index = 0;
      hcrcr = dcrcr = 0xFFU;
+     buf_clear();
+  }
+  ~command(){
+     asm("nop");
   }
   void buf_clear() {
-    for(uint8_t i = 0; i<63U; ++i){
+    for(uint8_t i = 0; i<8U; ++i){
       data[i]=0x00U;
     }
   }
+  void clean_all(){
+ signature =
+ dest_id_1=
+ dest_id_2 =
+ cmd       =
+ size      =
+ hcrc      =
+ dcrc      =
+ hcrcr     =
+dcrcr      =
+index      =
+size_of_packet = 0U;
+  }
   unsigned char get_size(){
-     return index;
+     int temp = size_of_packet;
+     size_of_packet = 0;
+     return temp;
   }
   bool get_status(){
      return completed;
@@ -116,6 +139,7 @@ public:
             }
             if (cb==SIGNATURE)   {
                 signature = cb;
+                completed = false;
                 ++index;
             break;
             }
@@ -150,31 +174,55 @@ public:
                 index = 0x00U;
                 break;
             }
-            if (hcrc==hcrcr) { // zadel for next version oof protocol
+            if (hcrc==hcrcr) {
+              if(size==0U){
+                 size_of_packet = index + 1U;
+                 index = 0x00U;
+                 completed = true;
+                 uart->push(signature);
+                 uart->push(dest_id_1);
+                 uart->push(dest_id_2);
+                 uart->push(cmd);
+                 uart->push(size);
+                 uart->push(hcrcr);
+                 break;
+              }
               ++index;
             }
             break;
 
         default: // data+dcrc
-            dcrcr ^= cb;
-            ++index;
-            if (index==size) {
-                if (dcrcr!=0x00U) { //bad dcrc
-                    //printf("bad dcrc dif 0x%02x\r\n", buf->dcrc);
+          if(index == size + 6U){      /*if data is tcrc*/
+             dcrc = cb;
+             if(dcrcr = dcrc){
+                  size_of_packet = index;
                   index = 0x00U;
+                  completed = true;
+                  uart->push(signature);
+                  uart->push(dest_id_1);
+                  uart->push(dest_id_2);
+                  uart->push(cmd);
+                  uart->push(size);
+                  uart->push(hcrc);
+                  while(tmp ->count!=0U){
+                     uart->push(tmp->pull());
+                  }
+                  uart->push(dcrc);
+                  clean_all();
                     break;
-                }
-                //printf("big cmd %i bytes cmd 0x%02X addr 0x%04X recved\r\n", buf->csize, buf->cid, buf->caddr);
-                completed = true;
-            }
+             }
+          }
+          else{
+            dcrcr ^= cb;
+            tmp->push(cb);
+            ++index;
             break;
         }
+    }
   }
 };
   
-extern RING* uart;
-extern RING* i2c;
-extern command *CMD;
+    extern command* CMD;
 /***************************************************************************************/
 void SystemInit(void);
 uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
