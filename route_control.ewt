@@ -2333,6 +2333,12 @@
     <group>
         <name>src</name>
         <file>
+            <name>$PROJ_DIR$\src\cmdpacket.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\cmdpacket.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\inc.h</name>
         </file>
         <file>

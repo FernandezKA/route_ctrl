@@ -46,6 +46,7 @@ build stm8s_uart2.pbi : index stm8s_uart2.xcl
 build stm8s_uart3.pbi : index stm8s_uart3.xcl
 build stm8s_uart4.pbi : index stm8s_uart4.xcl
 build stm8s_wwdg.pbi : index stm8s_wwdg.xcl
+build cmdpacket.pbi : index cmdpacket.xcl
 build main.pbi : index main.xcl
 build src.pbi : index src.xcl
 build route_control_part0.pbi : link stm8s_adc1.pbi stm8s_adc2.pbi stm8s_awu.pbi stm8s_beep.pbi stm8s_can.pbi
@@ -53,7 +54,7 @@ build route_control_part1.pbi : link stm8s_clk.pbi stm8s_exti.pbi stm8s_flash.pb
 build route_control_part2.pbi : link stm8s_it.pbi stm8s_itc.pbi stm8s_iwdg.pbi stm8s_rst.pbi stm8s_spi.pbi
 build route_control_part3.pbi : link stm8s_tim1.pbi stm8s_tim2.pbi stm8s_tim3.pbi stm8s_tim4.pbi stm8s_tim5.pbi
 build route_control_part4.pbi : link stm8s_tim6.pbi stm8s_uart1.pbi stm8s_uart2.pbi stm8s_uart3.pbi stm8s_uart4.pbi
-build route_control_part5.pbi : link stm8s_wwdg.pbi main.pbi src.pbi
+build route_control_part5.pbi : link stm8s_wwdg.pbi cmdpacket.pbi main.pbi src.pbi
 build route_control.pbd : link route_control_part0.pbi route_control_part1.pbi route_control_part2.pbi route_control_part3.pbi route_control_part4.pbi route_control_part5.pbi
 build route_control.pbw : browsedata route_control.pbd
 

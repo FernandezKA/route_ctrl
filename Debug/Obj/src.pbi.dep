@@ -6,4 +6,5 @@ src.pbi: C:\dev\stm8\spl\src\src.c C:\dev\stm8\spl\src/inc.h \
   C:\dev\stm8\spl\lib\SPL\inc\stm8s_gpio.h \
   C:\dev\stm8\spl\lib\SPL\inc\stm8s_i2c.h \
   C:\dev\stm8\spl\lib\SPL\inc\stm8s_itc.h \
-  C:\dev\stm8\spl\lib\SPL\inc\stm8s_uart1.h
+  C:\dev\stm8\spl\lib\SPL\inc\stm8s_uart1.h \
+  C:\dev\stm8\spl\src/cmdpacket.h

@@ -1,4 +1,5 @@
 #include "inc.h"
+#include "cmdpacket.h"
 /*******************************************************************************/
 uint8_t address = 0x00U; /*default value*/ // Change position
 unsigned char dev_addr(void)
@@ -7,7 +8,7 @@ unsigned char dev_addr(void)
   addr = GPIOC->IDR;
   addr &= (0x3FU); //побитовое и для зануления 7 и 6 битов
   addr |= (1U << 5);
-  return DEF_ADDR;
+  return DEV_ADDR;
 }
 void gpio_init(void)
 {
@@ -20,12 +21,12 @@ void gpio_init(void)
   GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);*/
   GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
-  
+
   GPIOC->DDR |= 0xF8; // 3 - 7 output set
-  GPIOD->DDR |= 0x0C;  // 2 - 3 output set
+  GPIOD->DDR |= 0x0C; // 2 - 3 output set
   GPIOC->CR1 |= 0xF8; // mode: push-pull
   GPIOD->CR1 |= 0x0C; // mode: push-pull
-  
+
   return;
 }
 /*******************************************************************************/
@@ -34,14 +35,17 @@ void i2c_init(const unsigned char &addr)
   I2C->FREQR = 16U;                //SET 2MHz CLOCKING
   I2C->CR1 |= (1U << 7 | 1U << 0); //DISABLE CLOCK STRECHING AND PERIPH ENABLE
   I2C->CR2 |= (1U << 2);           //ACKNOWLEDGE ENABLE
-  I2C->OARL = (addr << 1);      //SET ADDRESS
+  I2C->OARL = (addr << 1);         //SET ADDRESS
   I2C->OARH |= (1U << 6);
   I2C->ITR = 0x07; // all I2C interrupt enable
 }
 /*******************************************************************************/
 inline void I2C_transaction_begin(void)
 {
-  if (I2C->SR3 & (1 << 2)) I2C->DR = CMD->get_size();//I2C_SendData(uart.getCount());
+  if (I2C->SR3 & (1 << 2))    {
+     GPIO_WriteHigh(GPIOA, GPIO_PIN_1);
+     //I2C_SendData(uart.getCount());
+  }
 }
 inline void I2C_transaction_end(void)
 {
@@ -51,7 +55,8 @@ inline void I2C_byte_received(u8 u8_RxData)
 {
   i2c->push(u8_RxData);
 }
-inline u8 I2C_byte_write(void){
+inline u8 I2C_byte_write(void)
+{
   return uart->pull();
 }
 /*******************************************************************************/
@@ -71,7 +76,7 @@ void SystemInit(void)
   UART1->PSCR = 0x01;     // divide the source clock by 1 for IrDA
   address = dev_addr();
   I2C_DeInit();
-  i2c_init(DEF_ADDR);
+  i2c_init(DEV_ADDR);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
 }
@@ -84,14 +89,16 @@ void assert_failed(u8 *file, u32 line)
 }
 #endif
 /*******************************************************************************/
-INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)  // add led blink here
-{ 
- CMD->recognize(UART1->DR);
- //uart->push(UART1->DR);
-  //GPIOC->ODR ^= 0xF8;
-  //if (GPIOC->ODR == 0x00) GPIOC->ODR |= 0xF8;
-  //else GPIOC->ODR = 0x00;
-  
+INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
+{
+
+  result = processPacketData(UART1->DR);
+  GPIOC->ODR ^= 0xF8;
+  if (GPIOC->ODR == 0x00)
+    GPIOC->ODR |= 0xF8;
+  else
+    GPIOC->ODR = 0x00;
+
   return;
 }
 /*******************************************************************************/
@@ -110,7 +117,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
   {
     I2C->CR2 |= 255 | I2C_CR2_STOP; // stop communication - release the lines
-    I2C->SR2 = 0;             // clear all error flags
+    I2C->SR2 = 0;                   // clear all error flags
   }
   //More bytes received ?
   if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
