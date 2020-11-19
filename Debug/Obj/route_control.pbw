@@ -51788,7 +51788,7 @@
     "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "64",
+      "line": "66",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "SystemInit",
@@ -51802,7 +51802,7 @@
     "display": "void assert_failed(u8 *, u32)",
     "location": {
       "column": "6",
-      "line": "86",
+      "line": "88",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "assert_failed",
@@ -51816,7 +51816,7 @@
     "display": "void UART1_RX_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "93",
+      "line": "95",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "UART1_RX_IRQHandler",
@@ -51830,7 +51830,7 @@
     "display": "void I2C_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "108",
+      "line": "110",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "I2C_IRQHandler",
@@ -51838,13 +51838,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3734@F@I2C_IRQHandler#@sr1",
+    "ID": "c:src.c@3779@F@I2C_IRQHandler#@sr1",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr1",
     "location": {
       "column": "13",
-      "line": "110",
+      "line": "112",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "sr1",
@@ -51852,13 +51852,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3752@F@I2C_IRQHandler#@sr2",
+    "ID": "c:src.c@3797@F@I2C_IRQHandler#@sr2",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr2",
     "location": {
       "column": "13",
-      "line": "111",
+      "line": "113",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "sr2",
@@ -51866,13 +51866,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3770@F@I2C_IRQHandler#@sr3",
+    "ID": "c:src.c@3815@F@I2C_IRQHandler#@sr3",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr3",
     "location": {
       "column": "13",
-      "line": "112",
+      "line": "114",
       "path": "C:\\dev\\stm8\\spl\\src\\src.c"
     },
     "name": "sr3",

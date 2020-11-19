@@ -4,7 +4,7 @@
 /***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
-#define DEV_ADDR (0x32U)
+#define DEV_ADDR (0x38U)
 /***********************/
 extern bool started;
 extern unsigned char result;

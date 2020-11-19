@@ -57,7 +57,9 @@ inline void I2C_byte_received(u8 u8_RxData)
   i2c->push(u8_RxData);
 }
 inline u8 I2C_byte_write(void)
-{
+{ if(counter==2U){
+   lastCmdBuf[0U] = 0U;
+}
   return lastCmdBuf[counter++];
 }
 /*******************************************************************************/
