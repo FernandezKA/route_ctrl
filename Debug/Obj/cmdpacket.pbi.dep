@@ -1,5 +1,5 @@
-cmdpacket.pbi: C:\dev\stm8\spl\src\cmdpacket.c \
-  C:\dev\stm8\spl\src/cmdpacket.h \
+cmdpacket.pbi: C:\dev\Project\route_control\src\cmdpacket.c \
+  C:\dev\Project\route_control\src/cmdpacket.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\string.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\ycheck.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\yvals.h \

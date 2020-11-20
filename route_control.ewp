@@ -261,7 +261,7 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\inc</state>
                     <state>$PROJ_DIR$\lib\SPL\inc</state>
-                    <state>C:\dev\stm8\spl\src</state>
+                    <state>C:\dev\Project\route_control\src</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
