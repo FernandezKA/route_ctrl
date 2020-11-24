@@ -40,24 +40,26 @@ unsigned char processPacketData(unsigned char cb)
     {
 
     case 0: // signature
-        if (cb != SLAVE_SIGNATURE && cb != FRONT_CAR_SIGNATURE && cb != REAR_CAR_SIGNATURE)
+        if (cb != SLAVE_SIGNATURE && cb != FRONT_CAR_SIGNATURE)
         {
             //printf("badsign: 0x%02x\r\n", *pcb);
             // do not needed because already //bufclear(buf);
             break;
         }
+        buf.hcrc = C_HCRC_INIT;
         if (cb == SLAVE_SIGNATURE)
             buf.csize = C_STD_PACKET_SZ;
-        else if (cb == FRONT_CAR_SIGNATURE)
+        else if (cb == FRONT_CAR_SIGNATURE) {
             buf.csize = C_MID_PACKET_SZ;
-        else if (cb == REAR_CAR_SIGNATURE)
-            buf.csize = C_SMALL_PACKET_SZ;
-        buf.hcrc = C_HCRC_INIT;
+            buf.hcrc = C_FRONT_HCRC_INIT ^ cb;
+        }
+        //else if (cb == REAR_CAR_SIGNATURE)
+       //     buf.csize = C_SMALL_PACKET_SZ;
         buf.pos += 1;
         break;
 
     case 1: // addr hi or 2-nd signature
-        if (buf.csize == C_SMALL_PACKET_SZ)
+       /* if (buf.csize == C_SMALL_PACKET_SZ)
         { // small packet arrived ok
             if (buf.data[1] != buf.data[0])
             { // error if signature
@@ -69,7 +71,7 @@ unsigned char processPacketData(unsigned char cb)
             setLatch();
             bufclear();
             return lastCmdBuf[0U];
-        }
+        }   */
         buf.hcrc ^= cb;
         buf.pos += 1;
         break;
@@ -81,9 +83,10 @@ unsigned char processPacketData(unsigned char cb)
         break;
 
     case 3: // cmd id or hcrc if mid_command
+        buf.hcrc ^= cb;
         if (buf.csize == C_MID_PACKET_SZ)
         {
-            if (buf.hcrc != cb)
+            if (0U != buf.hcrc)
             {
                 bufclear();
                 break;
@@ -94,7 +97,6 @@ unsigned char processPacketData(unsigned char cb)
             bufclear();
             return lastCmdBuf[0U];
         }
-        buf.hcrc ^= cb;
         buf.pos += 1;
         //buf.cid = buf.data[3];
         break;

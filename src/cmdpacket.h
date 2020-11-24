@@ -14,9 +14,10 @@ extern "C" {
 
 #define MASTER_SIGNATURE (0xf5U)
 #define SLAVE_SIGNATURE (0x5fU)
-#define REAR_CAR_SIGNATURE (0xf6U)
+//#define REAR_CAR_SIGNATURE (0xf6U)
 #define FRONT_CAR_SIGNATURE (0x54U)
 #define C_HCRC_INIT (0xffU)
+#define C_FRONT_HCRC_INIT (0x33U)
 #define C_DCRC_INIT (0x00U)
 
 typedef struct
