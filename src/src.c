@@ -6,7 +6,8 @@ unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
   addr = GPIOC->IDR;
-  addr &= (0x3FU); //побитовое и для зануления 7 и 6 битов
+  addr &= (0xFCU); //побитовое и для зануления 1, 2, 3 битов
+  /*в результате максимальное значение для регистра - 3FU*/
   addr |= (1U << 5);
   return DEV_ADDR;
 }
