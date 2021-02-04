@@ -12,14 +12,16 @@ unsigned char dev_addr(void)
 }
 void gpio_init(void)
 {
-  /*GPIO_DeInit(GPIOC);
+  /***********************warning, this part of code is not tested!************/
+GPIO_DeInit(GPIOC);
   GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_FL_NO_IT);
   GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);*/
+  //GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);//not using
+  //GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);//not using
+  /************************end part of untested code***************************/
   GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
 
   GPIOC->DDR |= 0xF8; // 3 - 7 output set
@@ -79,7 +81,7 @@ void SystemInit(void)
   UART1->PSCR = 0x01;     // divide the source clock by 1 for IrDA
   address = dev_addr();
   I2C_DeInit();
-  i2c_init(DEV_ADDR);
+  i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
 }
