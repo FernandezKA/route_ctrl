@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\bin\stm8stlink.dll" 
 
-"C:\dev\Project\route_control\Debug\Exe\SPL_STM8S_template.out" 
+"C:\dev\MCU\ROUTE_CONTROL\Debug\Exe\SPL_STM8S_template.out" 
 
 --plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\bin\stm8bat.dll" 
 

@@ -2,13 +2,10 @@
 #include "cmdpacket.h"
 /*******************************************************************************/
 uint8_t address = 0x00U; /*default value*/ // Change position
-unsigned char dev_addr(void)
+inline unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
-  addr = GPIOC->IDR;
-  addr &= (0xFCU); //побитовое и для зануления 0, 1, 2 битов
-  /*в результате максимальное значение для регистра - 3FU*/
-  addr |= (1U << 5);
+  addr = ((GPIOC->IDR)>>3)|0x30; //MSB
   return DEV_ADDR;
 }
 void gpio_init(void)

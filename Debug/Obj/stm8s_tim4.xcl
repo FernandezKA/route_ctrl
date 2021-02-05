@@ -1,20 +1,22 @@
-"C:\dev\Project\route_control\lib\SPL\src\stm8s_tim4.c"
+"C:\dev\MCU\ROUTE_CONTROL\lib\SPL\src\stm8s_tim4.c"
 -std=c++98
 -ferror-limit=0
 -fbracket-depth=512
 -MD
 -MF
-C:\dev\Project\route_control\Debug\Obj\stm8s_tim4.pbi.dep
+C:\dev\MCU\ROUTE_CONTROL\Debug\Obj\stm8s_tim4.pbi.dep
 -o
 stm8s_tim4.pbi
 -I
-C:\dev\Project\route_control\lib\SPL\src
+C:\dev\MCU\ROUTE_CONTROL\lib\SPL\src
 -I
-C:\dev\Project\route_control\inc
+C:\dev\MCU\ROUTE_CONTROL\inc
 -I
-C:\dev\Project\route_control\lib\SPL\inc
+C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc
 -I
 C:\dev\Project\route_control\src
+-I
+C:\dev\MCU\ROUTE_CONTROL\src
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc
 -I
@@ -22,11 +24,13 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\c
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\ecpp
 -I
-C:\dev\Project\route_control\inc
+C:\dev\MCU\ROUTE_CONTROL\inc
 -I
-C:\dev\Project\route_control\lib\SPL\inc
+C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc
 -I
 C:\dev\Project\route_control\src
+-I
+C:\dev\MCU\ROUTE_CONTROL\src
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

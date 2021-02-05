@@ -823,7 +823,7 @@
                     <item>cb</item>
                     <item>buf</item>
                     <item>lastCmdBuf</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\dev\Project\route_control\settings\route_control.Debug.general.xcl" --backend -f "C:\dev\Project\route_control\settings\route_control.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\dev\MCU\ROUTE_CONTROL\settings\route_control.Debug.general.xcl" --backend -f "C:\dev\MCU\ROUTE_CONTROL\settings\route_control.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\dev\Project\route_control\settings\route_control.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\dev\Project\route_control\settings\route_control.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\dev\MCU\ROUTE_CONTROL\settings\route_control.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\dev\MCU\ROUTE_CONTROL\settings\route_control.Debug.driver.xcl" 
 }
