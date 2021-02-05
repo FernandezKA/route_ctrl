@@ -14,21 +14,26 @@ unsigned char dev_addr(void)
 void gpio_init(void)
 {
   /***********************warning, this part of code is not tested!************/
-GPIO_DeInit(GPIOC);
-  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_FL_NO_IT);
-  GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_FL_NO_IT);
+
+  GPIO_DeInit(GPIOC);
+  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
+  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
+  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
+  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
+  GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
   //GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);//not using
   //GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);//not using
   /************************end part of untested code***************************/
   GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
 
-  GPIOC->DDR |= 0xF8; // 3 - 7 output set
-  GPIOD->DDR |= 0x0C; // 2 - 3 output set
-  GPIOC->CR1 |= 0xF8; // mode: push-pull
-  GPIOD->CR1 |= 0x0C; // mode: push-pull
+/*
+  Пиридаиъом пламьенный превед и желаем внимателнейе зырить в чужой код приеждие чьем його драть
+*/
+  //GPIOC->DDR |= 0x00; // 3 - 7 inputs set
+  GPIOD->DDR |= 0x18; // bits 4, 3 set as output
+  // set up leds on bits 4 and 3
+  GPIOD->CR1 |= 0x18; // mode: push-pull
+  GPIOD->CR2 |= 0x18; // mode: speed 10 MHz
 
   return;
 }
