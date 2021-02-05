@@ -1,12 +1,11 @@
 #include "inc.h"
 #include "cmdpacket.h"
 /*******************************************************************************/
-uint8_t address = 0x00U; /*default value*/ // Change position
 inline unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
   addr = ((GPIOC->IDR)>>3)|0x30; //MSB
-  return DEV_ADDR;
+  return addr;
 }
 void gpio_init(void)
 {
@@ -82,7 +81,7 @@ void SystemInit(void)
   /*UART1 CONFIG*/
   UART1->CR5 |= (1 << 1); // IrDA mode enable
   UART1->PSCR = 0x01;     // divide the source clock by 1 for IrDA
-  address = dev_addr();
+  uint8_t address = dev_addr();
   I2C_DeInit();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
