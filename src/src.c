@@ -4,7 +4,9 @@
 inline unsigned char dev_addr(void)
 {
   volatile unsigned char addr;
-  addr = ((GPIOC->IDR)>>3)|0x30; //MSB
+  volatile unsigned char temp = GPIOC->IDR;/*read value of gpioc*/
+  temp = ~temp;
+  addr = ((temp)>>3)|0x30; //MSB
   return addr;
 }
 void gpio_init(void)
@@ -81,8 +83,9 @@ void SystemInit(void)
   /*UART1 CONFIG*/
   UART1->CR5 |= (1 << 1); // IrDA mode enable
   UART1->PSCR = 0x01;     // divide the source clock by 1 for IrDA
-  uint8_t address = dev_addr();
+  //uint8_t address = dev_addr();/*unused variable*/
   I2C_DeInit();
+  unsigned char address = dev_addr();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
   enableInterrupts();
