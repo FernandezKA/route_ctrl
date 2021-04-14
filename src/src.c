@@ -92,6 +92,10 @@ void assert_failed(u8 *file, u32 line)
     ;
 }
 #endif
+INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11){
+  TIM1->SR1&=~TIM1_SR1_UIF;/*CLEAR FLAG*/
+  ibuff.getPull();
+}
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
 {
@@ -124,19 +128,22 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   //More bytes received ?
   if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
   {
-    I2C_byte_received(I2C->DR);
+    //I2C_byte_received(I2C->DR);
+    ibuff.getParse((uint8_t) I2C->DR);
   }
   // Byte received ?
   if (sr1 & I2C_SR1_RXNE)
   {
     //name = I2C->DR;
-    I2C_byte_received(I2C->DR);
+    //I2C_byte_received(I2C->DR);
+    ibuff.getParse((uint8_t) I2C->DR);
   }
   //NAK? (=end of slave transmit comm)
   if (sr2 & I2C_SR2_AF)
   {
     I2C->SR2 &= ~I2C_SR2_AF; // clear AF
-    I2C_transaction_end();
+    ibuff.endRecieve();
+    //I2C_transaction_end();
   }
   // Stop bit from Master  (= end of slave receive comm)
   if (sr1 & I2C_SR1_STOPF)
