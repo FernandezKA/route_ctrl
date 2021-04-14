@@ -35,13 +35,5 @@ int main(void)
     {
       GPIO_WriteHigh(GPIOA, GPIO_PIN_1);
     } 
-
-    if (BitMask(UART1->SR, UART1_SR_TXE))
-    {
-      if (ibuff.getComplete())
-      {
-        ibuff.getPull();
-      }
-    }
   }
 }

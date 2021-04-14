@@ -18,7 +18,6 @@ class I2C_buff
 {
 private:
   bool repeat;
-  bool completed;
   uint8_t size;
   uint8_t countSend;
   uint8_t countRecieve;
@@ -28,7 +27,6 @@ public:
   explicit I2C_buff(void)
   {
     repeat = false;
-    completed = false;
     countSend = 0x00U;
     countRecieve = 0x00U;
     size = 0x00U;
@@ -37,12 +35,7 @@ public:
   {
     return repeat;
   }
-  inline bool getComplete(void) const
-  {
-    return completed;
-  }
 inline void endRecieve(void){
-  completed = true;
   if(repeat){
     TIM1->CR1|=TIM1_CR1_CEN;
   }
@@ -112,7 +105,6 @@ inline void endRecieve(void){
     }
     else
     {
-      completed = true;
       countRecieve = 0x00U;
     }
   }
