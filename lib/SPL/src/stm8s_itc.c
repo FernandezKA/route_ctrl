@@ -58,6 +58,7 @@ uint8_t ITC_GetCPUCC(void)
 #else /* _IAR_ */
   asm("push cc");
   asm("pop a"); /* Ignore compiler warning, the returned value is in A register */
+    return 0;
 #endif /* _COSMIC_*/
 }
 

@@ -19,15 +19,8 @@ void gpio_init(void)
   GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
   GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
   GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
-  //GPIO_Init(GPIOD, GPIO_PIN_2, GPIO_MODE_IN_FL_NO_IT);//not using
-  //GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_FL_NO_IT);//not using
   /************************end part of untested code***************************/
   GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
-
-/*
-  Пиридаиъом пламьенный превед и желаем внимателнейе зырить в чужой код приеждие чьем його драть
-*/
-  //GPIOC->DDR |= 0x00; // 3 - 7 inputs set
   GPIOD->DDR |= 0x18; // bits 4, 3 set as output
   // set up leds on bits 4 and 3
   GPIOD->CR1 |= 0x18; // mode: push-pull
@@ -48,15 +41,16 @@ void i2c_init(const unsigned char &addr)
 /*******************************************************************************/
 inline void I2C_transaction_begin(void)
 {
+  
   if (I2C->SR3 & (1 << 2))    {
     unread = false;
     I2C->DR = lastCmdBuf[0U];
     counter = 1U;
   }
 }
-inline void I2C_transaction_end(void)
+inline void I2C_transaction_end(void)/*this function making stop incrementing counter*/
 {
-  uart->rollback(); /*немного черной магии*/ /* никакой чёрной магии в стенах вуза. Исключительно зелёное волхование, или белое волшебство!*/
+  uart->rollback(); 
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
@@ -106,11 +100,7 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
   if (result!=0U) unread = true;
   
   GPIOC->ODR ^= 0xF8;
-  /*if (GPIOC->ODR == 0x00)
-    GPIOC->ODR |= 0xF8;
-  else
-    GPIOC->ODR = 0x00;
-  */
+
   return;
 }
 /*******************************************************************************/
@@ -118,12 +108,12 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   static u8 sr1;
   static u8 sr2;
-  static u8 sr3;
+  //static u8 sr3;
 
   // save the I2C registers configuration
   sr1 = I2C->SR1;
   sr2 = I2C->SR2;
-  sr3 = I2C->SR3;
+  //sr3 = I2C->SR3;
 
   // Communication error?
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
@@ -152,6 +142,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   if (sr1 & I2C_SR1_STOPF)
   {
     I2C->CR2 |= I2C_CR2_ACK; // CR2 write to clear STOPF
+    /*at this function we start parsing data*/
     I2C_transaction_end();
   }
   // Slave address matched (= Start Comm)

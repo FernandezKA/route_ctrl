@@ -4,6 +4,12 @@
         <path>$WS_DIR$\Backup of route_control.ewp</path>
     </project>
     <project>
+        <path>$WS_DIR$\..\MANIPULATE_LED\LED_MAN\LED_MAN\LED_MANIPULATE.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\MANIPULATE_LED\LED_MAN\LED_MAN\manipulate.ewp</path>
+    </project>
+    <project>
         <path>$WS_DIR$\route_control.ewp</path>
     </project>
     <batchBuild />
