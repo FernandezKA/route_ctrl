@@ -829,7 +829,7 @@
             <IarPane-34092>
                 <expressions>
                     <item>temp</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

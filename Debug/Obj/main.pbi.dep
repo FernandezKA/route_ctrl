@@ -1,11 +1,9 @@
-main.pbi: C:\dev\MCU\ROUTE_CONTROL\src\main.c \
-  C:\dev\MCU\ROUTE_CONTROL\src/inc.h \
+main.pbi: C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_uart1.h \
+  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_itc.h \
+  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_i2c.h \
+  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_gpio.h \
+  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_clk.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h \
   C:\dev\MCU\ROUTE_CONTROL\inc\stm8s_conf.h \
   C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_clk.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc/stm8s.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_gpio.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_i2c.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_itc.h \
-  C:\dev\MCU\ROUTE_CONTROL\lib\SPL\inc\stm8s_uart1.h
+  C:\dev\MCU\ROUTE_CONTROL\src\inc.h C:\dev\MCU\ROUTE_CONTROL\src\main.c

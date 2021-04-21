@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspace>
     <project>
+        <path>$WS_DIR$\..\agPWM\agPWM.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\Blink\Temp\blink.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\CLOCK\CLOCK.ewp</path>
+    </project>
+    <project>
         <path>$WS_DIR$\route_control.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\RFID_MARK\SLAVE\software\SLAVE.ewp</path>
     </project>
     <batchBuild />
 </workspace>
