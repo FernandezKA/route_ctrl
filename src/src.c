@@ -14,17 +14,17 @@ void gpio_init(void)
   /***********************warning, this part of code is not tested!************/
 
   GPIO_DeInit(GPIOC);
-  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
-  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
-  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
-  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
-  GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_PU_NO_IT); // Пу спасёт нас всех!
+  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);
+  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT);
+  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT);
+  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT);
+  GPIO_Init(GPIOC, GPIO_PIN_7, GPIO_MODE_IN_PU_NO_IT);
+
   /************************end part of untested code***************************/
   GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_OUT_OD_HIZ_SLOW);
-  GPIOD->DDR |= 0x18; // bits 4, 3 set as output
-  // set up leds on bits 4 and 3
-  GPIOD->CR1 |= 0x18; // mode: push-pull
-  GPIOD->CR2 |= 0x18; // mode: speed 10 MHz
+  GPIOD->DDR|=(1U<<3|1U<<4);
+  GPIOD->CR1 |= (1U<<3|1U<<4); // mode: push-pull
+  GPIOD->CR2 |= (1U<<3|1U<<4); // mode: speed 10 MHz
 
   return;
 }
@@ -41,16 +41,15 @@ void i2c_init(const unsigned char &addr)
 /*******************************************************************************/
 inline void I2C_transaction_begin(void)
 {
-  
   if (I2C->SR3 & (1 << 2))    {
     unread = false;
     I2C->DR = lastCmdBuf[0U];
     counter = 1U;
   }
 }
-inline void I2C_transaction_end(void)/*this function making stop incrementing counter*/
+inline void I2C_transaction_end(void)
 {
-  uart->rollback(); 
+  uart->rollback(); /*немного черной магии*/ /* никакой чёрной магии в стенах вуза. Исключительно зелёное волхование, или белое волшебство!*/
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
@@ -92,10 +91,6 @@ void assert_failed(u8 *file, u32 line)
     ;
 }
 #endif
-INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11){
-  TIM1->SR1&=~TIM1_SR1_UIF;/*CLEAR FLAG*/
-  ibuff.getPull();
-}
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
 {
@@ -103,7 +98,7 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
   result = processPacketData(UART1->DR);
   if (result!=0U) unread = true;
   
-  GPIOC->ODR ^= 0xF8;
+  GPIOD->ODR^=(1U<<4);
 
   return;
 }
@@ -112,12 +107,12 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   static u8 sr1;
   static u8 sr2;
-  //static u8 sr3;
+  static u8 sr3;
 
   // save the I2C registers configuration
   sr1 = I2C->SR1;
   sr2 = I2C->SR2;
-  //sr3 = I2C->SR3;
+  sr3 = I2C->SR3;
 
   // Communication error?
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
@@ -128,28 +123,24 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   //More bytes received ?
   if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
   {
-    //I2C_byte_received(I2C->DR);
-    ibuff.getParse((uint8_t) I2C->DR);
+    I2C_byte_received(I2C->DR);
   }
   // Byte received ?
   if (sr1 & I2C_SR1_RXNE)
   {
     //name = I2C->DR;
-    //I2C_byte_received(I2C->DR);
-    ibuff.getParse((uint8_t) I2C->DR);
+    I2C_byte_received(I2C->DR);
   }
   //NAK? (=end of slave transmit comm)
   if (sr2 & I2C_SR2_AF)
   {
     I2C->SR2 &= ~I2C_SR2_AF; // clear AF
-    ibuff.endRecieve();
-    //I2C_transaction_end();
+    I2C_transaction_end();
   }
   // Stop bit from Master  (= end of slave receive comm)
   if (sr1 & I2C_SR1_STOPF)
   {
     I2C->CR2 |= I2C_CR2_ACK; // CR2 write to clear STOPF
-    /*at this function we start parsing data*/
     I2C_transaction_end();
   }
   // Slave address matched (= Start Comm)

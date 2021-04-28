@@ -5,114 +5,12 @@
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
 #define DEV_ADDR (0x38U)
-
 /***********************/
 extern bool started;
 extern unsigned char result;
 extern bool unread;
 extern unsigned char counter;
-extern unsigned char uc_i2c_size;
 /*************************************************************************/
-
-class I2C_buff
-{
-private:
-  bool repeat;
-  uint8_t size;
-  uint8_t countSend;
-  uint8_t countRecieve;
-  uint8_t command[BUFF_SIZE];
-
-public:
-  explicit I2C_buff(void)
-  {
-    repeat = false;
-    countSend = 0x00U;
-    countRecieve = 0x00U;
-    size = 0x00U;
-  }
-  inline bool I2C_state(void) const
-  {
-    return repeat;
-  }
-inline void endRecieve(void){
-  if(repeat){
-    TIM1->CR1|=TIM1_CR1_CEN;
-  }
-  else if(!repeat){
-    getPull();
-  }
-}
-  inline void getParse(const uint8_t &new_value)
-  {
-    switch (countRecieve)
-    {
-    case 0x00U:
-      switch (new_value)
-      {
-      case 0x00U:
-        repeat = false;
-        rIncrement();
-        break;
-
-      case 0x01:
-        repeat = true;
-        rIncrement();
-        break;
-
-      default:
-        repeat = false;
-        I2C_buff(); /*reinit buff*/
-        break;
-      }
-      break;
-
-    case 0x01U:
-      switch (new_value)
-      {
-      case 0x00U:
-        I2C_buff(); /*reinit*/
-        break;
-
-      default:
-        size = new_value; /*add recieved size of packet*/
-        break;
-      }
-      break;
-
-    default:
-      pushBack(new_value);
-      break;
-    }
-  }
-  inline void getPull(void)
-  {
-      while(countSend < size - 1){
-      while(~UART1_SR_TXE){asm("nop");}
-      UART1->DR = command[countSend];
-    }
-  }
-  inline void pushBack(const uint8_t &value)
-  {
-    command[countRecieve] = value;
-    rIncrement();
-  }
-  inline void rIncrement(void)
-  {
-    if (countRecieve < size)
-    {
-      ++countRecieve;
-    }
-    else
-    {
-      countRecieve = 0x00U;
-    }
-  }
-};
-
-
-extern I2C_buff ibuff;
-/*********************************************************************/
 struct RING
 {
 public:
@@ -194,8 +92,5 @@ void gpio_config(void);
 void i2c_init(void);
 /***************************************************************************************/
 
-//extern unsigned char lastCmdSize;
-//unsigned char getLastSize(void);
-//unsigned char processPacketData(unsigned char cb);
 
 #endif
