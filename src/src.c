@@ -49,7 +49,7 @@ inline void I2C_transaction_begin(void)
 }
 inline void I2C_transaction_end(void)
 {
-  uart->rollback(); /*немного черной магии*/ /* никакой чёрной магии в стенах вуза. Исключительно зелёное волхование, или белое волшебство!*/
+  uart->rollback(); 
 }
 inline void I2C_byte_received(u8 u8_RxData)
 {
@@ -60,6 +60,7 @@ inline u8 I2C_byte_write(void)
    lastCmdBuf[0U] = 0U;
 }
   return lastCmdBuf[counter++];
+  //???
 }
 /*******************************************************************************/
 void SystemInit(void)
@@ -94,25 +95,23 @@ void assert_failed(u8 *file, u32 line)
 /*******************************************************************************/
 INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
 {
-
+  UART1->SR = 0x00;//Clear all flags
   result = processPacketData(UART1->DR);
   if (result!=0U) unread = true;
-  
   GPIOD->ODR^=(1U<<4);
-
-  return;
+  //return;
 }
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   static u8 sr1;
   static u8 sr2;
-  static u8 sr3;
+  //static u8 sr3;
 
   // save the I2C registers configuration
   sr1 = I2C->SR1;
   sr2 = I2C->SR2;
-  sr3 = I2C->SR3;
+  //sr3 = I2C->SR3;
 
   // Communication error?
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
@@ -159,4 +158,8 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
     //I2C->DR = name;
     I2C->DR = I2C_byte_write();
   }
+}
+void __vWWDT_config(unsigned char* max_value, unsigned char* window_value){
+  WWDG_Init(*max_value, *window_value);
+  WWDG_SWReset();
 }

@@ -261,7 +261,7 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\inc</state>
                     <state>$PROJ_DIR$\lib\SPL\inc</state>
-                    <state>C:\dev\Project\route_control\src</state>
+                    <state>$PROJ_DIR$\src</state>
                     <state>C:\dev\MCU\ROUTE_CONTROL\src</state>
                 </option>
                 <option>

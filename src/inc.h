@@ -1,6 +1,7 @@
 #ifndef _inc_h_
 #define _inc_h_
 #include "stm8s_conf.h"
+#include "stm8s_wwdg.h"
 /***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
@@ -32,7 +33,7 @@ public:
       return;
     data[inp++] = temp;
     if (inp == BUFF_SIZE)
-      inp = 0U;
+    inp = 0U;
     count++;
     //    if (count == BUFF_SIZE - 1U) full = true;
   }
@@ -49,7 +50,7 @@ public:
     o1 = data[out++];
     if (out == BUFF_SIZE)
       out = 0U;
-    --count;
+      --count;
     return o1;
   }
   inline void rollback(void) // rolls back buffer receiver pointer one byte backward
@@ -62,8 +63,8 @@ public:
     rollback_disable = false;
     if (out == 0)
       out = BUFF_SIZE;
-    out--;
-    count++;
+      out--;
+      count++;
   }
   inline bool isEmpty(void)
   {
@@ -75,21 +76,23 @@ public:
 
   inline bool isFull(void)
   {
-    return (count == (BUFF_SIZE - 1U));
+    return (count == (BUFF_SIZE - 1U));//Почему так?
   }
 
   inline unsigned char getCount(void)
   {
     return count;
+    //ИМхо, лучше  return (tail_ptr - head_ptr)
   };
 };
 extern RING *uart;
 extern RING *i2c;
 /***************************************************************************************/
 void SystemInit(void);
-uint8_t dev_addr(void); /*Функция, определяющая адрес устройства*/
+uint8_t dev_addr(void);
 void gpio_config(void);
 void i2c_init(void);
+void __vWWDG_config(unsigned char* max_value, unsigned char* window_value);
 /***************************************************************************************/
 
 

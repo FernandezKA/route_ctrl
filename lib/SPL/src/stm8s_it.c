@@ -14,7 +14,6 @@ INTERRUPT_HANDLER_TRAP(TRAP_IRQHandler)
 #ifndef TLI_IRQ
 //Top Level Interrupt routine.
 INTERRUPT_HANDLER(TLI_IRQHandler, 0)
-
 {
 	while (1){};
 }
