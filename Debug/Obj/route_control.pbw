@@ -36604,10 +36604,24 @@
     "scope": null
   },
   {
-    "ID": "c:@F@__vWWDG_config#*c#S0_#",
+    "ID": "c:@F@__vWWDG_config#c#c#",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void __vWWDG_config(unsigned char *, unsigned char *)",
+    "display": "void __vWWDG_config(unsigned char, unsigned char)",
+    "location": {
+      "column": "6",
+      "line": "95",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\inc.h"
+    },
+    "name": "__vWWDG_config",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@__vWWDG_config#c#c#",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void __vWWDG_config(unsigned char, unsigned char)",
     "location": {
       "column": "6",
       "line": "95",
@@ -47996,6 +48010,400 @@
     "scope": null
   },
   {
+    "ID": "c:cmdpacket.h@46@macro@_CMDPACKET_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_CMDPACKET_H",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "_CMDPACKET_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@117@macro@BUF_SZ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BUF_SZ",
+    "location": {
+      "column": "9",
+      "line": "10",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "BUF_SZ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@137@macro@C_STD_PACKET_SZ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_STD_PACKET_SZ",
+    "location": {
+      "column": "9",
+      "line": "11",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_STD_PACKET_SZ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@164@macro@C_MID_PACKET_SZ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_MID_PACKET_SZ",
+    "location": {
+      "column": "9",
+      "line": "12",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_MID_PACKET_SZ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@191@macro@C_SMALL_PACKET_SZ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_SMALL_PACKET_SZ",
+    "location": {
+      "column": "9",
+      "line": "13",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_SMALL_PACKET_SZ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@222@macro@MASTER_SIGNATURE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MASTER_SIGNATURE",
+    "location": {
+      "column": "9",
+      "line": "15",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "MASTER_SIGNATURE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@256@macro@SLAVE_SIGNATURE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SLAVE_SIGNATURE",
+    "location": {
+      "column": "9",
+      "line": "16",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "SLAVE_SIGNATURE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@327@macro@FRONT_CAR_SIGNATURE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "FRONT_CAR_SIGNATURE",
+    "location": {
+      "column": "9",
+      "line": "18",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "FRONT_CAR_SIGNATURE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@364@macro@C_HCRC_INIT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_HCRC_INIT",
+    "location": {
+      "column": "9",
+      "line": "19",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_HCRC_INIT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@393@macro@C_FRONT_HCRC_INIT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_FRONT_HCRC_INIT",
+    "location": {
+      "column": "9",
+      "line": "20",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_FRONT_HCRC_INIT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmdpacket.h@428@macro@C_DCRC_INIT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "C_DCRC_INIT",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "C_DCRC_INIT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@SA@tCmdBuf",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "",
+    "location": {
+      "column": "9",
+      "line": "23",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "members": [
+      {
+        "ID": "c:@SA@tCmdBuf@FI@pos",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "pos",
+        "location": {
+          "column": "17",
+          "line": "25",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "pos",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      },
+      {
+        "ID": "c:@SA@tCmdBuf@FI@csize",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "csize",
+        "location": {
+          "column": "17",
+          "line": "26",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "csize",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      },
+      {
+        "ID": "c:@SA@tCmdBuf@FI@hcrc",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "hcrc",
+        "location": {
+          "column": "17",
+          "line": "27",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "hcrc",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      },
+      {
+        "ID": "c:@SA@tCmdBuf@FI@dcrc",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "dcrc",
+        "location": {
+          "column": "17",
+          "line": "28",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "dcrc",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      },
+      {
+        "ID": "c:@SA@tCmdBuf@FI@data",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "data",
+        "location": {
+          "column": "17",
+          "line": "29",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "data",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      },
+      {
+        "ID": "c:@T@tCmdBuf",
+        "What": "TypedefDecl",
+        "defdec": "Def",
+        "display": "struct tCmdBuf",
+        "location": {
+          "column": "3",
+          "line": "30",
+          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+        },
+        "name": "tCmdBuf",
+        "origin": "user_include",
+        "scope": "_anonymous_cmdpacket_h_23_9"
+      }
+    ],
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@lastCmdBuf",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "lastCmdBuf",
+    "location": {
+      "column": "22",
+      "line": "32",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "lastCmdBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@lastCmdBuf",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "lastCmdBuf",
+    "location": {
+      "column": "22",
+      "line": "32",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "lastCmdBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@bufclear",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void bufclear(void)",
+    "location": {
+      "column": "6",
+      "line": "34",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "bufclear",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@bufclear",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void bufclear(void)",
+    "location": {
+      "column": "6",
+      "line": "34",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "bufclear",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getLastCmd",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char * getLastCmd(void)",
+    "location": {
+      "column": "16",
+      "line": "35",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "getLastCmd",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getLastCmd",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char * getLastCmd(void)",
+    "location": {
+      "column": "16",
+      "line": "35",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "getLastCmd",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setLatch",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setLatch(void)",
+    "location": {
+      "column": "6",
+      "line": "36",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "setLatch",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setLatch",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setLatch(void)",
+    "location": {
+      "column": "6",
+      "line": "36",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "setLatch",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@processPacketData",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char processPacketData(unsigned char)",
+    "location": {
+      "column": "15",
+      "line": "37",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "processPacketData",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@processPacketData",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char processPacketData(unsigned char)",
+    "location": {
+      "column": "15",
+      "line": "37",
+      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
+    },
+    "name": "processPacketData",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:stm8s_wwdg.c@1413@macro@BIT_MASK",
     "What": "MacroDef",
     "defdec": "Def",
@@ -50442,7 +50850,7 @@
     "display": "void assert_failed(u8 *, u32)",
     "location": {
       "column": "6",
-      "line": "89",
+      "line": "90",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
     "name": "assert_failed",
@@ -50456,7 +50864,7 @@
     "display": "void UART1_RX_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "96",
+      "line": "97",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
     "name": "UART1_RX_IRQHandler",
@@ -50470,7 +50878,7 @@
     "display": "void I2C_IRQHandler(void)",
     "location": {
       "column": "1",
-      "line": "105",
+      "line": "106",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
     "name": "I2C_IRQHandler",
@@ -50478,13 +50886,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3524@F@I2C_IRQHandler#@sr1",
+    "ID": "c:src.c@3592@F@I2C_IRQHandler#@sr1",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr1",
     "location": {
       "column": "13",
-      "line": "107",
+      "line": "108",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
     "name": "sr1",
@@ -50492,13 +50900,13 @@
     "scope": null
   },
   {
-    "ID": "c:src.c@3542@F@I2C_IRQHandler#@sr2",
+    "ID": "c:src.c@3610@F@I2C_IRQHandler#@sr2",
     "What": "Variable",
     "defdec": "Def",
     "display": "sr2",
     "location": {
       "column": "13",
-      "line": "108",
+      "line": "109",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
     "name": "sr2",
@@ -50506,16 +50914,16 @@
     "scope": null
   },
   {
-    "ID": "c:@F@__vWWDT_config#*c#S0_#",
+    "ID": "c:@F@__vWWDG_config#c#c#",
     "What": "Function",
     "defdec": "Def",
-    "display": "void __vWWDT_config(unsigned char *, unsigned char *)",
+    "display": "void __vWWDG_config(unsigned char, unsigned char)",
     "location": {
       "column": "6",
-      "line": "162",
+      "line": "163",
       "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\src.c"
     },
-    "name": "__vWWDT_config",
+    "name": "__vWWDG_config",
     "origin": "project_file",
     "scope": null
   },
@@ -51276,104 +51684,6 @@
     "scope": null
   },
   {
-    "ID": "c:ysizet.h@111@macro@_YSIZET_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_YSIZET_H",
-    "location": {
-      "column": "9",
-      "line": "5",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "_YSIZET_H",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@333@macro@_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "17",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@352@macro@_SIZET",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_SIZET",
-    "location": {
-      "column": "11",
-      "line": "18",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "_SIZET",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@370@macro@_STD_USING_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "19",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "_STD_USING_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Sizet",
-    "location": {
-      "column": "16",
-      "line": "20",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@475@macro@__DATA_PTR_MEM_HELPER1__",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__DATA_PTR_MEM_HELPER1__",
-    "location": {
-      "column": "9",
-      "line": "23",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "__DATA_PTR_MEM_HELPER1__",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@__data_size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "1",
-      "line": "25",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
-    },
-    "name": "__data_size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:DLib_Threads.h@442@macro@_DLIB_THREADS_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -51542,400 +51852,6 @@
     "scope": null
   },
   {
-    "ID": "c:cmdpacket.h@46@macro@_CMDPACKET_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_CMDPACKET_H",
-    "location": {
-      "column": "9",
-      "line": "4",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "_CMDPACKET_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@117@macro@BUF_SZ",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "BUF_SZ",
-    "location": {
-      "column": "9",
-      "line": "10",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "BUF_SZ",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@137@macro@C_STD_PACKET_SZ",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_STD_PACKET_SZ",
-    "location": {
-      "column": "9",
-      "line": "11",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_STD_PACKET_SZ",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@164@macro@C_MID_PACKET_SZ",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_MID_PACKET_SZ",
-    "location": {
-      "column": "9",
-      "line": "12",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_MID_PACKET_SZ",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@191@macro@C_SMALL_PACKET_SZ",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_SMALL_PACKET_SZ",
-    "location": {
-      "column": "9",
-      "line": "13",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_SMALL_PACKET_SZ",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@222@macro@MASTER_SIGNATURE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "MASTER_SIGNATURE",
-    "location": {
-      "column": "9",
-      "line": "15",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "MASTER_SIGNATURE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@256@macro@SLAVE_SIGNATURE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "SLAVE_SIGNATURE",
-    "location": {
-      "column": "9",
-      "line": "16",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "SLAVE_SIGNATURE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@327@macro@FRONT_CAR_SIGNATURE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "FRONT_CAR_SIGNATURE",
-    "location": {
-      "column": "9",
-      "line": "18",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "FRONT_CAR_SIGNATURE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@364@macro@C_HCRC_INIT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_HCRC_INIT",
-    "location": {
-      "column": "9",
-      "line": "19",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_HCRC_INIT",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@393@macro@C_FRONT_HCRC_INIT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_FRONT_HCRC_INIT",
-    "location": {
-      "column": "9",
-      "line": "20",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_FRONT_HCRC_INIT",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmdpacket.h@428@macro@C_DCRC_INIT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "C_DCRC_INIT",
-    "location": {
-      "column": "9",
-      "line": "21",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "C_DCRC_INIT",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@SA@tCmdBuf",
-    "What": "Struct",
-    "defdec": "Def",
-    "display": "",
-    "location": {
-      "column": "9",
-      "line": "23",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "members": [
-      {
-        "ID": "c:@SA@tCmdBuf@FI@pos",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "pos",
-        "location": {
-          "column": "17",
-          "line": "25",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "pos",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      },
-      {
-        "ID": "c:@SA@tCmdBuf@FI@csize",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "csize",
-        "location": {
-          "column": "17",
-          "line": "26",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "csize",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      },
-      {
-        "ID": "c:@SA@tCmdBuf@FI@hcrc",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "hcrc",
-        "location": {
-          "column": "17",
-          "line": "27",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "hcrc",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      },
-      {
-        "ID": "c:@SA@tCmdBuf@FI@dcrc",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "dcrc",
-        "location": {
-          "column": "17",
-          "line": "28",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "dcrc",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      },
-      {
-        "ID": "c:@SA@tCmdBuf@FI@data",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "data",
-        "location": {
-          "column": "17",
-          "line": "29",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "data",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      },
-      {
-        "ID": "c:@T@tCmdBuf",
-        "What": "TypedefDecl",
-        "defdec": "Def",
-        "display": "struct tCmdBuf",
-        "location": {
-          "column": "3",
-          "line": "30",
-          "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-        },
-        "name": "tCmdBuf",
-        "origin": "user_include",
-        "scope": "_anonymous_cmdpacket_h_23_9"
-      }
-    ],
-    "name": "",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@lastCmdBuf",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "lastCmdBuf",
-    "location": {
-      "column": "22",
-      "line": "32",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "lastCmdBuf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@lastCmdBuf",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "lastCmdBuf",
-    "location": {
-      "column": "22",
-      "line": "32",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "lastCmdBuf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@bufclear",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void bufclear(void)",
-    "location": {
-      "column": "6",
-      "line": "34",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "bufclear",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@bufclear",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void bufclear(void)",
-    "location": {
-      "column": "6",
-      "line": "34",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "bufclear",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getLastCmd",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char * getLastCmd(void)",
-    "location": {
-      "column": "16",
-      "line": "35",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "getLastCmd",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getLastCmd",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char * getLastCmd(void)",
-    "location": {
-      "column": "16",
-      "line": "35",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "getLastCmd",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setLatch",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setLatch(void)",
-    "location": {
-      "column": "6",
-      "line": "36",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "setLatch",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setLatch",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setLatch(void)",
-    "location": {
-      "column": "6",
-      "line": "36",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "setLatch",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@processPacketData",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char processPacketData(unsigned char)",
-    "location": {
-      "column": "15",
-      "line": "37",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "processPacketData",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@processPacketData",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char processPacketData(unsigned char)",
-    "location": {
-      "column": "15",
-      "line": "37",
-      "path": "C:\\dev\\MCU\\STM8\\route_control\\src\\cmdpacket.h"
-    },
-    "name": "processPacketData",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:@uart",
     "What": "Variable",
     "defdec": "Def",
@@ -52020,86 +51936,100 @@
     "scope": null
   },
   {
-    "ID": "c:xencoding_limits.h@130@macro@_XENCODING_LIMITS_H",
+    "ID": "c:ysizet.h@111@macro@_YSIZET_H",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_XENCODING_LIMITS_H",
+    "display": "_YSIZET_H",
     "location": {
       "column": "9",
       "line": "5",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
     },
-    "name": "_XENCODING_LIMITS_H",
+    "name": "_YSIZET_H",
     "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:xencoding_limits.h@329@macro@_EncodingSb_LenMax",
+    "ID": "c:ysizet.h@333@macro@_SIZE_T",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_EncodingSb_LenMax",
+    "display": "_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "17",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
+    },
+    "name": "_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@352@macro@_SIZET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_SIZET",
+    "location": {
+      "column": "11",
+      "line": "18",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
+    },
+    "name": "_SIZET",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@370@macro@_STD_USING_SIZE_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "19",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
+    },
+    "name": "_STD_USING_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@T@size_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Sizet",
+    "location": {
+      "column": "16",
+      "line": "20",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
+    },
+    "name": "size_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@475@macro@__DATA_PTR_MEM_HELPER1__",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__DATA_PTR_MEM_HELPER1__",
     "location": {
       "column": "9",
-      "line": "15",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+      "line": "23",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
     },
-    "name": "_EncodingSb_LenMax",
+    "name": "__DATA_PTR_MEM_HELPER1__",
     "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:xencoding_limits.h@461@macro@_EncodingUtf8_LenMax",
-    "What": "MacroDef",
+    "ID": "c:ysizet.h@T@__data_size_t",
+    "What": "Typedef",
     "defdec": "Def",
-    "display": "_EncodingUtf8_LenMax",
+    "display": "unsigned int",
     "location": {
-      "column": "11",
-      "line": "20",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+      "column": "1",
+      "line": "25",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\ysizet.h"
     },
-    "name": "_EncodingUtf8_LenMax",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:xencoding_limits.h@1097@macro@_ENCODING_WITH_USED",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_ENCODING_WITH_USED",
-    "location": {
-      "column": "13",
-      "line": "47",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
-    },
-    "name": "_ENCODING_WITH_USED",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:xencoding_limits.h@1161@macro@_ENCODING_LEN_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_ENCODING_LEN_MAX",
-    "location": {
-      "column": "11",
-      "line": "51",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
-    },
-    "name": "_ENCODING_LEN_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:xencoding_limits.h@1218@macro@_ENCODING_CUR_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_ENCODING_CUR_MAX",
-    "location": {
-      "column": "11",
-      "line": "52",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
-    },
-    "name": "_ENCODING_CUR_MAX",
+    "name": "__data_size_t",
     "origin": "system_include",
     "scope": null
   },
@@ -52198,6 +52128,90 @@
       "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\DLib_Product.h"
     },
     "name": "_TLS_CONST_DEFINITION",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@130@macro@_XENCODING_LIMITS_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_XENCODING_LIMITS_H",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_XENCODING_LIMITS_H",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@329@macro@_EncodingSb_LenMax",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_EncodingSb_LenMax",
+    "location": {
+      "column": "9",
+      "line": "15",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_EncodingSb_LenMax",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@461@macro@_EncodingUtf8_LenMax",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_EncodingUtf8_LenMax",
+    "location": {
+      "column": "11",
+      "line": "20",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_EncodingUtf8_LenMax",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@1097@macro@_ENCODING_WITH_USED",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_ENCODING_WITH_USED",
+    "location": {
+      "column": "13",
+      "line": "47",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_ENCODING_WITH_USED",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@1161@macro@_ENCODING_LEN_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_ENCODING_LEN_MAX",
+    "location": {
+      "column": "11",
+      "line": "51",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_ENCODING_LEN_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:xencoding_limits.h@1218@macro@_ENCODING_CUR_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_ENCODING_CUR_MAX",
+    "location": {
+      "column": "11",
+      "line": "52",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\stm8\\inc\\c\\xencoding_limits.h"
+    },
+    "name": "_ENCODING_CUR_MAX",
     "origin": "system_include",
     "scope": null
   },

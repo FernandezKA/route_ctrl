@@ -12,6 +12,7 @@ int main(void)
 
   while (1)
   {
+    WWDG_SetCounter(0x7F);
     if (unread)
     {
       GPIO_WriteLow(GPIOA, GPIO_PIN_1);

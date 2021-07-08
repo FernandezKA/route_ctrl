@@ -92,7 +92,7 @@ void SystemInit(void);
 uint8_t dev_addr(void);
 void gpio_config(void);
 void i2c_init(void);
-void __vWWDG_config(unsigned char* max_value, unsigned char* window_value);
+void __vWWDG_config(unsigned char max_value, unsigned char window_value);
 /***************************************************************************************/
 
 

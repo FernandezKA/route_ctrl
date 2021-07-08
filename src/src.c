@@ -82,6 +82,7 @@ void SystemInit(void)
   unsigned char address = dev_addr();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+  __vWWDG_config(((unsigned char) 0x7F), ((unsigned char) 0x7A)); 
   enableInterrupts();
 }
 /*******************************************************************************/
@@ -159,7 +160,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
     I2C->DR = I2C_byte_write();
   }
 }
-void __vWWDT_config(unsigned char* max_value, unsigned char* window_value){
-  WWDG_Init(*max_value, *window_value);
+void __vWWDG_config(unsigned char max_value, unsigned char window_value){
+  WWDG_Init(max_value, window_value);
   WWDG_SWReset();
 }
