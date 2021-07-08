@@ -82,7 +82,7 @@ void SystemInit(void)
   unsigned char address = dev_addr();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-  __vWWDG_config(((unsigned char) 0x7F), ((unsigned char) 0x7A)); 
+  __vWWDG_config(((unsigned char) 0x7F), ((unsigned char) 0x0F)); 
   enableInterrupts();
 }
 /*******************************************************************************/
