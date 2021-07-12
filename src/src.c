@@ -1,4 +1,5 @@
 #include "inc.h"
+#include "timers.h"
 #include "cmdpacket.h"
 /*******************************************************************************/
 inline unsigned char dev_addr(void)
@@ -82,15 +83,14 @@ void SystemInit(void)
   unsigned char address = dev_addr();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-  __vWWDG_config(((unsigned char) 0x7F), ((unsigned char) 0x0F)); 
+  __vTim1Config();
   enableInterrupts();
 }
 /*******************************************************************************/
 #ifdef USE_FULL_ASSERT
 void assert_failed(u8 *file, u32 line)
 {
-  while (1)
-    ;
+  WWDG_SWReset();
 }
 #endif
 /*******************************************************************************/
@@ -112,7 +112,7 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   // save the I2C registers configuration
   sr1 = I2C->SR1;
   sr2 = I2C->SR2;
-  //sr3 = I2C->SR3;
+  //sr3 = I2C->SR3;//This string may be important!
 
   // Communication error?
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
@@ -160,7 +160,18 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
     I2C->DR = I2C_byte_write();
   }
 }
-void __vWWDG_config(unsigned char max_value, unsigned char window_value){
-  WWDG_Init(max_value, window_value);
+void __vTim1Config(void)
+{
+  CLK->PCKENR2 |= CLK_PCKENR1_TIM1; /*ENABLE TIM1 clocking*/
+  TIM1->CR1 |= TIM1_CR1_ARPE;/*enable autoreload*/
+  TIM1->PSCRH = 64000 >> 8;/*set prescaler*/
+  TIM1->PSCRL = 64000 & 0xFF;
+  TIM1->ARRH = 7500U >> 8; /*7500 at one minute*/
+  TIM1->ARRL = 7500U & 0xFF;
+  TIM1->IER|=TIM1_IER_UIE;
+}
+
+INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11)
+{
   WWDG_SWReset();
 }

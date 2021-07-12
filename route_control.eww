@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspace>
     <project>
+        <path>$WS_DIR$\Backup of Backup of route_control.ewp</path>
+    </project>
+    <project>
         <path>$WS_DIR$\route_control.ewp</path>
     </project>
     <project>
         <path>$WS_DIR$\..\RFID_MARK\SLAVE\software\SLAVE.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\test_wwdg\test_wwdg.ewp</path>
     </project>
     <batchBuild />
 </workspace>

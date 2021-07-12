@@ -16,8 +16,6 @@ C:\dev\MCU\STM8\route_control\lib\SPL\inc
 -I
 C:\dev\MCU\STM8\route_control\src
 -I
-C:\dev\MCU\ROUTE_CONTROL\src
--I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\stm8\inc\c
@@ -29,8 +27,6 @@ C:\dev\MCU\STM8\route_control\inc
 C:\dev\MCU\STM8\route_control\lib\SPL\inc
 -I
 C:\dev\MCU\STM8\route_control\src
--I
-C:\dev\MCU\ROUTE_CONTROL\src
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

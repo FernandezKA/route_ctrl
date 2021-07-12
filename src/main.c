@@ -1,4 +1,5 @@
 #include "inc.h"
+#include "timers.h"
 /*I2C config*/
 RING *uart = new RING;
 RING *i2c = new RING;
@@ -12,7 +13,7 @@ int main(void)
 
   while (1)
   {
-    WWDG_SetCounter(0x7F);
+    //WWDG_SetCounter(0x7F);
     if (unread)
     {
       GPIO_WriteLow(GPIOA, GPIO_PIN_1);

@@ -2,6 +2,7 @@
 #define _inc_h_
 #include "stm8s_conf.h"
 #include "stm8s_wwdg.h"
+#include "timers.h"
 /***********************/
 #define BitMask(a, b) (((a) & (b)) == (b))
 #define BUFF_SIZE (64U)
@@ -92,7 +93,8 @@ void SystemInit(void);
 uint8_t dev_addr(void);
 void gpio_config(void);
 void i2c_init(void);
-void __vWWDG_config(unsigned char max_value, unsigned char window_value);
+void __vTim1Config(void);
+INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11);
 /***************************************************************************************/
 
 
