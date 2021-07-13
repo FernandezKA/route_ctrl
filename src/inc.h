@@ -12,6 +12,7 @@ extern bool started;
 extern unsigned char result;
 extern bool unread;
 extern unsigned char counter;
+
 /*************************************************************************/
 struct RING
 {
@@ -94,7 +95,6 @@ uint8_t dev_addr(void);
 void gpio_config(void);
 void i2c_init(void);
 void __vTim1Config(void);
-INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11);
 /***************************************************************************************/
 
 

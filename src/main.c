@@ -10,10 +10,8 @@ unsigned char counter = 0U;
 int main(void)
 {
   SystemInit();
-
   while (1)
   {
-    //WWDG_SetCounter(0x7F);
     if (unread)
     {
       GPIO_WriteLow(GPIOA, GPIO_PIN_1);
@@ -27,7 +25,7 @@ int main(void)
   
     if (BitMask(UART1->SR, 1U << 7))
     { /*waiting while txe==1*/
-      if (!i2c->isEmpty())
+        if (!i2c->isEmpty())
         UART1->DR = i2c->pull();
     }
   }

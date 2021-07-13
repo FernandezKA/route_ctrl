@@ -83,14 +83,15 @@ void SystemInit(void)
   unsigned char address = dev_addr();
   i2c_init(address);
   UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-  __vTim1Config();
+  //__vTim1Config();
   enableInterrupts();
 }
 /*******************************************************************************/
 #ifdef USE_FULL_ASSERT
 void assert_failed(u8 *file, u32 line)
 {
-  WWDG_SWReset();
+  asm("nop");
+  return;
 }
 #endif
 /*******************************************************************************/
@@ -100,7 +101,6 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18) // add led blink here
   result = processPacketData(UART1->DR);
   if (result!=0U) unread = true;
   GPIOD->ODR^=(1U<<4);
-  //return;
 }
 /*******************************************************************************/
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
@@ -117,8 +117,9 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   // Communication error?
   if (sr2 & (I2C_SR2_WUFH | I2C_SR2_OVR | I2C_SR2_ARLO | I2C_SR2_BERR))
   {
-    I2C->CR2 |= 255 | I2C_CR2_STOP; // stop communication - release the lines
-    I2C->SR2 = 0;                   // clear all error flags
+    WWDG_SWReset();
+    //I2C->CR2 |= 255 | I2C_CR2_STOP; // stop communication - release the lines
+    //I2C->SR2 = 0;                   // clear all error flags
   }
   //More bytes received ?
   if ((sr1 & (I2C_SR1_RXNE | I2C_SR1_BTF)) == (I2C_SR1_RXNE | I2C_SR1_BTF))
@@ -162,16 +163,24 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 }
 void __vTim1Config(void)
 {
+  TIM1->CR1 = 0x00;
+  TIM1->CR1|=TIM1_CR1_CEN;
   CLK->PCKENR2 |= CLK_PCKENR1_TIM1; /*ENABLE TIM1 clocking*/
   TIM1->CR1 |= TIM1_CR1_ARPE;/*enable autoreload*/
-  TIM1->PSCRH = 64000 >> 8;/*set prescaler*/
-  TIM1->PSCRL = 64000 & 0xFF;
-  TIM1->ARRH = 7500U >> 8; /*7500 at one minute*/
-  TIM1->ARRL = 7500U & 0xFF;
+  TIM1->PSCRH = 0xFF;//64000 >> 8;/*set prescaler*/
+  TIM1->PSCRL = 0xFF;//64000 & 0xFF;
+  TIM1->ARRH = 2*7500U >> 8; /*7500 at one minute*/
+  TIM1->ARRL = 2*7500U & 0xFF;
+  TIM1->CNTRH = 0x00;
+  TIM1->CNTRL = 0x00;
   TIM1->IER|=TIM1_IER_UIE;
 }
-
+/*
+*@brief: This timer IRQ used for cycled reboot MCU
+*@retval: none
+*/
 INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11)
 {
-  WWDG_SWReset();
+  TIM1->SR1&=~TIM1_SR1_UIF;
+  //WWDG_SWReset();
 }
